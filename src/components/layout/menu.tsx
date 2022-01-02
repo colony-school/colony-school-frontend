@@ -18,18 +18,19 @@ type Group = {
   items: Array<Item>;
 };
 
-
 /**
  * A nav item with hover and active. Only active when the client URL is the same with item URL.
  */
 const Item = ({ item }: { item: Item }): JSX.Element => {
-
   return (
     <Link href={item.url} key={item.name}>
       <a
-        className={`flex flex-row gap-3 items-center px-6 py-4 rounded-full hover:bg-light-tertiary-container
-        dark:hover:bg-dark-tertiary-container
-        ${useRouter().asPath == item.url && "bg-light-secondary-container dark:bg-dark-secondary-container"}`}
+        className={`flex flex-row gap-3 items-center px-6 py-4 rounded-full
+        hover:bg-light-tertiary-container dark:hover:bg-dark-tertiary-container
+        ${
+          useRouter().asPath == item.url &&
+          "bg-light-secondary-container dark:bg-dark-secondary-container"
+        }`}
       >
         <i className="material-icons" translate="no">
           {item.icon}
