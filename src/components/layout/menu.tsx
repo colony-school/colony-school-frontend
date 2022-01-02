@@ -4,15 +4,57 @@ import Link from "next/link";
 
 // Images
 import colonyLogo from "@images/brand/logo.svg";
+import { useRouter } from "next/router";
 
 // Types
+type Item = {
+  name: string;
+  icon: string;
+  url: string;
+};
+
 type Group = {
   name: string;
-  items: Array<{
-    name: string;
-    icon: string;
-    url: string;
-  }>;
+  items: Array<Item>;
+};
+
+
+/**
+ * A nav item with hover and active. Only active when the client URL is the same with item URL.
+ */
+const Item = ({ item }: { item: Item }): JSX.Element => {
+
+  return (
+    <Link href={item.url} key={item.name}>
+      <a
+        className={`flex flex-row gap-3 items-center px-6 py-4 rounded-full hover:bg-light-tertiary-container
+        dark:hover:bg-dark-tertiary-container
+        ${useRouter().asPath == item.url && "bg-light-secondary-container dark:bg-dark-secondary-container"}`}
+      >
+        <i className="material-icons" translate="no">
+          {item.icon}
+        </i>
+        <p>{item.name}</p>
+      </a>
+    </Link>
+  );
+};
+
+const Group = ({ group }: { group: Group }): JSX.Element => {
+  return (
+    <div
+      key={group.name}
+      className="border-b-2 border-b-light-outline last:border-none dark:border-b-dark-outline"
+    >
+      <h2 className="p-4 font-bold font-light-on-surface-variant dark:font-dark-on-surface-variant">
+        {group.name}
+      </h2>
+
+      {group.items.map((item) => {
+        return <Item item={item} />;
+      })}
+    </div>
+  );
 };
 
 /**
@@ -31,30 +73,7 @@ const Menu = ({ groups }: { groups: Array<Group> }): JSX.Element => {
       </div>
 
       {groups.map((group) => {
-        return (
-          <div
-            key={group.name}
-            className="border-b-2 border-b-light-outline last:border-none dark:border-b-dark-outline"
-          >
-            <h2 className="p-4 font-bold font-light-on-surface-variant dark:font-dark-on-surface-variant">
-              {group.name}
-            </h2>
-
-            {group.items.map((item) => {
-              return (
-                <Link href={item.url} key={item.name}>
-                  <a
-                    className="flex flex-row gap-3 items-center px-6 py-4 rounded-full hover:bg-light-tertiary-container
-                    dark:hover:bg-dark-tertiary-container"
-                  >
-                    <i className="material-icons" translate="no">{item.icon}</i>
-                    <p>{item.name}</p>
-                  </a>
-                </Link>
-              );
-            })}
-          </div>
-        );
+        return <Group group={group} />;
       })}
     </nav>
   );
