@@ -8,7 +8,7 @@ const CurrentClass = () => {
       <div className="grid grid-cols-2 gap-3">
         <div className="p-4">
           <h2 className="text-xl">Current Class</h2>
-          <h3 className="text-5xl font-bold">Machine Learning 1</h3>
+          <h3 className="text-5xl font-bold">English 8</h3>
         </div>
         <div className="flex flex-col gap-3 p-4">
           <Headline
@@ -21,8 +21,8 @@ const CurrentClass = () => {
             title={<h3 className="text-base">Instructor</h3>}
             subhead={
               <ul className="text-xl">
-                <li>Smart Wattanapornmongkol</li>
-                <li>Sadudee Theparree</li>
+                <li>Dr John Peter Smith</li>
+                <li>Mattana Tatanyang</li>
               </ul>
             }
             className="p-0"
@@ -35,7 +35,7 @@ const CurrentClass = () => {
               />
             }
             title={<h3 className="text-base">Time</h3>}
-            subhead={<p className="text-xl">08:30-10:10</p>}
+            subhead={<p className="text-xl">14:20-16:00</p>}
             className="p-0"
           />
           <Headline
@@ -56,11 +56,11 @@ const CurrentClass = () => {
           <progress value={32} max={100} className="progress" />
         </div>
         <div className="flex flex-row justify-end gap-2 p-4">
-          <button className="btn btn-outlined">Classroom</button>
-          <button className="btn btn-filled">
+          <a href="https://classroom.google.com/u/1/c/MzQzNTA0NDkyMjgx" target="_blank" className="btn btn-outlined">Classroom</a>
+          <a href="https://meet.google.com/zbm-wnny-fsi" target="_blank" className="btn btn-filled">
             <Icon icon="videocam" />
             Join Meet
-          </button>
+          </a>
         </div>
       </div>
     </section>
