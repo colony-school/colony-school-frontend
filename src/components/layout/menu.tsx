@@ -32,11 +32,11 @@ const Item = ({ item }: { item: Item }): JSX.Element => {
         }`}
       >
         <div
-          className={
+          className={`flex ${
             path == item.url
               ? "text-light-secondary dark:text-dark-secondary"
               : "text-light-primary dark:text-dark-primary"
-          }
+          }`}
         >
           {item.icon}
         </div>
