@@ -1,9 +1,6 @@
 // Modules
 import Image from "next/image";
 import Link from "next/link";
-
-// Images
-import colonyLogo from "@images/brand/logo.svg";
 import { useRouter } from "next/router";
 
 // Types
@@ -67,7 +64,7 @@ const Menu = ({ groups }: { groups: Array<Group> }): JSX.Element => {
     <nav className="flex flex-col p-3 h-screen bg-light-surface1 overflow-auto scroll-invisible dark:bg-dark-surface1">
       <div className="flex flex-row items-center gap-2 font-extrabold text-4xl p-4">
         <div className="relative w-9 h-9">
-          <Image src={colonyLogo} layout="fill" objectFit="contain" />
+          <Image src="/images/brand/logo.svg" layout="fill" objectFit="contain" />
         </div>
         <p>School</p>
         <h1 className="sr-only">Colony School</h1>

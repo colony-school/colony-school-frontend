@@ -9,7 +9,7 @@ import Menu from "@components/layout/menu";
  */
 const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
   return (
-    <div className="flex flex-col sm:grid sm:grid-cols-[2fr_6fr] sm:gap-8">
+    <div className="flex flex-col sm:grid sm:grid-cols-[2fr_6fr]">
       <Menu
         groups={[
           {
