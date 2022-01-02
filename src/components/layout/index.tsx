@@ -40,7 +40,9 @@ const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
           },
         ]}
       />
-      {children}
+      <main>
+        {children}
+      </main>
     </div>
   );
 };
