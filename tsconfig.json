@@ -19,8 +19,9 @@
       "@public/*": ["public/*"],
       "@images/*": ["public/images/*"],
       "@components/*": ["src/components/*"],
+      "@styles/*": ["src/styles/*"],
       "@backend/*": ["src/utils/backend/*"],
-      "@utypes/*": ["src/utils/types/*"]
+      "@utypes/*": ["src/utils/types/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
