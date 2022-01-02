@@ -5,15 +5,16 @@ import type { AppProps } from "next/app";
 import Layout from "@components/layout";
 
 // Styles
-// import "../../styles/tailwind-dist.css";
 import "@styles/global.css";
 
 // Main component
 function App({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
-      <Component {...pageProps} />
-    </Layout>
+    <>
+      <Layout>
+        <Component {...pageProps} />
+      </Layout>
+    </>
   );
 }
 

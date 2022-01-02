@@ -1,3 +1,19 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  ::-webkit-scrollbar {
+    @apply w-2 bg-light-tertiary-container dark:bg-dark-tertiary-container;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-light-tertiary rounded-full dark:bg-dark-tertiary;
+  }
+}
+
+@layer utilities {
+  .scroll-invisible::-webkit-scrollbar {
+    @apply w-0;
+  }
+}

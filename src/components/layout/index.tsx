@@ -9,40 +9,39 @@ import Menu from "@components/layout/menu";
  */
 const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
   return (
-    <>
-      <Menu groups={[
-        {
-          name: "Summaries",
-          items: [
-            { name: "Dashboard", url: "/" },
-            { name: "Events and Announcements", url: "/events" },
-            { name: "Schedule", url: "/schedule" },
-            { name: "Your Assignments", url: "/assignments" },
-            { name: "Your Class", url: "/class/1/405" },
-          ],
-        },
-        {
-          name: "School",
-          items: [
-            { name: "Forms", url: "/forms" },
-            { name: "COVID-19 Infections", url: "/covid" },
-          ],
-        },
-        {
-          name: "Database",
-          items: [
-            { name: "Teacher List", url: "/db/teachers" },
-            { name: "Subjects List", url: "/db/subjects" },
-            { name: "Classrooms List", url: "/db/classrooms" },
-          ],
-        },
-      ]} />
-      <p>Hello</p>
-      <div>
-        {children}
-      </div>
-    </>
-  )
-}
+    <div className="flex flex-col sm:grid sm:grid-cols-[2fr_6fr]">
+      <Menu
+        groups={[
+          {
+            name: "Summaries",
+            items: [
+              { name: "Dashboard", icon: "dashboard", url: "/" },
+              { name: "Events and Announcements", icon: "event", url: "/events" },
+              { name: "Schedule", icon: "schedule", url: "/schedule" },
+              { name: "Your Assignments", icon: "assignment", url: "/assignments" },
+              { name: "Your Class", icon: "groups", url: "/class/1/405" },
+            ],
+          },
+          {
+            name: "School",
+            items: [
+              { name: "Forms", icon: "edit", url: "/forms" },
+              { name: "COVID-19 Infections", icon: "coronavirus", url: "/covid" },
+            ],
+          },
+          {
+            name: "Database",
+            items: [
+              { name: "Teacher List", icon: "person_search", url: "/db/teachers" },
+              { name: "Subjects List", icon: "class", url: "/db/subjects" },
+              { name: "Classrooms List", icon: "table_view", url: "/db/classrooms" },
+            ],
+          },
+        ]}
+      />
+      {children}
+    </div>
+  );
+};
 
 export default Layout;

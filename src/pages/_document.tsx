@@ -7,12 +7,22 @@ class ColonySchoolDocument extends Document {
       <Html>
         <Head>
           <link rel="preconnect" href="https://fonts.googleapis.com" />
-          <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="true" />
-          <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&family=Roboto&display=swap" rel="stylesheet" />
-          <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="true"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai&family=Inter&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+          />
           <link rel="manifest" href="/manifest.json" />
         </Head>
-        <body>
+        <body className="text-light-on-background bg-light-background dark:text-dark-on-background dark:bg-dark-background">
           <Main />
           <NextScript />
         </body>
