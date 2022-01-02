@@ -6,7 +6,7 @@ import { useRouter } from "next/router";
 // Types
 type Item = {
   name: string;
-  icon: string;
+  icon: JSX.Element;
   url: string;
 };
 
@@ -19,19 +19,27 @@ type Group = {
  * A nav item with hover and active. Only active when the client URL is the same with item URL.
  */
 const Item = ({ item }: { item: Item }): JSX.Element => {
+  const path = useRouter().asPath;
+
   return (
     <Link href={item.url} key={item.name}>
       <a
         className={`flex flex-row gap-3 items-center px-6 py-4 rounded-full
         hover:bg-light-tertiary-container dark:hover:bg-dark-tertiary-container
         ${
-          useRouter().asPath == item.url &&
+          path == item.url &&
           "bg-light-secondary-container dark:bg-dark-secondary-container"
         }`}
       >
-        <i className="material-icons" translate="no">
+        <div
+          className={
+            path == item.url
+              ? "text-light-secondary dark:text-dark-secondary"
+              : "text-light-primary dark:text-dark-primary"
+          }
+        >
           {item.icon}
-        </i>
+        </div>
         <p>{item.name}</p>
       </a>
     </Link>
@@ -64,7 +72,11 @@ const Menu = ({ groups }: { groups: Array<Group> }): JSX.Element => {
     <nav className="flex flex-col p-3 h-screen bg-light-surface1 overflow-auto scroll-invisible dark:bg-dark-surface1">
       <div className="flex flex-row items-center gap-2 font-extrabold text-4xl p-4">
         <div className="relative w-9 h-9">
-          <Image src="/images/brand/logo.svg" layout="fill" objectFit="contain" />
+          <Image
+            src="/images/brand/logo.svg"
+            layout="fill"
+            objectFit="contain"
+          />
         </div>
         <p>School</p>
         <h1 className="sr-only">Colony School</h1>
