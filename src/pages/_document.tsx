@@ -20,7 +20,6 @@ class ColonySchoolDocument extends Document {
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet"
           />
-          <link rel="manifest" href="/manifest.json" />
         </Head>
         <body className="text-light-on-background bg-light-background dark:text-dark-on-background dark:bg-dark-background">
           <Main />
