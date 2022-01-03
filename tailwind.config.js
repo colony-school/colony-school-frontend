@@ -69,7 +69,7 @@ module.exports = {
           "on-error-container": "#ffdad4",
           background: "#1b1b1b",
           "on-background": "#e2e2e6",
-          surface: "#1b1b1b",
+          surface: "#1f1f1f",
           "on-surface": "#e2e2e6",
           "surface-variant": "#43474e",
           "on-surface-variant": "#c3c6cf",
