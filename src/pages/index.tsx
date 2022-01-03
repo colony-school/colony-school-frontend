@@ -12,9 +12,9 @@ import Featured from "@components/dashboard/featured";
  */
 const Dashboard: NextPage = () => {
   return (
-    <div className="flex flex-col h-full">
+    <div className="flex flex-col sm:h-screen">
       <CurrentClass />
-      <main className="flex flex-row gap-7 p-7 h-full overflow-auto">
+      <main className="grid grid-cols-[repeat(auto-fill,_minmax(16rem,_1fr))] gap-7 p-7 h-full overflow-auto">
         <Featured />
         <Assignments />
         <Announcements />

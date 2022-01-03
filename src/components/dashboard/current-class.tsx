@@ -5,7 +5,7 @@ import Icon from "@components/global/icon";
 const CurrentClass = () => {
   return (
     <section className="w-full p-3 text-light-on-surface bg-light-surface2 dark:text-dark-on-surface dark:bg-dark-surface2">
-      <div className="grid grid-cols-2 gap-3">
+      <div className="flex flex-col sm:grid sm:grid-cols-2 gap-3">
         <div className="p-4">
           <h2 className="text-xl">Current Class</h2>
           <h3 className="text-5xl font-bold">English 8</h3>
@@ -50,7 +50,7 @@ const CurrentClass = () => {
           />
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-3">
+      <div className="flex flex-col sm:grid sm:grid-cols-2 gap-3">
         <div className="p-4">
           <p>1 hour 12 minutes left</p>
           <progress value={32} max={100} className="progress" />

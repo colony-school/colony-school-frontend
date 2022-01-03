@@ -16,8 +16,13 @@ const NavRail = ({
   return (
     <nav className="flex flex-col items-center gap-1 w-fit h-screen p-1 bg-light-surface1">
       <Link href="/">
-        <a className="relative w-10 m-4 aspect-square">
-          <Image src="/images/brand/logo.svg" layout="fill" />
+        <a className="flex flex-col gap-1 items-center m-4">
+          <div className="relative w-10 aspect-square">
+            <Image src="/images/brand/logo.svg" layout="fill" />
+          </div>
+          <p className="font-bold text-sm text-center">
+            School
+          </p>
         </a>
       </Link>
       {items.map((item) => {

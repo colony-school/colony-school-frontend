@@ -6,7 +6,7 @@ import Icon from "@components/global/icon";
  */
 const TopAppBar = (): JSX.Element => {
   return (
-    <header className="bg-light-surface2 dark:bg-dark-surface2">
+    <header className="w-screen bg-light-surface2 dark:bg-dark-surface2">
       <Icon
         icon="arrow_back"
         className="text-light-on-surface-variant dark:text-dark-on-surface-variant"

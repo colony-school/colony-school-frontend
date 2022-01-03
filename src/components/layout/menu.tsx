@@ -10,14 +10,14 @@ import { navGroups, navItems } from "./items";
  */
 const Menu = (): JSX.Element => {
   return (
-    <>
+    <div>
       <div className="hidden lg:block">
         <NavDrawer groups={navGroups} />
       </div>
       <div className="hidden sm:block lg:hidden">
         <NavRail items={navItems} />
       </div>
-    </>
+    </div>
   );
 };
 
