@@ -34,16 +34,16 @@
   .btn-filled {
     @apply text-light-on-primary bg-light-primary
       dark:text-dark-on-primary dark:bg-dark-primary
-      hover:bg-light-primary-0.08 hover:dark:bg-dark-primary-0.08 hover:shadow
-      focus:bg-light-primary-0.08 focus:dark:bg-dark-primary-0.08
+      hover:bg-light-primary-0.08 hover:dark:bg-dark-primary-0.08 hover:transition-none hover:shadow
+      focus:bg-light-primary-0.08 focus:dark:bg-dark-primary-0.08 focus:transition-none
       active:bg-light-primary-0.12 active:dark:bg-dark-primary-0.12 active:shadow-none active:transition-none;
   }
 
   .btn-outlined {
     @apply text-light-primary bg-light-surface border-light-outline
       dark:text-dark-primary border-2 dark:bg-dark-surface dark:border-dark-outline
-      hover:bg-light-primary-0.08-tlc hover:dark:bg-dark-primary-0.08-tlc
-      focus:bg-light-primary-0.12-tlc focus:dark:bg-dark-primary-0.12-tlc
+      hover:bg-light-primary-0.08-tlc hover:dark:bg-dark-primary-0.08-tlc hover:transition-none
+      focus:bg-light-primary-0.12-tlc focus:dark:bg-dark-primary-0.12-tlc focus:transition-none
       focus:border-light-primary focus:dark:border-dark-primary
       active:bg-light-primary-0.12-tlc active:dark:bg-dark-primary-0.12-tlc active:transition-none
       active:border-light-outline active:dark:border-dark-outline;

@@ -24,19 +24,19 @@ const Item = ({ item }: { item: Item }): JSX.Element => {
   return (
     <Link href={item.url} key={item.name}>
       <a
-        className={`flex flex-row gap-3 items-center px-6 py-4 rounded-full
-        hover:bg-light-tertiary-container dark:hover:bg-dark-tertiary-container
+        className={`flex flex-row gap-3 items-center px-6 py-4 rounded-full group transition-colors
+        hover:bg-light-tertiary-container hover:dark:bg-dark-tertiary-container hover:transition-none
         ${
           path == item.url &&
           "bg-light-secondary-container dark:bg-dark-secondary-container"
         }`}
       >
         <div
-          className={`flex ${
+          className={`flex transition-colors ${
             path == item.url
               ? "text-light-secondary dark:text-dark-secondary"
               : "text-light-primary dark:text-dark-primary"
-          }`}
+          } group-hover:text-light-tertiary group-hover:dark:text-dark-tertiary group-hover:transition-none`}
         >
           {item.icon}
         </div>
