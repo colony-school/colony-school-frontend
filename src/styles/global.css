@@ -59,7 +59,7 @@
 
   /* Chip */
   .chip {
-    @apply py-2 px-3 font-medium rounded-lg;
+    @apply py-2 px-3 text-base font-medium rounded-lg;
   }
 
   /* Card */

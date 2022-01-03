@@ -18,8 +18,8 @@ const FeaturedItem = ({
   return (
     <li className="flex flex-col gap-4 p-4" key={name}>
       <div>
-        <h4>{name}</h4>
-        <p>{desc}</p>
+        <h4 className="font-bold text-lg">{name}</h4>
+        <p className="text-base">{desc}</p>
       </div>
       <div className="flex flex-row-reverse gap-2">
         {actions.map((action) => (

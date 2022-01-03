@@ -29,8 +29,8 @@ const AssignmentItem = ({
           focus:bg-light-primary-0.12-tlc active:bg-light-primary-0.12-tlc"
         >
           <div>
-            <p className="font-bold">{name}</p>
-            <p>
+            <p className="font-bold text-light-on-surface dark:text-dark-on-surface text-lg">{name}</p>
+            <p className="text-light-on-surface-variant dark:text-dark-on-surface-variant text-base">
               {subject} • {due.toLocaleDateString("th-TH")}
             </p>
           </div>
