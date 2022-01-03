@@ -1,6 +1,6 @@
 // Components
 import Headline from "@components/global/headline";
-import Icon from "@components/icon";
+import Icon from "@components/global/icon";
 
 const CurrentClass = () => {
   return (

@@ -3,7 +3,7 @@ import { ReactNode } from "react";
 
 // Client components
 import Menu from "@components/layout/menu";
-import Icon from "@components/icon";
+import Icon from "@components/global/icon";
 
 /**
  * The layout for Colony School

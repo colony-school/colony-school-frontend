@@ -1,6 +1,6 @@
 // Components
 import Title from "@components/global/title";
-import Icon from "@components/icon";
+import Icon from "@components/global/icon";
 
 const Assignments = (): JSX.Element => {
   return (

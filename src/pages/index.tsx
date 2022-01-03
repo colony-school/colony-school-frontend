@@ -2,10 +2,10 @@
 import type { NextPage } from "next";
 
 // Components
+import Announcements from "@components/dashboard/announcements";
+import Assignments from "@components/dashboard/assignments";
 import CurrentClass from "@components/dashboard/current-class";
 import Featured from "@components/dashboard/featured";
-import Assignments from "@components/dashboard/assignments";
-import Announcements from "@components/dashboard/announcements";
 
 /**
  * At-a-glance display of everything you need to know at school
