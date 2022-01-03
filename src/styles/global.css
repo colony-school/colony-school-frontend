@@ -50,10 +50,19 @@
   }
 
   .btn-text {
-    @apply text-light-primary dark:text-dark-primary
+    @apply text-light-primary dark:text-dark-primary px-2
       hover:bg-light-primary-0.08-tlc hover:dark:bg-dark-primary-0.08-tlc
       focus:bg-light-primary-0.12-tlc focus:dark:bg-dark-primary-0.12-tlc
       active:bg-light-primary-0.12-tlc active:dark:bg-dark-primary-0.12-tlc;
+  }
+
+  /* Card */
+  .card {
+    @apply w-full rounded-lg;
+  }
+
+  .card-elevated {
+    @apply bg-light-surface dark:bg-dark-surface shadow;
   }
 }
 
