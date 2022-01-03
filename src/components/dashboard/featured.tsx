@@ -16,7 +16,7 @@ const FeaturedItem = ({
   }>;
 }): JSX.Element => {
   return (
-    <li className="flex flex-col gap-4 p-4">
+    <li className="flex flex-col gap-4 p-4" key={name}>
       <div>
         <h4>{name}</h4>
         <p>{desc}</p>
@@ -24,14 +24,14 @@ const FeaturedItem = ({
       <div className="flex flex-row-reverse gap-2">
         {actions.map((action) => (
           <a
-            className={`
-              block btn
+            className={`block btn
               ${action.type == "primary" && "btn-filled"}
               ${action.type == "secondary" && "btn-tonal"}
               ${action.type == "tertiary" && "btn-text"}
             `}
             href={action.url}
             target="_blank"
+            key={action.name}
           >
             {action.name}
           </a>
