@@ -12,7 +12,7 @@ const Assignments = (): JSX.Element => {
             className="text-light-primary dark:text-dark-primary"
           />
         }
-        title={<h3>Featured</h3>}
+        title={<h3>Due Soon</h3>}
       />
     </section>
   );
