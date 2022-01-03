@@ -27,7 +27,7 @@ const NavRail = ({
       </Link>
       {items.map((item) => {
         return (
-          <Link href={item.url}>
+          <Link href={item.url} key={item.name}>
             <a className="flex flex-col justify-center items-center gap-1 p-2 h-20 group">
               <div
                 className={`flex flex-row items-center py-2 px-6 text-light-on-surface-variant dark:text-dark-on-surface-variant
