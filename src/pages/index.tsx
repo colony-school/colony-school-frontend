@@ -20,7 +20,7 @@ const Dashboard: NextPage = () => {
         </div>
         <CurrentClass />
       </div>
-      <main className="grid grid-cols-[repeat(auto-fill,_minmax(16rem,_1fr))] gap-7 p-7 h-full overflow-auto">
+      <main className="grid grid-cols-[repeat(auto-fill,_minmax(16rem,_1fr))] lg:grid-cols-3 gap-7 p-7 h-full overflow-auto">
         <Featured />
         <Assignments />
         <Announcements />
