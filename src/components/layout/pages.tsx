@@ -1,5 +1,5 @@
 // Components
-import Icon from "@components/global/icon";
+import MaterialIcon from "@components/global/icon";
 
 /**
  * Navigation items seperated into groups
@@ -12,27 +12,27 @@ export const navGroups = [
     items: [
       {
         name: "Dashboard",
-        icon: <Icon icon="dashboard" />,
+        icon: <MaterialIcon icon="dashboard" />,
         url: "/",
       },
       {
         name: "Events and Announcements",
-        icon: <Icon icon="event" />,
+        icon: <MaterialIcon icon="event" />,
         url: "/events",
       },
       {
         name: "Schedule",
-        icon: <Icon icon="schedule" />,
+        icon: <MaterialIcon icon="schedule" />,
         url: "/schedule",
       },
       {
         name: "Your Assignments",
-        icon: <Icon icon="assignment" />,
+        icon: <MaterialIcon icon="assignment" />,
         url: "/assignments",
       },
       {
         name: "Your Class",
-        icon: <Icon icon="groups" />,
+        icon: <MaterialIcon icon="groups" />,
         url: "/class/1/405",
       },
     ],
@@ -40,10 +40,10 @@ export const navGroups = [
   {
     name: "School",
     items: [
-      { name: "Forms", icon: <Icon icon="edit" />, url: "/forms" },
+      { name: "Forms", icon: <MaterialIcon icon="edit" />, url: "/forms" },
       {
         name: "COVID-19 Infections",
-        icon: <Icon icon="coronavirus" />,
+        icon: <MaterialIcon icon="coronavirus" />,
         url: "/covid",
       },
     ],
@@ -53,17 +53,17 @@ export const navGroups = [
     items: [
       {
         name: "Teacher List",
-        icon: <Icon icon="person_search" />,
+        icon: <MaterialIcon icon="person_search" />,
         url: "/db/teachers",
       },
       {
         name: "Subjects List",
-        icon: <Icon icon="class" />,
+        icon: <MaterialIcon icon="class" />,
         url: "/db/subjects",
       },
       {
         name: "Classrooms List",
-        icon: <Icon icon="table_view" />,
+        icon: <MaterialIcon icon="table_view" />,
         url: "/db/classrooms",
       },
     ],
@@ -76,10 +76,10 @@ export const navGroups = [
  * * Navigation Rail (`NavRail` from `nav-rail.tsx`)
  */
 export const navItems = [
-  { name: "Dashboard", icon: <Icon icon="dashboard" />, url: "/" },
-  { name: "Events", icon: <Icon icon="event" />, url: "/events" },
-  { name: "Schedule", icon: <Icon icon="schedule" />, url: "/schedule" },
-  { name: "To-do", icon: <Icon icon="assignment" />, url: "/assignments" },
-  { name: "Class", icon: <Icon icon="groups" />, url: "/class/1/405" },
-  { name: "Database", icon: <Icon icon="table_chart" />, url: "/db" },
+  { name: "Dashboard", icon: <MaterialIcon icon="dashboard" />, url: "/" },
+  { name: "Events", icon: <MaterialIcon icon="event" />, url: "/events" },
+  { name: "Schedule", icon: <MaterialIcon icon="schedule" />, url: "/schedule" },
+  { name: "To-do", icon: <MaterialIcon icon="assignment" />, url: "/assignments" },
+  { name: "Class", icon: <MaterialIcon icon="groups" />, url: "/class/1/405" },
+  { name: "Database", icon: <MaterialIcon icon="table_chart" />, url: "/db" },
 ];

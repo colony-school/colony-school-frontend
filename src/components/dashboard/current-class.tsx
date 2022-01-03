@@ -1,6 +1,6 @@
 // Components
 import Headline from "@components/global/headline";
-import Icon from "@components/global/icon";
+import MaterialIcon from "@components/global/icon";
 
 const CurrentClass = () => {
   return (
@@ -16,7 +16,7 @@ const CurrentClass = () => {
         <div className="flex flex-col gap-3 px-4 pb-4">
           <Headline
             icon={
-              <Icon
+              <MaterialIcon
                 icon="person"
                 className="text-light-primary dark:text-dark-primary"
               />
@@ -32,7 +32,7 @@ const CurrentClass = () => {
           />
           <Headline
             icon={
-              <Icon
+              <MaterialIcon
                 icon="schedule"
                 className="text-light-primary dark:text-dark-primary"
               />
@@ -43,7 +43,7 @@ const CurrentClass = () => {
           />
           <Headline
             icon={
-              <Icon
+              <MaterialIcon
                 icon="assignment"
                 className="text-light-primary dark:text-dark-primary"
               />
@@ -71,7 +71,7 @@ const CurrentClass = () => {
             target="_blank"
             className="btn btn-filled"
           >
-            <Icon icon="videocam" />
+            <MaterialIcon icon="videocam" />
             Join Meet
           </a>
         </div>

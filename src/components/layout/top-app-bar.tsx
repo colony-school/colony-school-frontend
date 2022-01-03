@@ -1,5 +1,5 @@
 // Components
-import Icon from "@components/global/icon";
+import MaterialIcon from "@components/global/icon";
 import { useRouter } from "next/router";
 import { navGroups } from "./pages";
 
@@ -12,7 +12,7 @@ const TopAppBar = (): JSX.Element => {
   return (
     <header className="w-full p-4 bg-light-surface2 dark:bg-dark-surface2 sm:p-7">
       <button className="btn btn-text p-0">
-        <Icon
+        <MaterialIcon
           icon="arrow_back"
           className="text-light-on-surface-variant dark:text-dark-on-surface-variant"
         />

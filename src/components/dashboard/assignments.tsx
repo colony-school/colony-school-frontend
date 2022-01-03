@@ -3,7 +3,7 @@ import Link from "next/link";
 
 // Components
 import Title from "@components/global/title";
-import Icon from "@components/global/icon";
+import MaterialIcon from "@components/global/icon";
 import Status from "@components/assignments/status";
 
 const AssignmentItem = ({
@@ -46,7 +46,7 @@ const Assignments = (): JSX.Element => {
     <section className="card card-elevated h-fit">
       <Title
         icon={
-          <Icon
+          <MaterialIcon
             icon="assignment"
             className="text-light-primary dark:text-dark-primary"
           />

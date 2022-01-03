@@ -1,6 +1,6 @@
 // Components
 import Title from "@components/global/title";
-import Icon from "@components/global/icon";
+import MaterialIcon from "@components/global/icon";
 
 const FeaturedItem = ({
   name,
@@ -46,7 +46,7 @@ const Featured = (): JSX.Element => {
     <section className="card card-elevated h-fit">
       <Title
         icon={
-          <Icon
+          <MaterialIcon
             icon="featured_video"
             className="text-light-primary dark:text-dark-primary"
           />
