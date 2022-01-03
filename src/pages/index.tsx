@@ -12,9 +12,9 @@ import Featured from "@components/dashboard/featured";
  */
 const Dashboard: NextPage = () => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col h-screen">
       <CurrentClass />
-      <main className="flex flex-row gap-7 p-7">
+      <main className="flex flex-row gap-7 p-7 h-full overflow-auto">
         <Featured />
         <Assignments />
         <Announcements />
