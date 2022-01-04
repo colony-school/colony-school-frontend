@@ -11,7 +11,7 @@ import {
 import Headline from "@components/global/headline";
 import MaterialIcon from "@components/global/icon";
 import { useEffect, useState } from "react";
-import { SubjectPeriod } from "@utils/types/class";
+import { SubjectPeriod } from "@utils/types/subject";
 
 /**
  * Ongoing class infobox
@@ -175,6 +175,10 @@ const CurrentClass = ({
 }: {
   subjectPeriod: SubjectPeriod;
 }): JSX.Element => {
+  // Processing
+  const periodStart = set(new Date(), subjectPeriod.periodStart);
+  const dueNumber = subjectPeriod.assignmentsDue.length;
+
   return (
     <section
       className="w-full p-3 text-light-on-surface bg-light-surface2
@@ -183,22 +187,19 @@ const CurrentClass = ({
       <div className="flex flex-col sm:grid sm:grid-cols-2 gap-3">
         <div className="px-4 pb-4">
           <h2 className="text-xl">Current Class</h2>
-          <h3 className="text-5xl font-bold">English 8</h3>
+          <h3 className="text-5xl font-bold">{subjectPeriod.name}</h3>
         </div>
         <ClassInfo
-          instructors={[
-            { name: "Dr John Peter Smith" },
-            { name: "Mattana Tatanyang" },
-          ]}
-          periodStart={set(new Date(), { hours: 14, minutes: 20, seconds: 0 })}
-          periodLength={100}
-          dueNumber={2}
+          instructors={subjectPeriod.instructors}
+          periodStart={periodStart}
+          periodLength={subjectPeriod.periodLength}
+          dueNumber={dueNumber}
         />
       </div>
       <div className="flex flex-col sm:grid sm:grid-cols-2 gap-3">
         <ClassTimeLeft
-          periodStart={set(new Date(), { hours: 14, minutes: 20, seconds: 0 })}
-          periodLength={100}
+          periodStart={periodStart}
+          periodLength={subjectPeriod.periodLength}
         />
         <ClassActions
           ggc="MzQzNTA0NDkyMjgx"
