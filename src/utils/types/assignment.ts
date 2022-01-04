@@ -1,4 +1,9 @@
 export type Assignment = {
-  name: string,
-  due: Date
-}
+  id: number;
+  name: string;
+  desc: string;
+  subject: string;
+  due: Date;
+  status: "not-started" | "started" | "done";
+  urgent: boolean;
+};

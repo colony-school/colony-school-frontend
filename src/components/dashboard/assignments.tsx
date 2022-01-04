@@ -6,42 +6,52 @@ import Title from "@components/global/title";
 import MaterialIcon from "@components/global/icon";
 import Status from "@components/assignments/status";
 
+// Types
+import { Assignment } from "@utils/types/assignment";
+import { getUnixTime } from "date-fns";
+
+/**
+ *
+ * @param assignment
+ */
 const AssignmentItem = ({
-  id,
-  name,
-  subject,
-  due,
-  status,
-  urgent,
+  assignment,
 }: {
-  id: number;
-  name: string;
-  subject: string;
-  due: Date;
-  status: "not-started" | "started" | "done";
-  urgent: boolean;
+  assignment: Assignment;
 }): JSX.Element => {
   return (
     <li>
-      <Link href={`/assignments?id=${id}`}>
+      <Link href={`/assignments?id=${assignment.id}`}>
         <a
           className="flex flex-row justify-between items-end p-4 hover:bg-light-primary-0.08-tlc
           focus:bg-light-primary-0.12-tlc active:bg-light-primary-0.12-tlc"
         >
           <div>
-            <p className="font-bold text-light-on-surface dark:text-dark-on-surface text-lg">{name}</p>
+            <p className="font-bold text-light-on-surface dark:text-dark-on-surface text-lg">
+              {assignment.name}
+            </p>
             <p className="text-light-on-surface-variant dark:text-dark-on-surface-variant text-base">
-              {subject} • {due.toLocaleDateString("th-TH")}
+              {assignment.subject}
+              {" • "}
+              {assignment.due.toLocaleDateString("th-TH")}
             </p>
           </div>
-          <Status status={status} urgent={urgent} pastDue={false} />
+          <Status
+            status={assignment.status}
+            urgent={assignment.urgent}
+            pastDue={getUnixTime(assignment.due) > getUnixTime(new Date())}
+          />
         </a>
       </Link>
     </li>
   );
 };
 
-const Assignments = (): JSX.Element => {
+const Assignments = ({
+  assignments,
+}: {
+  assignments: Array<Assignment>;
+}): JSX.Element => {
   return (
     <section className="card card-elevated h-fit">
       <Title
@@ -54,36 +64,13 @@ const Assignments = (): JSX.Element => {
         title={<h3>Due Soon</h3>}
       />
       <ul>
-        <AssignmentItem
-          id={1}
-          name="Tideman"
-          subject="CS50"
-          due={new Date(2021, 10, 6, 23, 59)}
-          status="not-started"
-          urgent={false}
-        />
-        <AssignmentItem
-          id={2}
-          name="Page 169-420"
-          subject="Addi M"
-          due={new Date(2021, 10, 8, 23, 59)}
-          status="not-started"
-          urgent={false}
-        />
-        <AssignmentItem
-          id={3}
-          name="Touch Grass"
-          subject="PE"
-          due={new Date(2021, 10, 6, 8, 30)}
-          status="started"
-          urgent={false}
-        />
+        {assignments.map((assignment) => {
+          return <AssignmentItem assignment={assignment} />;
+        })}
       </ul>
       <div className="flex flex-row justify-end p-4">
         <Link href="/assignments">
-          <a className="btn btn-filled">
-            See all
-          </a>
+          <a className="btn btn-filled">See all</a>
         </Link>
       </div>
     </section>
