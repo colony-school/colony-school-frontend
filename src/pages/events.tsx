@@ -57,7 +57,8 @@ const EventItem = ({
         className={`card flex flex-row justify-between items-center gap-4 h-20 text-left
         bg-light-surface1 dark:bg-dark-surface1 ${
           active
-            ? "text-light-on-primary-container bg-light-primary-container dark:text-dark-on-primary-container dark:bg-dark-primary-container shadow"
+            ? "text-light-on-primary-container bg-light-primary-container \
+              dark:text-dark-on-primary-container dark:bg-dark-primary-container shadow"
             : "text-light-on-surface bg-light-surface1 dark:text-dark-on-surface dark:bg-dark-surface1"
         }`}
         onClick={() => setActiveID(event.id)}
