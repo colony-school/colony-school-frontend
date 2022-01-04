@@ -1,39 +1,47 @@
 // Modules
+import getUnixTime from "date-fns/getUnixTime";
 import Link from "next/link";
 
 // Components
 import Title from "@components/global/title";
 import MaterialIcon from "@components/global/icon";
 
+// Types
+import { GlanceAnnouncement } from "@utils/types/announcement";
+
 // Utils
 import { to3LetterMonth } from "@utils/date";
 
-const MainAnnouncementItem = ({
-  name,
-  desc,
+const AnnouncementPostDate = ({
   postDate,
-  source
 }: {
-  name: string;
-  desc: string;
   postDate: Date;
-  source: string;
+}): JSX.Element => {
+  return (
+    <time className="flex flex-col items-center font-bold text-light-secondary dark:text-dark-secondary w-8">
+      <p className="text-2xl">{postDate.getDate()}</p>
+      <p className="text-base">{to3LetterMonth(postDate.getMonth())}</p>
+    </time>
+  );
+};
+
+const MainAnnouncementItem = ({
+  announcement,
+}: {
+  announcement: GlanceAnnouncement;
 }): JSX.Element => {
   return (
     <li className="flex flex-col">
       <div className="w-full h-48 bg-light-surface-variant dark:bg-dark-surface-variant" />
       <div className="flex flex-row gap-4 py-3 px-4">
-        <time className="flex flex-col items-center font-bold text-light-secondary dark:text-dark-secondary w-8">
-          <p className="text-2xl">{postDate.getDate()}</p>
-          <p className="text-base">{to3LetterMonth(postDate.getMonth())}</p>
-        </time>
+        <AnnouncementPostDate postDate={announcement.postDate} />
         <div className="flex flex-col gap-3">
-          <h4 className="font-bold">{name}</h4>
-          <p className="text-base">{desc}</p>
+          <h4 className="font-bold">{announcement.name}</h4>
+          <p className="text-base">{announcement.desc}</p>
           <div className="flex flex-row justify-end">
-            <button className="btn btn-text">
+            <a href={announcement.source} className="btn btn-text">
               Read source
-            </button>
+            </a>
             <button className="btn btn-outlined">
               <MaterialIcon icon="share" />
               Share
@@ -45,7 +53,38 @@ const MainAnnouncementItem = ({
   );
 };
 
-const Announcements = (): JSX.Element => {
+const AnnouncementItem = ({
+  announcement,
+}: {
+  announcement: GlanceAnnouncement;
+}): JSX.Element => {
+  return (
+    <li
+      className="hover:bg-light-primary-0.08-tlc hover:dark:bg-dark-primary-0.08-tlc
+      focus:bg-light-primary-0.12-tlc focus:dark:bg-dark-primary-0.12-tlc"
+    >
+      <Link href={`/events?id=${announcement.id}`}>
+        <a>
+          <div className="flex flex-row gap-4 items-center py-3 px-4">
+            <AnnouncementPostDate postDate={announcement.postDate} />
+            <h4 className="font-bold">{announcement.name}</h4>
+          </div>
+        </a>
+      </Link>
+    </li>
+  );
+};
+
+const Announcements = ({
+  announcements,
+}: {
+  announcements: Array<GlanceAnnouncement>;
+}): JSX.Element => {
+  // Sort the announcements by post date
+  announcements.sort((a, b) => {
+    return getUnixTime(a.postDate) - getUnixTime(b.postDate);
+  });
+
   return (
     <section className="card card-elevated h-fit">
       <Title
@@ -57,12 +96,15 @@ const Announcements = (): JSX.Element => {
         }
         title={<h3>Announcements</h3>}
       />
-      <MainAnnouncementItem
-        name="Shortened periods from period 4 onwards"
-        desc="Shortened periods due to a school-wide teacher meeting at 16:00"
-        postDate={new Date(2021, 9, 12)}
-        source="https://youtu.be/dQw4w9WgXcQ"
-      />
+      <ul>
+        <MainAnnouncementItem
+          announcement={announcements[0]}
+          key={announcements[0].name}
+        />
+        {announcements.slice(1).map((announcement) => {
+          return <AnnouncementItem announcement={announcement} />;
+        })}
+      </ul>
       <div className="flex flex-row justify-end p-4">
         <Link href="/events">
           <a className="btn btn-filled">See all</a>

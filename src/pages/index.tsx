@@ -108,7 +108,31 @@ const Dashboard: NextPage = () => {
             },
           ]}
         />
-        <Announcements />
+        <Announcements
+          announcements={[
+            {
+              id: 1,
+              name: "Shortened periods from period 4 onwards",
+              desc: "Shortened periods due to a school-wide teacher meeting at 16:00",
+              postDate: new Date(2021, 9, 12),
+              source: "https://youtu.be/dQw4w9WgXcQ",
+            },
+            {
+              id: 2,
+              name: "Banana Eating Contest at lunch, no periods cut or shortened",
+              desc: "No questions asked. Come to Sala Phrasadej at lunch and try!",
+              postDate: new Date(2021, 9, 14),
+              source: "http://mysk.school/th/index.php",
+            },
+            {
+              id: 3,
+              name: "Periods 4 and onwards is completely cut",
+              desc: "The director have received word that COVID-19 is a thing",
+              postDate: new Date(2021, 9, 31),
+              source: "https://www.shittynft.com/shared/img/shity-spin.gif",
+            },
+          ]}
+        />
       </main>
     </div>
   );
