@@ -20,7 +20,7 @@ const NavRail = ({
           <div className="relative w-10 aspect-square">
             <Image src="/images/brand/logo.svg" layout="fill" />
           </div>
-          <p className="font-bold text-sm text-center">
+          <p className="font-bold text-sm text-center text-light-primary dark:text-dark-primary">
             School
           </p>
         </a>
