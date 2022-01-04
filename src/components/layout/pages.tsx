@@ -1,12 +1,15 @@
 // Components
 import MaterialIcon from "@components/global/icon";
 
+// Types
+import { NavGroup } from "@utils/types/navigation";
+
 /**
  * Navigation items seperated into groups
  * 
  * For Navigation Drawers (`NavDrawer` from `nav-drawer.tsx`)
  */
-export const navGroups = [
+export const navGroups: Array<NavGroup> = [
   {
     name: "Summaries",
     items: [

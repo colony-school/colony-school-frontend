@@ -4,21 +4,12 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 
 // Types
-type Item = {
-  name: string;
-  icon: JSX.Element;
-  url: string;
-};
-
-type Group = {
-  name: string;
-  items: Array<Item>;
-};
+import { NavItem, NavGroup } from "@utils/types/navigation";
 
 /**
  * A nav item with hover and active. Only active when the client URL is the same with item URL.
  */
-const Item = ({ item }: { item: Item }): JSX.Element => {
+const Item = ({ item }: { item: NavItem }): JSX.Element => {
   const path = useRouter().asPath;
 
   return (
@@ -46,7 +37,7 @@ const Item = ({ item }: { item: Item }): JSX.Element => {
   );
 };
 
-const Group = ({ group }: { group: Group }): JSX.Element => {
+const Group = ({ group }: { group: NavGroup }): JSX.Element => {
   return (
     <div
       key={group.name}
@@ -67,7 +58,7 @@ const Group = ({ group }: { group: Group }): JSX.Element => {
  * The menu
  * @param items List of nav items, each containes name and URL
  */
-const NavDrawer = ({ groups }: { groups: Array<Group> }): JSX.Element => {
+const NavDrawer = ({ groups }: { groups: Array<NavGroup> }): JSX.Element => {
   return (
     <nav className="flex flex-col p-3 h-screen bg-light-surface1 overflow-auto scroll-invisible dark:bg-dark-surface1">
       <div className="flex flex-row items-center gap-2 font-extrabold text-4xl p-4">

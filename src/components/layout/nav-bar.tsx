@@ -2,13 +2,16 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+// Types
+import { NavItem } from "@utils/types/navigation";
+
 /**
  * A persistent and convenient way to switch between primary destinations
  */
 const NavBar = ({
   items,
 }: {
-  items: Array<{ name: string; icon: JSX.Element; url: string }>;
+  items: Array<NavItem>;
 }): JSX.Element => {
   const path = useRouter().asPath;
 
