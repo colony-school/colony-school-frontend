@@ -4,11 +4,13 @@
 
 @layer base {
   ::-webkit-scrollbar {
-    @apply w-2 bg-light-tertiary-container dark:bg-dark-tertiary-container;
+    @apply bg-light-surface1 dark:bg-dark-surface1;
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-light-tertiary rounded-full dark:bg-dark-tertiary;
+    @apply bg-light-surface5 dark:bg-dark-surface5
+      hover:bg-light-surface3 hover:dark:bg-dark-surface3
+      active:bg-light-surface5 active:dark:bg-dark-surface5;
   }
 }
 
