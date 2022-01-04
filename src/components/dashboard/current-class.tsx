@@ -1,5 +1,11 @@
 // Modules
-import { addMinutes, formatDuration, intervalToDuration, set } from "date-fns";
+import {
+  addMinutes,
+  format,
+  formatDuration,
+  intervalToDuration,
+  set,
+} from "date-fns";
 
 // Components
 import Headline from "@components/global/headline";
@@ -37,10 +43,8 @@ const ClassInfo = ({
         title={<h3 className="text-base">Instructor</h3>}
         subhead={
           <ul className="text-xl">
-            <li>Dr John Peter Smith</li>
-            <li>Mattana Tatanyang</li>
             {instructors.map((instructor) => {
-              <li>{instructor.name}</li>;
+              return <li>{instructor.name}</li>;
             })}
           </ul>
         }
@@ -54,7 +58,12 @@ const ClassInfo = ({
           />
         }
         title={<h3 className="text-base">Time</h3>}
-        subhead={<p className="text-xl">14:20-16:00</p>}
+        subhead={
+          <p className="text-xl">
+            {format(periodStart, "HH:mm")}–
+            {format(addMinutes(periodStart, periodLength), "HH:mm")}
+          </p>
+        }
         className="p-0"
       />
       <Headline
@@ -64,7 +73,7 @@ const ClassInfo = ({
             className="text-light-primary dark:text-dark-primary"
           />
         }
-        subhead={<p className="text-xl">2 assignments due</p>}
+        subhead={<p className="text-xl">{dueNumber} assignments due</p>}
         className="p-0"
       />
     </div>
