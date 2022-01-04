@@ -1,6 +1,7 @@
 // Modules
 import { format } from "date-fns";
 import { NextPage } from "next";
+import { useState } from "react";
 
 // Components
 import MaterialIcon from "@components/global/icon";
@@ -41,11 +42,26 @@ const SearchBar = () => {
  *
  * @param event
  */
-const EventItem = ({ event }: { event: ListedAnnouncement }): JSX.Element => {
+const EventItem = ({
+  event,
+  active,
+  setActiveID,
+}: {
+  event: ListedAnnouncement;
+  active: boolean;
+  setActiveID: Function;
+}): JSX.Element => {
   return (
     <li>
-      <button className="card flex flex-row justify-between items-center gap-4 h-20 text-left
-        bg-light-surface1 dark:bg-dark-surface1">
+      <button
+        className={`card flex flex-row justify-between items-center gap-4 h-20 text-left
+        bg-light-surface1 dark:bg-dark-surface1 ${
+          active
+            ? "text-light-on-primary-container bg-light-primary-container dark:text-dark-on-primary-container dark:bg-dark-primary-container shadow"
+            : "text-light-on-surface bg-light-surface1 dark:text-dark-on-surface dark:bg-dark-surface1"
+        }`}
+        onClick={() => setActiveID(event.id)}
+      >
         <div className="flex flex-row items-center px-4 gap-4">
           <MaterialIcon
             icon={event.type}
@@ -71,6 +87,29 @@ const EventItem = ({ event }: { event: ListedAnnouncement }): JSX.Element => {
  * Events and announcements
  */
 const Events: NextPage = () => {
+  const [events, setEvents] = useState<Array<ListedAnnouncement>>([
+    {
+      id: 4,
+      title: "Shortened Periods",
+      postDate: new Date(2021, 9, 12),
+      type: "announcement",
+    },
+    {
+      id: 5,
+      title: "Final Exam",
+      postDate: new Date(2021, 9, 13),
+      type: "event",
+    },
+    {
+      id: 6,
+      title: "Banana Eating Contest",
+      postDate: new Date(2021, 9, 14),
+      type: "event",
+    },
+  ]);
+
+  const [activeID, setActiveID] = useState<number | null>(null);
+
   return (
     <div className="bg-light-surface2 dark:bg-dark-surface2">
       <TopAppBar />
@@ -80,28 +119,24 @@ const Events: NextPage = () => {
       >
         <div className="flex flex-col gap-4 pl-4 pt-4">
           <SearchBar />
-          <ul className="flex flex-col gap-4 px-4 pb-4">
-            <EventItem
-              event={{
-                id: 4,
-                title: "Shortened Periods",
-                postDate: new Date(2021, 9, 12),
-                type: "announcement",
-              }}
-            />
-            <EventItem
-              event={{
-                id: 5,
-                title: "Final Exam",
-                postDate: new Date(2021, 9, 13),
-                type: "event",
-              }}
-            />
+          <ul className="flex flex-col gap-4 px-4 pb-4 overflow-auto">
+            {events.map((event) => {
+              return (
+                <EventItem
+                  event={event}
+                  active={activeID == event.id}
+                  setActiveID={setActiveID}
+                />
+              );
+            })}
           </ul>
         </div>
         <div className="p-8">
           <div className="card card-elevated">
-            <Title icon={<MaterialIcon icon="event" />} title={<h2></h2>} />
+            <Title
+              icon={<MaterialIcon icon="event" />}
+              title={<h2>{activeID}</h2>}
+            />
           </div>
         </div>
       </div>
