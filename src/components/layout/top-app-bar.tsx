@@ -1,7 +1,11 @@
+// Modules
+import { useRouter } from "next/router";
+
 // Components
 import MaterialIcon from "@components/global/icon";
-import { useRouter } from "next/router";
-import { navGroups } from "./pages";
+
+// Data
+import { navGroups } from "@components/layout/pages";
 
 /**
  * Displays information and actions at the top of a screen
