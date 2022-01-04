@@ -1,10 +1,5 @@
 // Modules
-import {
-  addMinutes,
-  formatDuration,
-  intervalToDuration,
-  set
-} from "date-fns";
+import { addMinutes, formatDuration, intervalToDuration, set } from "date-fns";
 
 // Components
 import Headline from "@components/global/headline";
@@ -124,10 +119,12 @@ const ClassTimeLeft = ({
       <p>{formatDuration(timeLeft)} left</p>
       <progress
         value={
-          periodLength -
-          ((timeLeft.hours || 0) * 60 + (timeLeft.minutes || periodLength) + (timeLeft.seconds || 0) * (0.0166))
+          periodLength * 60 -
+          ((timeLeft.hours || 0) * 3600 +
+            (timeLeft.minutes || 0) * 60 +
+            (timeLeft.seconds || 0))
         }
-        max={periodLength}
+        max={periodLength * 60}
         className="progress"
       />
     </div>
