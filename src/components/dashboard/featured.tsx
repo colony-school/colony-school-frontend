@@ -11,7 +11,7 @@ const FeaturedItem = ({
   desc: string;
   actions: Array<{
     name: string;
-    type: "primary" | "secondary" | "tertiary";
+    type?: "primary" | "secondary" | "tertiary";
     url: string;
   }>;
 }): JSX.Element => {
@@ -25,7 +25,7 @@ const FeaturedItem = ({
         {actions.map((action) => (
           <a
             className={`block btn
-              ${action.type == "primary" && "btn-filled"}
+              ${(action.type == "primary" || !action.type) && "btn-filled"}
               ${action.type == "secondary" && "btn-tonal"}
               ${action.type == "tertiary" && "btn-text"}
             `}
