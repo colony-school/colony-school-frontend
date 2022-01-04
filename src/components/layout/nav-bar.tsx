@@ -19,7 +19,7 @@ const NavBar = ({
           <a className="flex flex-col items-center px-2 py-1 w-full">
             <div
               className={`flex flex-row justify-center py-1 rounded-full
-              ${path === item.url && "w-full bg-light-secondary-container"} `}
+              ${path === item.url && "w-full bg-light-secondary-container dark:bg-dark-secondary-container"} `}
             >
               {item.icon}
             </div>
