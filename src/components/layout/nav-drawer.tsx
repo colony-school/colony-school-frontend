@@ -13,7 +13,7 @@ const Item = ({ item }: { item: NavItem }): JSX.Element => {
   const path = useRouter().asPath;
 
   return (
-    <Link href={item.url} key={item.name}>
+    <Link href={item.url}>
       <a
         className={`flex flex-row gap-3 items-center px-6 py-4 rounded-full group transition-colors
         hover:bg-light-tertiary-container hover:dark:bg-dark-tertiary-container hover:transition-none
@@ -48,7 +48,7 @@ const Group = ({ group }: { group: NavGroup }): JSX.Element => {
       </h2>
 
       {group.items.map((item) => {
-        return <Item item={item} />;
+        return <Item item={item} key={item.name} />;
       })}
     </div>
   );
@@ -74,7 +74,7 @@ const NavDrawer = ({ groups }: { groups: Array<NavGroup> }): JSX.Element => {
       </div>
 
       {groups.map((group) => {
-        return <Group group={group} />;
+        return <Group group={group} key={group.name} />;
       })}
     </nav>
   );
