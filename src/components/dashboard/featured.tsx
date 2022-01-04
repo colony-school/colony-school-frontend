@@ -70,7 +70,7 @@ const Featured = ({
       />
       <ul>
         {featuredItems.map((featuredItem) => {
-          return <FeaturedItem featuredItem={featuredItem} />;
+          return <FeaturedItem featuredItem={featuredItem} key={featuredItem.name} />;
         })}
       </ul>
     </section>

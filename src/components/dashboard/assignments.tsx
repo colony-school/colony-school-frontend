@@ -65,7 +65,7 @@ const Assignments = ({
       />
       <ul>
         {assignments.map((assignment) => {
-          return <AssignmentItem assignment={assignment} />;
+          return <AssignmentItem assignment={assignment} key={assignment.id} />;
         })}
       </ul>
       <div className="flex flex-row justify-end p-4">
