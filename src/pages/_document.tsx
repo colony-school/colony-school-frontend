@@ -21,8 +21,7 @@ class ColonySchoolDocument extends Document {
             rel="stylesheet"
           />
         </Head>
-        <body className="text-light-on-background bg-light-background
-          dark:text-dark-on-background dark:bg-dark-background">
+        <body>
           <Main />
           <NextScript />
         </body>
