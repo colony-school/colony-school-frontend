@@ -96,20 +96,35 @@ const Announcements = ({
         }
         title={<h3>Announcements</h3>}
       />
-      <ul>
-        <MainAnnouncementItem
-          announcement={announcements[0]}
-          key={announcements[0].name}
-        />
-        {announcements.slice(1).map((announcement) => {
-          return <AnnouncementItem announcement={announcement} />;
-        })}
-      </ul>
-      <div className="flex flex-row justify-end p-4">
-        <Link href="/events">
-          <a className="btn btn-filled">See all</a>
-        </Link>
-      </div>
+      {announcements.length > 0 ? (
+        <>
+          <ul>
+            <MainAnnouncementItem
+              announcement={announcements[0]}
+              key={announcements[0].name}
+            />
+            {announcements.slice(1).map((announcement) => {
+              return <AnnouncementItem announcement={announcement} />;
+            })}
+          </ul>
+          <div className="flex flex-row justify-end p-4">
+            <Link href="/events">
+              <a className="btn btn-filled">See all</a>
+            </Link>
+          </div>
+        </>
+      ) : (
+        <p
+          className="flex flex-row justify-center items-center gap-2 p-4
+          text-light-on-surface-variant dark:text-dark-on-surface-variant"
+        >
+          <MaterialIcon
+            icon="highlight_off"
+            className="text-light-secondary dark:text-dark-secondary"
+          />
+          <p>No announcements</p>
+        </p>
+      )}
     </section>
   );
 };
