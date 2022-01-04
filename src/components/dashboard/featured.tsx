@@ -2,6 +2,17 @@
 import Title from "@components/global/title";
 import MaterialIcon from "@components/global/icon";
 
+// Types
+import { FeaturedItem } from "@utils/types/featured";
+
+/**
+ * A featured item, for Featured Card (`Featured` from `featured.tsx`)
+ * 
+ * You have to pay to get one
+ * @param name The title of what is being featured
+ * @param desc The description of what is being featured
+ * @param actions A list of actions you can take, an action has 3 types: "primary," "secondary," and "tertiary"
+ */
 const FeaturedItem = ({
   name,
   desc,
@@ -41,7 +52,11 @@ const FeaturedItem = ({
   );
 };
 
-const Featured = (): JSX.Element => {
+/**
+ * The Featured Card, the only way we can make money
+ * @param featuredItems A list of featured items
+ */
+const Featured = ({ featuredItems }: { featuredItems: Array<FeaturedItem> }): JSX.Element => {
   return (
     <section className="card card-elevated h-fit">
       <Title

@@ -1,3 +1,3 @@
 export type Instructor = {
-  name: string
-}
+  name: string;
+};
