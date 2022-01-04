@@ -44,7 +44,7 @@ const ClassInfo = ({
         subhead={
           <ul className="text-xl">
             {instructors.map((instructor) => {
-              return <li>{instructor.name}</li>;
+              return <li key={instructor.name}>{instructor.name}</li>;
             })}
           </ul>
         }
