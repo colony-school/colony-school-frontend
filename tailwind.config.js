@@ -11,6 +11,10 @@ module.exports = {
           "on-primary": "#ffffff",
           "primary-container": "#d1e4ff",
           "on-primary-container": "#001c38",
+          "primary-0.08": "#146db0",
+          "primary-0.12": "#7965af",
+          "primary-0.08-tlc": "#6750a408",
+          "primary-0.12-tlc": "#6750a40c",
           secondary: "#715c00",
           "on-secondary": "#ffffff",
           "secondary-container": "#ffe167",
@@ -47,6 +51,10 @@ module.exports = {
           "on-primary": "#00315b",
           "primary-container": "#004881",
           "on-primary-container": "#d1e4ff",
+          "primary-0.08": "#d0bcff", // temp
+          "primary-0.12": "#d0bcff", // temp
+          "primary-0.08-tlc": "#9fc9ff08",
+          "primary-0.12-tlc": "#9fc9ff0c",
           secondary: "#e8c429",
           "on-secondary": "#3b2f00",
           "secondary-container": "#554500",
@@ -61,7 +69,7 @@ module.exports = {
           "on-error-container": "#ffdad4",
           background: "#1b1b1b",
           "on-background": "#e2e2e6",
-          surface: "#1b1b1b",
+          surface: "#1f1f1f",
           "on-surface": "#e2e2e6",
           "surface-variant": "#43474e",
           "on-surface-variant": "#c3c6cf",
@@ -78,223 +86,6 @@ module.exports = {
           white: "#ffffff",
           black: "#000000"
         },
-        primary: {
-          primary100: "#ffffff",
-          primary99: "#fdfcff",
-          primary95: "#e9f1ff",
-          primary90: "#d1e4ff",
-          primary80: "#9fc9ff",
-          primary70: "#65afff",
-          primary60: "#4094e9",
-          primary50: "#157acd",
-          primary40: "#0060a9",
-          primary30: "#004881",
-          primary20: "#00315b",
-          primary10: "#001c38",
-          primary0: "#000000",
-          "opacity-0.08": "#9fc9ff",
-          "opacity-0.12": "#9fc9ff",
-          "opacity-0.16": "#9fc9ff"
-        },
-        secondary: {
-          secondary100: "#ffffff",
-          secondary99: "#fffbf7",
-          secondary95: "#fff0bb",
-          secondary90: "#ffe167",
-          secondary80: "#e8c429",
-          secondary70: "#caa800",
-          secondary60: "#ac8e00",
-          secondary50: "#8f7500",
-          secondary40: "#715c00",
-          secondary30: "#554500",
-          secondary20: "#3b2f00",
-          secondary10: "#231b00",
-          secondary0: "#000000",
-          "opacity-0.08": "#e8c429",
-          "opacity-0.12": "#e8c429",
-          "opacity-0.16": "#e8c429"
-        },
-        tertiary: {
-          tertiary100: "#ffffff",
-          tertiary99: "#fcfcfc",
-          tertiary95: "#ffede5",
-          tertiary90: "#ffdbca",
-          tertiary80: "#ffb591",
-          tertiary70: "#fa8f59",
-          tertiary60: "#da7642",
-          tertiary50: "#ba5d2b",
-          tertiary40: "#9a4514",
-          tertiary30: "#7b2f00",
-          tertiary20: "#571f00",
-          tertiary10: "#351000",
-          tertiary0: "#000000",
-          "opacity-0.08": "#ffb591",
-          "opacity-0.12": "#ffb591",
-          "opacity-0.16": "#ffb591"
-        },
-        neutral: {
-          neutral100: "#ffffff",
-          neutral99: "#fdfcff",
-          neutral95: "#f1f0f4",
-          neutral90: "#e2e2e6",
-          neutral80: "#c6c6ca",
-          neutral70: "#ababaf",
-          neutral60: "#909094",
-          neutral50: "#76777a",
-          neutral40: "#5d5e62",
-          neutral30: "#46474a",
-          neutral20: "#2f3033",
-          neutral10: "#1b1b1b",
-          neutral0: "#000000"
-        },
-        "neutral-variant": {
-          "neutral-variant100": "#ffffff",
-          "neutral-variant99": "#fdfcff",
-          "neutral-variant95": "#eef1fa",
-          "neutral-variant90": "#dfe2eb",
-          "neutral-variant80": "#c3c6cf",
-          "neutral-variant70": "#a7abb3",
-          "neutral-variant60": "#8d9199",
-          "neutral-variant50": "#73777f",
-          "neutral-variant40": "#5a5e66",
-          "neutral-variant30": "#43474e",
-          "neutral-variant20": "#2d3137",
-          "neutral-variant10": "#181c22",
-          "neutral-variant0": "#000000"
-        },
-        error: {
-          error100: "#ffffff",
-          error99: "#fcfcfc",
-          error95: "#ffede9",
-          error90: "#ffdad4",
-          error80: "#ffb4a9",
-          error70: "#ff897a",
-          error60: "#ff5449",
-          error50: "#dd3730",
-          error40: "#ba1b1b",
-          error30: "#930006",
-          error20: "#680003",
-          error10: "#410001",
-          error0: "#000000",
-          "opacity-0.08": "#ffb4a9",
-          "opacity-0.12": "#ffb4a9",
-          "opacity-0.16": "#ffb4a9"
-        },
-        "on-primary": {
-          "opacity-0.08": "#00315b",
-          "opacity-0.12": "#00315b",
-          "opacity-0.16": "#00315b"
-        },
-        "primary-container": {
-          "opacity-0.08": "#004881",
-          "opacity-0.12": "#004881",
-          "opacity-0.16": "#004881"
-        },
-        "on-primary-container": {
-          "opacity-0.08": "#d1e4ff",
-          "opacity-0.12": "#d1e4ff",
-          "opacity-0.16": "#d1e4ff"
-        },
-        "on-secondary": {
-          "opacity-0.08": "#3b2f00",
-          "opacity-0.12": "#3b2f00",
-          "opacity-0.16": "#3b2f00"
-        },
-        "secondary-container": {
-          "opacity-0.08": "#554500",
-          "opacity-0.12": "#554500",
-          "opacity-0.16": "#554500"
-        },
-        "on-secondary-container": {
-          "opacity-0.08": "#ffe167",
-          "opacity-0.12": "#ffe167",
-          "opacity-0.16": "#ffe167"
-        },
-        "on-tertiary": {
-          "opacity-0.08": "#571f00",
-          "opacity-0.12": "#571f00",
-          "opacity-0.16": "#571f00"
-        },
-        "tertiary-container": {
-          "opacity-0.08": "#7b2f00",
-          "opacity-0.12": "#7b2f00",
-          "opacity-0.16": "#7b2f00"
-        },
-        "on-tertiary-container": {
-          "opacity-0.08": "#ffdbca",
-          "opacity-0.12": "#ffdbca",
-          "opacity-0.16": "#ffdbca"
-        },
-        "error-container": {
-          "opacity-0.08": "#930006",
-          "opacity-0.12": "#930006",
-          "opacity-0.16": "#930006"
-        },
-        "on-error": {
-          "opacity-0.08": "#680003",
-          "opacity-0.12": "#680003",
-          "opacity-0.16": "#680003"
-        },
-        "on-error-container": {
-          "opacity-0.08": "#ffdad4",
-          "opacity-0.12": "#ffdad4",
-          "opacity-0.16": "#ffdad4"
-        },
-        background: {
-          "opacity-0.08": "#1b1b1b",
-          "opacity-0.12": "#1b1b1b",
-          "opacity-0.16": "#1b1b1b"
-        },
-        "on-background": {
-          "opacity-0.08": "#e2e2e6",
-          "opacity-0.12": "#e2e2e6",
-          "opacity-0.16": "#e2e2e6"
-        },
-        surface: {
-          "opacity-0.08": "#1b1b1b",
-          "opacity-0.12": "#1b1b1b",
-          "opacity-0.16": "#1b1b1b"
-        },
-        "on-surface": {
-          "opacity-0.08": "#e2e2e6",
-          "opacity-0.12": "#e2e2e6",
-          "opacity-0.16": "#e2e2e6"
-        },
-        "surface-variant": {
-          "opacity-0.08": "#43474e",
-          "opacity-0.12": "#43474e",
-          "opacity-0.16": "#43474e"
-        },
-        "on-surface-variant": {
-          "opacity-0.08": "#c3c6cf",
-          "opacity-0.12": "#c3c6cf",
-          "opacity-0.16": "#c3c6cf"
-        },
-        outline: {
-          "opacity-0.08": "#8d9199",
-          "opacity-0.12": "#8d9199",
-          "opacity-0.16": "#8d9199"
-        },
-        "inverse-on-surface": {
-          "opacity-0.08": "#1b1b1b",
-          "opacity-0.12": "#1b1b1b",
-          "opacity-0.16": "#1b1b1b"
-        },
-        "inverse-surface": {
-          "opacity-0.08": "#e2e2e6",
-          "opacity-0.12": "#e2e2e6",
-          "opacity-0.16": "#e2e2e6"
-        },
-        "inverse-primary": {
-          "opacity-0.08": "#0060a9",
-          "opacity-0.12": "#0060a9",
-          "opacity-0.16": "#0060a9"
-        },
-        shadow: {
-          "opacity-0.08": "#000000",
-          "opacity-0.12": "#000000",
-          "opacity-0.16": "#000000"
-        }
       },
       fontSize: {
         xs: "0.6875rem",
@@ -324,7 +115,10 @@ module.exports = {
         "2xl": "1.75rem",
         "3xl": "2.90625rem",
         full: "9999px"
-      }
+      },
+      boxShadow: {
+        DEFAULT: "0px 1px 2px rgba(0, 0, 0, 0.6), 0px 2px 6px 2px rgba(0, 0, 0, 0.3)"
+      },
     },
   },
   plugins: [],

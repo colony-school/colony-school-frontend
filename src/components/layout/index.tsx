@@ -1,48 +1,38 @@
 // Modules
 import { ReactNode } from "react";
 
-// Client components
+// Components
 import Menu from "@components/layout/menu";
-import Icon from "@components/icon";
+import NavBar from "@components/layout/nav-bar";
+import TopAppBar from "@components/layout/top-app-bar";
+
+// Data
+import { navItems } from "./pages";
 
 /**
  * The layout for Colony School
  */
 const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
   return (
-    <div className="flex flex-col sm:grid sm:grid-cols-[2fr_6fr]">
-      <Menu
-        groups={[
-          {
-            name: "Summaries",
-            items: [
-              { name: "Dashboard", icon: <Icon icon="dashboard" />, url: "/" },
-              { name: "Events and Announcements", icon: <Icon icon="event" />, url: "/events" },
-              { name: "Schedule", icon: <Icon icon="schedule" />, url: "/schedule" },
-              { name: "Your Assignments", icon: <Icon icon="assignment" />, url: "/assignments" },
-              { name: "Your Class", icon: <Icon icon="groups" />, url: "/class/1/405" },
-            ],
-          },
-          {
-            name: "School",
-            items: [
-              { name: "Forms", icon: <Icon icon="edit" />, url: "/forms" },
-              { name: "COVID-19 Infections", icon: <Icon icon="coronavirus" />, url: "/covid" },
-            ],
-          },
-          {
-            name: "Database",
-            items: [
-              { name: "Teacher List", icon: <Icon icon="person_search" />, url: "/db/teachers" },
-              { name: "Subjects List", icon: <Icon icon="class" />, url: "/db/subjects" },
-              { name: "Classrooms List", icon: <Icon icon="table_view" />, url: "/db/classrooms" },
-            ],
-          },
-        ]}
-      />
-      <main>
+    <div
+      className="flex flex-col justify-between h-screen overflow-hidden
+        sm:flex sm:flex-row sm:h-fit 
+        lg:grid lg:grid-cols-[2fr_6fr]"
+    >
+      <div className="w-fit lg:w-full">
+        <div className="w-screen sm:hidden z-1">
+          <TopAppBar />
+        </div>
+        <div className="hidden w-fit sm:block lg:w-full">
+          <Menu />
+        </div>
+      </div>
+      <div className="w-full h-full overflow-auto sm:h-screen">
         {children}
-      </main>
+      </div>
+      <div className="sm:hidden">
+        <NavBar items={navItems} />
+      </div>
     </div>
   );
 };
