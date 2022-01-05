@@ -1,3 +1,5 @@
+import { Action } from "@utils/types/action";
+
 /**
  * A short representation of an announcement or event from school
  *
@@ -43,4 +45,5 @@ export type Announcement = {
   eventEnd?: Date;
   periodEnd?: number;
   location?: string;
+  actions?: Array<Action>
 };

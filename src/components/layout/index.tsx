@@ -21,7 +21,7 @@ const Layout = ({ children }: { children: ReactNode }): JSX.Element => {
     >
       <div className="w-fit lg:w-full">
         <div className="w-screen sm:hidden z-1">
-          <TopAppBar />
+          <TopAppBar title="Colony School" />
         </div>
         <div className="hidden w-fit sm:block lg:w-full">
           <Menu />

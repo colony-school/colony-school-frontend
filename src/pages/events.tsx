@@ -6,6 +6,7 @@ import { useState } from "react";
 // Components
 import MaterialIcon from "@components/global/icon";
 import Title from "@components/global/title";
+import Headline from "@components/global/headline";
 import TopAppBar from "@components/layout/top-app-bar";
 
 // Types
@@ -126,22 +127,80 @@ const ActiveEventDisplay = ({
             )}
             {event.eventStart && event.eventEnd && (
               <div className="grid grid-cols-2">
-                <Title
-                  icon={<MaterialIcon icon="calendar_today" />}
-                  title={<h3>Date</h3>}
-                  subhead={`${format(event.eventStart, "dd/MM/yyyy")}${
-                    oneDayEvent ? "" : "–" + format(event.eventEnd, "dd/MM/yyyy")
-                  }`}
+                <Headline
+                  icon={
+                    <MaterialIcon
+                      icon="calendar_today"
+                      className="text-light-primary dark:text-dark-primary"
+                    />
+                  }
+                  title={<h3 className="text-base">Date</h3>}
+                  subhead={
+                    <time>
+                      {format(event.eventStart, "dd/MM/yyyy")}
+                      {oneDayEvent
+                        ? ""
+                        : "–" + format(event.eventEnd, "dd/MM/yyyy")}
+                    </time>
+                  }
                 />
-                <Title
-                  icon={<MaterialIcon icon="schedule" />}
-                  title={<h3>Time</h3>}
-                  subhead={format(event.eventStart, "dd/MM/yyyy")}
+                <Headline
+                  icon={
+                    <MaterialIcon
+                      icon="schedule"
+                      className="text-light-primary dark:text-dark-primary"
+                    />
+                  }
+                  title={<h3 className="text-base">Time</h3>}
+                  subhead={
+                    <time>
+                      {format(event.eventStart, "HH:mm")}–
+                      {format(event.eventEnd, "HH:mm")}
+                      {event.periodStart &&
+                        event.periodEnd &&
+                        ` (Period ${event.periodStart}–${event.periodEnd})`}
+                    </time>
+                  }
                 />
               </div>
             )}
+            {event.location && (
+              <Headline
+                icon={
+                  <MaterialIcon
+                    icon="place"
+                    className="text-light-primary dark:text-dark-primary"
+                  />
+                }
+                title={<h3 className="text-base">Location</h3>}
+                subhead={
+                  <div className="flex flex-row gap-2 items-center">
+                    <p>{event.location}</p>
+                    <button className="btn-text flex p-0 rounded-full">
+                      <MaterialIcon
+                        icon="map"
+                        className="text-light-secondary dark:text-dark-secondary"
+                      />
+                    </button>
+                  </div>
+                }
+              />
+            )}
             <p className="p-4">{event.desc}</p>
-        </div>
+            <div className="flex flex-row justify-end gap-2 p-4">
+              <a href={event.source} className="btn btn-outlined">
+                Read source
+              </a>
+              {event.actions &&
+                event.actions.map((action) => {
+                  return (
+                    <a href={action.url} target="_blank" className="btn btn-filled">
+                      {action.name}
+                    </a>
+                  );
+                })}
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -187,12 +246,18 @@ const Events: NextPage = () => {
       amet orci. Fusce quis felis in velit dictum suscipit a in libero. In leo felis, consectetur in dignissim a, congue viverra orci. \
       Proin sed est magna. Donec at risus sollicitudin, cursus ipsum ut, convallis risus. In convallis, est eget congue imperdiet, lorem \
       augue imperdiet tortor, nec pretium orci neque et lacus.",
+    type: "announcement",
     postDate: new Date(2021, 9, 12),
     source: "https://youtu.be/dQw4w9WgXcQ",
     image: "/images/brand/logo.svg",
     eventStart: new Date(2021, 9, 14, 11, 50),
     eventEnd: new Date(2021, 9, 14, 12, 40),
-    type: "announcement",
+    periodStart: 4,
+    periodEnd: 5,
+    location: "Sala Phrasadej Building, 1st floor",
+    actions: [
+      { name: "Join", type: "primary", url: "https://smartwatt.me/contact" },
+    ],
   });
 
   return (
