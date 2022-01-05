@@ -38,7 +38,9 @@ export type Announcement = {
   postDate: Date;
   source: string;
   image?: string;
+  eventStart?: Date;
   periodStart?: number;
+  eventEnd?: Date;
   periodEnd?: number;
   location?: string;
 };
