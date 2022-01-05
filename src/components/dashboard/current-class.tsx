@@ -48,7 +48,7 @@ const ClassInfo = ({
             })}
           </ul>
         }
-        className="p-0"
+        noPadding={true}
       />
       <Headline
         icon={
@@ -64,7 +64,7 @@ const ClassInfo = ({
             {format(addMinutes(periodStart, periodLength), "HH:mm")}
           </p>
         }
-        className="p-0"
+        noPadding={true}
       />
       <Headline
         icon={
@@ -74,7 +74,7 @@ const ClassInfo = ({
           />
         }
         subhead={<p className="text-xl">{dueNumber} assignments due</p>}
-        className="p-0"
+        noPadding={true}
       />
     </div>
   );
