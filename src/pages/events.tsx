@@ -27,8 +27,10 @@ const SearchBar = () => {
           <MaterialIcon icon="search" />
         </button>
         <input
-          className="block w-full h-full bg-light-surface dark:bg-dark-surface
-          placeholder:text-light-on-surface placeholder:dark:text-dark-on-surface"
+          className="block w-full h-full bg-light-surface dark:bg-dark-surface outline-none
+          placeholder:text-light-on-surface placeholder:dark:text-dark-on-surface
+          hover:transition-none hover:bg-light-primary-0.08-tlc hover:dark:bg-dark-primary-0.08-tlc
+          focus:placeholder:text-light-on-surface-variant  focus:placeholder:dark:text-dark-on-surface-variant"
           placeholder="Search events"
           role="search"
         />
@@ -86,7 +88,11 @@ const EventItem = ({
             </p>
           </div>
         </div>
-        <div className="h-full rounded-r-lg aspect-square bg-light-surface-variant dark:bg-dark-surface-variant" />
+        {event.image && (
+          <div className="relative h-full rounded-r-lg aspect-square bg-light-surface-variant dark:bg-dark-surface-variant">
+            <Image src={event.image} layout="fill" />
+          </div>
+        )}
       </button>
     </li>
   );
@@ -194,7 +200,11 @@ const ActiveEventDisplay = ({
               {event.actions &&
                 event.actions.map((action) => {
                   return (
-                    <a href={action.url} target="_blank" className="btn btn-filled">
+                    <a
+                      href={action.url}
+                      target="_blank"
+                      className="btn btn-filled"
+                    >
                       {action.name}
                     </a>
                   );
@@ -229,6 +239,7 @@ const Events: NextPage = () => {
       title: "Banana Eating Contest",
       postDate: new Date(2021, 9, 14),
       type: "event",
+      image: "/images/brand/logo.svg",
     },
     {
       id: 3,
