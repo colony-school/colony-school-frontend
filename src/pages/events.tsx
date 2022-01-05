@@ -225,10 +225,10 @@ const Events: NextPage = () => {
   const [activeEvent, setActiveEvent] = useState<Announcement>({
     id: 4,
     title: "Banana Eating Contest",
-    desc: "Sed turpis quam, euismod sit amet ullamcorper ut, facilisis sed nulla. Proin nisi felis, lobortis eget lacinia et, hendrerit sit \
-      amet orci. Fusce quis felis in velit dictum suscipit a in libero. In leo felis, consectetur in dignissim a, congue viverra orci. \
-      Proin sed est magna. Donec at risus sollicitudin, cursus ipsum ut, convallis risus. In convallis, est eget congue imperdiet, lorem \
-      augue imperdiet tortor, nec pretium orci neque et lacus.",
+    desc: "Sed turpis quam, euismod sit amet ullamcorper ut, facilisis sed nulla. Proin nisi felis, lobortis eget lacinia et, hendrerit \
+    sit amet orci. Fusce quis felis in velit dictum suscipit a in libero. In leo felis, consectetur in dignissim a, congue viverra \
+    orci. Proin sed est magna. Donec at risus sollicitudin, cursus ipsum ut, convallis risus. In convallis, est eget congue \
+    imperdiet, lorem augue imperdiet tortor, nec pretium orci neque et lacus.",
     type: "announcement",
     postDate: new Date(2021, 9, 12),
     source: "https://youtu.be/dQw4w9WgXcQ",
@@ -255,7 +255,7 @@ const Events: NextPage = () => {
           sm:rounded-tl-lg"
       >
         <div className="flex flex-col pl-4 pt-4">
-          <Search onChange={(newQuery: string) => setQuery(newQuery)} />
+          <Search placeholder="Search events" onChange={(newQuery: string) => setQuery(newQuery)} />
           <ul className="flex flex-col gap-4 px-4 pt-2 pb-8 max-h-full overflow-auto">
             {events.map((event) => {
               return (

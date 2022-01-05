@@ -6,13 +6,16 @@ import MaterialIcon from "@components/global/icon";
 
 /**
  * A search bar
+ * @param placeholder Input placeholder
  * @param onChange The function triggered when the input content changes
  * @param onSubmit The function triggered when the search button is clicked
  */
 const Search = ({
+  placeholder,
   onChange,
   onSubmit,
 }: {
+  placeholder?: string;
   onChange?: Function;
   onSubmit?: Function;
 }): JSX.Element => {
@@ -45,7 +48,7 @@ const Search = ({
             }
             setQuery(e.target.value);
           }}
-          placeholder="Search events"
+          placeholder={placeholder || "Search"}
           role="search"
         />
         <button className="btn-text grid place-items-center h-full px-4 text-light-on-surface dark:text-dark-on-surface">
