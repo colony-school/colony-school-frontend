@@ -1,5 +1,5 @@
 // Modules
-import { format } from "date-fns";
+import { differenceInDays, format } from "date-fns";
 import { NextPage } from "next";
 import { useState } from "react";
 
@@ -10,6 +10,7 @@ import TopAppBar from "@components/layout/top-app-bar";
 
 // Types
 import { Announcement, ListedAnnouncement } from "@utils/types/announcement";
+import Image from "next/image";
 
 /**
  * The search bar
@@ -99,18 +100,50 @@ const ActiveEventDisplay = ({
 }: {
   event: Announcement;
 }): JSX.Element => {
+  const oneDayEvent =
+    differenceInDays(event.eventStart || 0, event.eventEnd || 0) === 0;
+  console.log(oneDayEvent);
+
   return (
-    <div className="card card-elevated">
-      <Title
-        icon={
-          <MaterialIcon
-            icon="event"
-            className="text-4xl text-light-primary dark:text-dark-primary"
+    <div className="card card-elevated overflow-hidden">
+      <div className="card h-[calc(100vh-11.25rem)] overflow-auto">
+        <div className="flex flex-col">
+          <Title
+            icon={
+              <MaterialIcon
+                icon="event"
+                className="text-4xl text-light-primary dark:text-dark-primary"
+              />
+            }
+            title={<h2 className="font-bold">{event.title}</h2>}
+            subhead="Event"
           />
-        }
-        title={<h2 className="font-bold">{event.title}</h2>}
-        subhead="Event"
-      />
+          <div className="flex flex-col overflow-auto">
+            {event.image && (
+              <div className="relative w-full h-48 bg-light-surface-variant dark:bg-dark-surface-variant">
+                <Image src={event.image} layout="fill" />
+              </div>
+            )}
+            {event.eventStart && event.eventEnd && (
+              <div className="grid grid-cols-2">
+                <Title
+                  icon={<MaterialIcon icon="calendar_today" />}
+                  title={<h3>Date</h3>}
+                  subhead={`${format(event.eventStart, "dd/MM/yyyy")}${
+                    oneDayEvent ? "" : "–" + format(event.eventEnd, "dd/MM/yyyy")
+                  }`}
+                />
+                <Title
+                  icon={<MaterialIcon icon="schedule" />}
+                  title={<h3>Time</h3>}
+                  subhead={format(event.eventStart, "dd/MM/yyyy")}
+                />
+              </div>
+            )}
+            <p className="p-4">{event.desc}</p>
+        </div>
+        </div>
+      </div>
     </div>
   );
 };
@@ -156,22 +189,24 @@ const Events: NextPage = () => {
       augue imperdiet tortor, nec pretium orci neque et lacus.",
     postDate: new Date(2021, 9, 12),
     source: "https://youtu.be/dQw4w9WgXcQ",
-    image: "https://www.nipponexpress.com/press/report/img/06-Nov-20-ogp.jpeg",
+    image: "/images/brand/logo.svg",
     eventStart: new Date(2021, 9, 14, 11, 50),
     eventEnd: new Date(2021, 9, 14, 12, 40),
     type: "announcement",
   });
 
   return (
-    <div className="bg-light-surface2 dark:bg-dark-surface2">
-      <TopAppBar title="Events and Announcements" />
+    <div className="flex flex-col sm:h-screen bg-light-surface2 dark:bg-dark-surface2">
+      <div className="hidden sm:block">
+        <TopAppBar title="Events and Announcements" />
+      </div>
       <div
-        className="flex flex-col gap-4 sm:grid sm:grid-cols-[2fr_3fr] sm:gap-0 bg-light-surface3 dark:bg-dark-surface3
-        rounded-tl-lg"
+        className="flex flex-col gap-4 sm:grid sm:grid-cols-[2fr_3fr] sm:gap-0 h-full bg-light-surface3 dark:bg-dark-surface3
+          sm:rounded-tl-lg"
       >
         <div className="flex flex-col pl-4 pt-4">
           <SearchBar />
-          <ul className="flex flex-col gap-4 px-4 pt-2 pb-4 overflow-auto">
+          <ul className="flex flex-col gap-4 px-4 pt-2 pb-8 max-h-full overflow-auto">
             {events.map((event) => {
               return (
                 <EventItem
@@ -183,7 +218,7 @@ const Events: NextPage = () => {
             })}
           </ul>
         </div>
-        <div className="p-8">
+        <div className="p-8 h-full">
           <ActiveEventDisplay event={activeEvent} />
         </div>
       </div>
