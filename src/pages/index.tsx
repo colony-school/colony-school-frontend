@@ -16,7 +16,7 @@ const Dashboard: NextPage = () => {
     <div className="flex flex-col sm:h-screen">
       <div>
         <div className="hidden sm:block">
-          <TopAppBar />
+          <TopAppBar title="Dashboard" />
         </div>
         <CurrentClass
           subjectPeriod={{

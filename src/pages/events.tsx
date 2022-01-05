@@ -54,7 +54,7 @@ const EventItem = ({
   return (
     <li className="card bg-light-surface1 dark:bg-dark-surface1">
       <button
-        className={`card flex flex-row justify-between items-center gap-4 h-20 text-left ${
+        className={`card flex flex-row justify-between items-center gap-4 h-20 text-left transition-shadow ${
           active
             ? "text-light-on-primary-container bg-light-primary-container \
                dark:text-dark-on-primary-container dark:bg-dark-primary-container shadow \
@@ -164,7 +164,7 @@ const Events: NextPage = () => {
 
   return (
     <div className="bg-light-surface2 dark:bg-dark-surface2">
-      <TopAppBar />
+      <TopAppBar title="Events and Announcements" />
       <div
         className="flex flex-col gap-4 sm:grid sm:grid-cols-[2fr_3fr] sm:gap-0 bg-light-surface3 dark:bg-dark-surface3
         rounded-tl-lg"
