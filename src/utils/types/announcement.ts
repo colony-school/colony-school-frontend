@@ -1,3 +1,5 @@
+import { Action } from "@utils/types/action";
+
 /**
  * A short representation of an announcement or event from school
  *
@@ -13,6 +15,22 @@ export type GlanceAnnouncement = {
 
 /**
  * An announcement or event from school
+ * 
+ * For Events and Announcements (list in `Events` from `events.tsx`)
+ */
+ export type ListedAnnouncement = {
+  id: number;
+  title: string;
+  type: "announcement" | "event";
+  postDate: Date;
+  image?: string;
+};
+
+
+/**
+ * An announcement or event from school
+ * 
+ * For Events and Announcements (card in `Events` from `events.tsx`)
  */
 export type Announcement = {
   id: number;
@@ -21,7 +39,11 @@ export type Announcement = {
   desc: string;
   postDate: Date;
   source: string;
+  image?: string;
+  eventStart?: Date;
   periodStart?: number;
+  eventEnd?: Date;
   periodEnd?: number;
   location?: string;
+  actions?: Array<Action>
 };

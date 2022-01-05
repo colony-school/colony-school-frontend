@@ -3,6 +3,11 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    @apply text-light-on-background bg-light-background
+    dark:text-dark-on-background dark:bg-dark-background;
+  }
+
   ::-webkit-scrollbar {
     @apply bg-light-surface1 dark:bg-dark-surface1;
   }

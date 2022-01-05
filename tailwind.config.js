@@ -44,7 +44,7 @@ module.exports = {
           surface4: "#dfe9f5",
           surface5: "#dae6f3",
           black: "#000000",
-          white: "#ffffff"
+          white: "#ffffff",
         },
         dark: {
           primary: "#9fc9ff",
@@ -84,7 +84,7 @@ module.exports = {
           surface4: "#2b3036",
           surface5: "#2d333b",
           white: "#ffffff",
-          black: "#000000"
+          black: "#000000",
         },
       },
       fontSize: {
@@ -100,7 +100,7 @@ module.exports = {
         "6xl": "2.25rem",
         "7xl": "2.8125rem",
         "8xl": "3.5625rem",
-        "9xl": "4rem"
+        "9xl": "4rem",
       },
       fontFamily: {
         sans: ["Inter", "Noto Sans Thai", "ui-sans-serif", "system-ui"],
@@ -114,12 +114,18 @@ module.exports = {
         xl: "0.9375rem",
         "2xl": "1.75rem",
         "3xl": "2.90625rem",
-        full: "9999px"
+        full: "9999px",
       },
       boxShadow: {
-        DEFAULT: "0px 1px 2px rgba(0, 0, 0, 0.6), 0px 2px 6px 2px rgba(0, 0, 0, 0.3)"
+        DEFAULT:
+          "0px 1px 2px rgba(0, 0, 0, 0.3), 0px 1px 3px 1px rgba(0, 0, 0, 0.15)",
+        md: "0px 1px 2px rgba(0, 0, 0, 0.3), 0px 2px 6px 2px rgba(0, 0, 0, 0.15)",
+        lg: "0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px rgba(0, 0, 0, 0.3)",
+        xl: "0px 6px 10px 4px rgba(0, 0, 0, 0.15), 0px 2px 3px rgba(0, 0, 0, 0.3)",
+        "2xl":
+          "0px 8px 12px 6px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.3)",
       },
     },
   },
   plugins: [],
-}
+};
