@@ -81,7 +81,6 @@ const ActiveEventDisplay = ({
 }): JSX.Element => {
   const oneDayEvent =
     differenceInDays(event.eventStart || 0, event.eventEnd || 0) === 0;
-  console.log(oneDayEvent);
 
   return (
     <div className="card card-elevated overflow-hidden">
