@@ -52,14 +52,16 @@ const EventItem = ({
   setActiveID: Function;
 }): JSX.Element => {
   return (
-    <li>
+    <li className="card bg-light-surface1 dark:bg-dark-surface1">
       <button
-        className={`card flex flex-row justify-between items-center gap-4 h-20 text-left
-        bg-light-surface1 dark:bg-dark-surface1 ${
+        className={`card flex flex-row justify-between items-center gap-4 h-20 text-left ${
           active
             ? "text-light-on-primary-container bg-light-primary-container \
-              dark:text-dark-on-primary-container dark:bg-dark-primary-container shadow"
-            : "text-light-on-surface bg-light-surface1 dark:text-dark-on-surface dark:bg-dark-surface1"
+               dark:text-dark-on-primary-container dark:bg-dark-primary-container shadow \
+               hover:shadow-md"
+            : "text-light-on-surface bg-light-surface1 dark:text-dark-on-surface dark:bg-dark-surface1 \
+               hover:bg-light-primary-0.08-tlc focus:bg-light-primary-0.12-tlc \
+               hover:dark:bg-dark-primary-0.08-tlc focus:dark:bg-dark-primary-0.12-tlc"
         }`}
         onClick={() => setActiveID(event.id)}
       >
