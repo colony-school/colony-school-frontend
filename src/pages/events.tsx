@@ -1,6 +1,7 @@
 // Modules
 import { differenceInDays, format } from "date-fns";
 import { NextPage } from "next";
+import Image from "next/image";
 import { useState } from "react";
 
 // Components
@@ -11,36 +12,7 @@ import TopAppBar from "@components/layout/top-app-bar";
 
 // Types
 import { Announcement, ListedAnnouncement } from "@utils/types/announcement";
-import Image from "next/image";
-
-/**
- * The search bar
- */
-const SearchBar = () => {
-  return (
-    <div className="px-4 pt-4 pb-2">
-      <div
-        className="flex flex-row justify-between items-center w-full h-12 bg-light-surface dark:bg-dark-surface overflow-hidden shadow
-        rounded-full"
-      >
-        <button className="btn-text grid place-items-center h-full px-4 text-light-on-surface dark:text-dark-on-surface">
-          <MaterialIcon icon="search" />
-        </button>
-        <input
-          className="block w-full h-full bg-light-surface dark:bg-dark-surface outline-none
-          placeholder:text-light-on-surface placeholder:dark:text-dark-on-surface
-          hover:transition-none hover:bg-light-primary-0.08-tlc hover:dark:bg-dark-primary-0.08-tlc
-          focus:placeholder:text-light-on-surface-variant  focus:placeholder:dark:text-dark-on-surface-variant"
-          placeholder="Search events"
-          role="search"
-        />
-        <button className="btn-text grid place-items-center h-full px-4 text-light-on-surface dark:text-dark-on-surface">
-          <MaterialIcon icon="filter_list" />
-        </button>
-      </div>
-    </div>
-  );
-};
+import Search from "@components/input/search";
 
 /**
  * Events and announcement listed in the list
@@ -271,6 +243,8 @@ const Events: NextPage = () => {
     ],
   });
 
+  const [query, setQuery] = useState<string>();
+
   return (
     <div className="flex flex-col sm:h-screen bg-light-surface2 dark:bg-dark-surface2">
       <div className="hidden sm:block">
@@ -281,7 +255,7 @@ const Events: NextPage = () => {
           sm:rounded-tl-lg"
       >
         <div className="flex flex-col pl-4 pt-4">
-          <SearchBar />
+          <Search onChange={(newQuery: string) => setQuery(newQuery)} />
           <ul className="flex flex-col gap-4 px-4 pt-2 pb-8 max-h-full overflow-auto">
             {events.map((event) => {
               return (
