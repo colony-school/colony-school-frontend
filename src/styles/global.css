@@ -91,6 +91,6 @@
   }
 
   .scroll-invisible::-webkit-scrollbar {
-    @apply w-0;
+    @apply w-0 h-0;
   }
 }

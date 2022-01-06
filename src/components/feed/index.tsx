@@ -81,7 +81,8 @@ const Feed = () => {
           attachments: [
             {
               type: "file",
-              file: {  // this is not a file, just an object stand-in that looks like a file
+              file: {
+                // this is not a file, just an object stand-in that looks like a file
                 lastModified: 0,
                 name: "tideman_2.cpp",
                 webkitRelativePath: "tideman_2.cpp",
@@ -108,6 +109,22 @@ const Feed = () => {
                 status: "not-started",
                 urgent: false,
               },
+            },
+          ],
+        }}
+      />
+      <Post
+        post={{
+          author: "Siravit P.",
+          postDate: new Date(2021, 10, 9, 15, 13, 42),
+          content:
+            "Some slides from today’s Physics class. I think I missed a few but I mean I don’t think he reads our lectures that \
+          carefully anyway…",
+          attachments: [
+            {
+              type: "slides",
+              name: "Circular Motion",
+              slides: ["/images/brand/logo.svg", "/images/brand/logo.svg"],
             },
           ],
         }}

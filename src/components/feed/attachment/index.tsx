@@ -3,6 +3,7 @@ import AnnouncementAttachment from "@components/feed/attachment/announcement";
 import AssignmentAttachment from "@components/feed/attachment/assignment";
 import FileAttachment from "@components/feed/attachment/file";
 import PeriodSwapAttachment from "@components/feed/attachment/period-swap";
+import SlidesAttachment from "@components/feed/attachment/slides";
 import SubjectPeriodAttachment from "@components/feed/attachment/subject-period";
 
 // Utils
@@ -40,6 +41,13 @@ const PostAttachments = ({
               <FileAttachment
                 file={attachment.file}
                 usePolicies={attachment.usePolicies}
+              />
+            );
+          case "slides":
+            return (
+              <SlidesAttachment
+                name={attachment.name}
+                slides={attachment.slides}
               />
             );
         }

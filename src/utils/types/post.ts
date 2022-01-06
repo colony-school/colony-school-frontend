@@ -16,7 +16,8 @@ export type Attachment =
   | SubjectPeriodAttachment
   | PeriodSwapAttachment
   | PaymentAttachement
-  | FileAttachment;
+  | FileAttachment
+  | SlidesAttachment;
 
 // Blue: Events and Announcements
 export type AnnouncementAttachment = {
@@ -60,3 +61,9 @@ export type FileAttachmentUsePolicies = {
   noCopy: boolean;
   noShare: boolean;
 };
+
+export type SlidesAttachment = {
+  type: "slides";
+  name: string;
+  slides: Array<string>
+}
