@@ -8,11 +8,11 @@ import { useState } from "react";
 import MaterialIcon from "@components/global/icon";
 import Title from "@components/global/title";
 import Headline from "@components/global/headline";
+import Search from "@components/input/search";
 import TopAppBar from "@components/layout/top-app-bar";
 
 // Types
 import { Announcement, ListedAnnouncement } from "@utils/types/announcement";
-import Search from "@components/input/search";
 
 /**
  * Events and announcement listed in the list

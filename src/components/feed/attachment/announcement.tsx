@@ -1,7 +1,12 @@
+// Modules
+import format from "date-fns/format";
+
+// Components
 import MaterialIcon from "@components/global/icon";
 import Title from "@components/global/title";
+
+// Types
 import { Announcement } from "@utils/types/announcement";
-import format from "date-fns/format";
 
 const AnnouncementAttachment = ({
   announcement,
