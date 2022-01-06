@@ -1,26 +1,55 @@
 // Components
+import AnnouncementAttachment from "@components/feed/attachment/announcement";
+import SubjectPeriodAttachment from "@components/feed/attachment/subject-period";
 import Title from "@components/global/title";
 
 // Types
-import { Post } from "@utils/types/post";
+import { Attachment, Post as PostType } from "@utils/types/post";
 
-const Post = ({ post }: { post: Post }) => {
+const PostTitle = ({ attachments }: { attachments: Array<Attachment> }) => {
+  // TODO: Post title should be generated from attachments
+  return <h3>Post</h3>;
+};
+
+const PostAttachments = ({
+  attachments,
+}: {
+  attachments: Array<Attachment>;
+}) => {
+  return (
+    <ul className="flex flex-col gap-2">
+      {attachments.map((attachment) => {
+        switch (attachment.type) {
+          case "announcement":
+            return (
+              <AnnouncementAttachment announcement={attachment.announcement} />
+            );
+          case "subject-period":
+            return (
+              <SubjectPeriodAttachment
+                subjectPeriod={attachment.subjectPeriod}
+              />
+            );
+        }
+      })}
+    </ul>
+  );
+};
+
+const Post = ({ post }: { post: PostType }) => {
   return (
     <li className="card card-elevated w-[72ch]">
       <Title
         icon={
-          <div className="grid place-items-center w-10 h-10 text-light-on-secondary bg-light-secondary rounded-full">
-            S
+          <div className="grid place-items-center w-10 h-10 text-light-on-secondary font-medium bg-light-secondary rounded-full">
+            {post.author[0]}
           </div>
         }
-        title={<h3>Post About Banana Eating Contest</h3>}
-        subhead="Tempoom L. • 03/10/2021"
+        title={<PostTitle attachments={post.attachments} />}
+        subhead={`${post.author} • 03/10/2021`}
       />
-      <p className="p-4">
-        If you wanna stay for the whole event, you should know that the second
-        half is overlapping with Chinese class. You should fill in this absence
-        form and contact T. Thanyapat.
-      </p>
+      <p className="p-4">{post.content}</p>
+      <PostAttachments attachments={post.attachments} />
       <div className="flex flex-row justify-end p-4">
         <button className="btn btn-text">Open in Sidebar</button>
       </div>

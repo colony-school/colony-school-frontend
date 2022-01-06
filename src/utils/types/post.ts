@@ -18,7 +18,7 @@ export type Attachment =
 // Blue: Events and Announcements
 export type AnnouncementAttachment = {
   type: "announcement";
-  event: Announcement;
+  announcement: Announcement;
 };
 
 // Yellow: Period and Payment
