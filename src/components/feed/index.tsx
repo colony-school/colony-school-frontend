@@ -25,6 +25,8 @@ const Feed = () => {
                 type: "event",
                 desc: "No questions asked. Come to Sala Phrasadej at lunch and try!",
                 postDate: new Date(2021, 9, 14),
+                eventStart: new Date(2021, 9, 14, 11, 0),
+                eventEnd: new Date(2021, 9, 14, 12, 40),
                 source: "http://mysk.school/th/index.php",
               },
             },

@@ -8,6 +8,9 @@ import Title from "@components/global/title";
 // Types
 import { Announcement } from "@utils/types/announcement";
 
+// Utils
+import { formatDateTime } from "@utils/formatting/duration";
+
 const AnnouncementAttachment = ({
   announcement,
 }: {
@@ -30,7 +33,7 @@ const AnnouncementAttachment = ({
       {announcement.eventStart && (
         <Title
           icon={<MaterialIcon icon="schedule" />}
-          title={<h4>Date: {format(announcement.eventStart, "dd/MM/yyyy")}</h4>}
+          title={<h4>Date: {formatDateTime(announcement.eventStart, undefined, announcement.eventEnd)}</h4>}
         />
       )}
     </li>
