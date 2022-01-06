@@ -8,11 +8,11 @@ import Feed from "@components/feed";
 
 const ClassFeedPage: NextPage = () => {
   return (
-    <div className="flex flex-col sm:h-screen">
+    <div className="flex flex-col sm:h-screen overflow-auto">
       <div className="hidden sm:block">
         <TopAppBar title="Your Class" />
       </div>
-      <div className="flex flex-col h-full">
+      <div className="flex flex-col">
         <div className="h-64 bg-light-surface-variant dark:bg-dark-surface-variant" />
         <div className="flex flex-row justify-center translate-y-[-50%]">
           <ActionCard
