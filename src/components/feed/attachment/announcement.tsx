@@ -1,6 +1,3 @@
-// Modules
-import format from "date-fns/format";
-
 // Components
 import MaterialIcon from "@components/global/icon";
 import Title from "@components/global/title";
@@ -9,7 +6,7 @@ import Title from "@components/global/title";
 import { Announcement } from "@utils/types/announcement";
 
 // Utils
-import { formatDateTime } from "@utils/formatting/duration";
+import { formatDate, formatTime } from "@utils/date";
 
 const AnnouncementAttachment = ({
   announcement,
@@ -17,9 +14,7 @@ const AnnouncementAttachment = ({
   announcement: Announcement;
 }) => {
   return (
-    <li
-      className="flex flex-col md:grid md:grid-cols-2 bg-light-primary-container dark:bg-dark-primary-container"
-    >
+    <li className="flex flex-col md:grid md:grid-cols-2 bg-light-primary-container dark:bg-dark-primary-container">
       <Title
         icon={
           <MaterialIcon
@@ -27,13 +22,28 @@ const AnnouncementAttachment = ({
             className="text-light-primary dark:text-dark-primary"
           />
         }
-        title={<h4>Event: {announcement.title}</h4>}
+        title={<h4 className="text-lg">Event: {announcement.title}</h4>}
         subhead={announcement.desc}
       />
       {announcement.eventStart && (
         <Title
-          icon={<MaterialIcon icon="schedule" />}
-          title={<h4>Date: {formatDateTime(announcement.eventStart, undefined, announcement.eventEnd)}</h4>}
+          icon={
+            <MaterialIcon
+              icon="schedule"
+              className="text-light-primary dark:text-dark-primary"
+            />
+          }
+          title={
+            <h4 className="text-lg">
+              Date: {formatDate(announcement.eventStart, announcement.eventEnd)}
+            </h4>
+          }
+          subhead={
+            `at ${formatTime(
+              announcement.eventStart,
+              announcement.eventEnd
+            )}` || "Invalid time"
+          }
         />
       )}
     </li>
