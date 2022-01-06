@@ -80,6 +80,16 @@
 }
 
 @layer utilities {
+  .max-lines-1 {
+    @apply [display:-webkit-box] [-webkit-line-clamp:1] [-webkit-box-orient:vertical]
+      overflow-hidden break-words text-ellipsis;
+  }
+
+  .max-lines-5 {
+    @apply [display:-webkit-box] [-webkit-line-clamp:5] [-webkit-box-orient:vertical]
+      overflow-hidden break-words text-ellipsis;
+  }
+
   .scroll-invisible::-webkit-scrollbar {
     @apply w-0;
   }
