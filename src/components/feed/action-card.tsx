@@ -22,16 +22,16 @@ const ActionCard = ({
 }): JSX.Element => {
   return (
     <header
-      className="flex flex-col gap-4 w-[36ch] py-4 px-8 bg-light-primary-container dark:bg-dark-primary-container rounded-3xl
+      className="flex flex-col gap-4 w-[42ch] max-w-full mx-2 py-4 px-8 bg-light-primary-container dark:bg-dark-primary-container rounded-3xl
         shadow-lg"
     >
       <div className="text-center">
-        <h2 className="text-3xl font-bold">{name}</h2>
-        <p className="text-base">Moderated by {moderator}</p>
+        <h2 className="text-5xl font-bold">{name}</h2>
+        <p className="text-lg">Moderated by {moderator}</p>
       </div>
-      <div className="flex flex-col gap-1">
-        <div className="flex flex-row justify-between items-end">
-          <p className="text-base">{currentClass.name}</p>
+      <div className="flex flex-col gap-2 sm:gap-1">
+        <div className="flex flex-col items-center gap-2 sm:flex-row sm:justify-between sm:items-end">
+          <p className="text-xl">{currentClass.name}</p>
           <div className="flex flex-row gap-1">
             <button className="btn btn-outlined flex p-2 rounded-full">
               <MaterialIcon icon="subject" />

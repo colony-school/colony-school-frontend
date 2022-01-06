@@ -8,7 +8,7 @@ import PostType from "@components/feed/post";
  */
 const Feed = () => {
   return (
-    <ul className="flex flex-col gap-4 items-center pb-8">
+    <ul className="flex flex-col gap-4 items-center pb-8 sm:px-8">
       <PostType
         post={{
           author: "Tempoom L.",

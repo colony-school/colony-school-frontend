@@ -38,7 +38,7 @@ const PostAttachments = ({
 
 const Post = ({ post }: { post: PostType }) => {
   return (
-    <li className="card card-elevated w-[72ch]">
+    <li className="max-w-full sm:card sm:card-elevated sm:w-[72ch]">
       <Title
         icon={
           <div className="grid place-items-center w-10 h-10 text-light-on-secondary font-medium bg-light-secondary rounded-full">

@@ -15,7 +15,7 @@ const SubjectPeriodAttachment = ({
   subjectPeriod: SubjectPeriod;
 }) => {
   return (
-    <div className="flex flex-col md:grid md:grid-cols-2 bg-light-secondary-container dark:bg-dark-secondary-container">
+    <li className="flex flex-col md:grid md:grid-cols-2 bg-light-secondary-container dark:bg-dark-secondary-container">
       <Title
         icon={
           <MaterialIcon
@@ -26,7 +26,7 @@ const SubjectPeriodAttachment = ({
         title={<h4>Period: {subjectPeriod.name}</h4>}
         subhead={format(set(new Date(), subjectPeriod.periodStart), "HH:mm")}
       />
-    </div>
+    </li>
   );
 };
 
