@@ -37,13 +37,9 @@ const Feed = () => {
                 instructors: [
                   { name: "Thanyapat Charoenporn" }
                 ],
-                periodStart: {
-                  hours: 11,
-                  minutes: 50,
-                  seconds: 0
-                },
+                periodStart: new Date(2021, 8, 14, 11, 50, 0),
                 periodLength: 50,
-                assignmentsDue: []
+                assignmentsDue: [],
               },
             },
           ],
