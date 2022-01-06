@@ -1,5 +1,5 @@
 // Modules
-import { format, set } from "date-fns";
+import { format } from "date-fns";
 
 // Components
 import MaterialIcon from "@components/global/icon";
@@ -27,10 +27,10 @@ const SubjectPeriodAttachment = ({
         }
         title={<h4 className="text-lg">Period: {subjectPeriod.name}</h4>}
         subhead={`${format(
-          set(new Date(), subjectPeriod.periodStart),
-          "dd/MM/yyyy"  // only time is fixed with the current approach, even though the date must be fixed as well for this to work
+          subjectPeriod.periodStart,
+          "dd/MM/yyyy"
         )} ${formatTime(
-          set(new Date(), subjectPeriod.periodStart),
+          subjectPeriod.periodStart,
           undefined,
           subjectPeriod.periodLength
         )}`}

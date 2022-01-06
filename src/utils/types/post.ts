@@ -1,5 +1,7 @@
-import { Announcement } from "./announcement";
-import { SubjectPeriod } from "./subject";
+// Types from other files
+import { Announcement } from "@utils/types/announcement";
+import { Assignment } from "@utils/types/assignment";
+import { SubjectPeriod } from "@utils/types/subject";
 
 export type Post = {
   author: string;
@@ -10,6 +12,7 @@ export type Post = {
 
 export type Attachment =
   | AnnouncementAttachment
+  | AssignmentAttachment
   | SubjectPeriodAttachment
   | PeriodSwapAttachment
   | PaymentAttachement
@@ -20,6 +23,11 @@ export type AnnouncementAttachment = {
   type: "announcement";
   announcement: Announcement;
 };
+
+export type AssignmentAttachment = {
+  type: "assignment";
+  assignment: Assignment;
+}
 
 // Yellow: Period and Payment
 export type SubjectPeriodAttachment = {
@@ -44,9 +52,11 @@ export type PaymentAttachement = {
 export type FileAttachment = {
   type: "file";
   file: File;
-  usePolicies: {
-    noParaphrase: boolean;
-    noCopy: boolean;
-    noShare: boolean;
-  };
+  usePolicies: FileAttachmentUsePolicies;
+};
+
+export type FileAttachmentUsePolicies = {
+  noParaphrase: boolean;
+  noCopy: boolean;
+  noShare: boolean;
 };

@@ -24,7 +24,7 @@ export function to3LetterMonth(month: number): string {
     "NOV",
     "DEC",
   ];
-  return months[month - 1];
+  return months[month];
 }
 
 /**
