@@ -176,7 +176,6 @@ const CurrentClass = ({
   subjectPeriod: SubjectPeriod;
 }): JSX.Element => {
   // Processing
-  const periodStart = set(new Date(), subjectPeriod.periodStart);
   const dueNumber = subjectPeriod.assignmentsDue.length;
 
   return (
@@ -191,14 +190,14 @@ const CurrentClass = ({
         </div>
         <ClassInfo
           instructors={subjectPeriod.instructors}
-          periodStart={periodStart}
+          periodStart={subjectPeriod.periodStart}
           periodLength={subjectPeriod.periodLength}
           dueNumber={dueNumber}
         />
       </div>
       <div className="flex flex-col sm:grid sm:grid-cols-2 gap-3">
         <ClassTimeLeft
-          periodStart={periodStart}
+          periodStart={subjectPeriod.periodStart}
           periodLength={subjectPeriod.periodLength}
         />
         <ClassActions
