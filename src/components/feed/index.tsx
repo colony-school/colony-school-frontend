@@ -134,6 +134,28 @@ const Feed = () => {
             "/images/dummybase/attachments/slide-9.png",
           ],
         },
+        {
+          type: "subject-period",
+          subjectPeriod: {
+            name: "Physics 1",
+            instructors: [{ name: "Niruth Prombutr" }],
+            periodStart: new Date(2021, 10, 9, 14, 20, 0),
+            periodLength: 50,
+            assignmentsDue: [],
+          },
+        },
+        {
+          type: "assignment",
+          assignment: {
+            id: 18,
+            name: "Lecture #2",
+            desc: "Circular motion lecture",
+            subject: "Physics 1",
+            due: new Date(2022, 0, 8, 23, 59, 59),
+            status: "started",
+            urgent: false,
+          },
+        },
       ],
     },
   ]);

@@ -11,6 +11,8 @@ import { Attachment, Post as PostType } from "@utils/types/post";
 
 const PostTitle = ({ attachments }: { attachments: Array<Attachment> }) => {
   // TODO: Post title should be generated from attachments
+  //       Will do this the first thing after the PR
+
   return <h3>Post</h3>;
 };
 
