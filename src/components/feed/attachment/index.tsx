@@ -8,6 +8,7 @@ import SubjectPeriodAttachment from "@components/feed/attachment/subject-period"
 
 // Utils
 import { Attachment } from "@utils/types/post";
+import PaymentAttachment from "./payment";
 
 /**
  * The bridge to all post attachments
@@ -48,6 +49,15 @@ const PostAttachments = ({
               <SlidesAttachment
                 name={attachment.name}
                 slides={attachment.slides}
+              />
+            );
+          case "payment":
+            return (
+              <PaymentAttachment
+                name={attachment.name}
+                totalOwed={attachment.totalOwed}
+                perPersonOwed={attachment.perPersonOwed}
+                unpaidPeople={attachment.unpaidPeople}
               />
             );
         }

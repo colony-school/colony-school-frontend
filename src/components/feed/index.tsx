@@ -113,6 +113,21 @@ const Feed = () => {
       ],
     },
     {
+      author: "Aniwat P.",
+      postDate: new Date(2021, 10, 10, 8, 29, 54),
+      content: "***Please*** pay.",
+      attachments: [
+        {
+          type: "payment",
+          name: "Gimme",
+          totalOwed: 600.0,
+          perPersonOwed: 20.0,
+          unpaidPeople: ["Tanvin C.", "Siravit P.", "Viboon C."],
+          unpaid: true,
+        },
+      ],
+    },
+    {
       author: "Siravit P.",
       postDate: new Date(2021, 10, 9, 15, 13, 42),
       content:

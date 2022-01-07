@@ -46,7 +46,8 @@ export type PaymentAttachement = {
   name: string;
   totalOwed: number;
   perPersonOwed: number;
-  unpaid: Array<string>;
+  unpaidPeople: Array<string>;
+  unpaid: boolean;
 }
 
 // Orange: Files
