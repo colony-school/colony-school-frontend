@@ -18,9 +18,9 @@ const Title = ({
       } ${className}`}
     >
       {icon}
-      <div className="text-xl font-medium">
+      <div className="w-full text-xl font-medium">
         {title}
-        <p className="text-base font-normal max-lines-1">{subhead}</p>
+        <p className="w-full text-base font-normal max-lines-1">{subhead}</p>
       </div>
     </div>
   );
