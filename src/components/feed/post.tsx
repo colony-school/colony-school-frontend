@@ -16,7 +16,7 @@ const PostTitle = ({ attachments }: { attachments: Array<Attachment> }) => {
 
 const Post = ({ post }: { post: PostType }) => {
   return (
-    <li className="max-w-full sm:card sm:card-elevated sm:w-[74ch]">
+    <li className="w-full max-w-full sm:card sm:card-elevated sm:w-[74ch]">
       <Title
         icon={
           <div className="grid place-items-center w-10 h-10 text-light-on-secondary font-medium bg-light-secondary rounded-full">

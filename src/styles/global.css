@@ -93,4 +93,17 @@
   .scroll-invisible::-webkit-scrollbar {
     @apply w-0 h-0;
   }
+
+  .scroll-1::-webkit-scrollbar {
+    @apply w-1 h-1;
+  }
+
+  .scroll-tertiary::-webkit-scrollbar {
+    @apply bg-light-tertiary-container dark:bg-dark-tertiary-container;
+  }
+  
+  .scroll-tertiary::-webkit-scrollbar-thumb {
+    @apply bg-light-tertiary dark:bg-dark-tertiary;
+  }
+  
 }

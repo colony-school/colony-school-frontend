@@ -1,6 +1,9 @@
+// Modules
+import Image from "next/image";
+
+// Components
 import MaterialIcon from "@components/global/icon";
 import Title from "@components/global/title";
-import Image from "next/image";
 
 const SlidesAttachment = ({
   name,
@@ -21,16 +24,18 @@ const SlidesAttachment = ({
         title={<h4 className="text-lg">Slides: {name}</h4>}
         subhead={`${slides.length} pictures`}
       />
-      <div className="flex flex-row h-28">
-        <ul className="flex flex-row gap-2 w-full p-2 scroll-invisible overflow-auto">
-          {slides.map((slide) => {
-            return (
-              <li className="relative h-full aspect-square bg-light-surface dark:bg-dark-surface rounded-lg overflow-hidden">
-                <Image src={slide} layout="fill" />
-              </li>
-            );
-          })}
-        </ul>
+      <div className="flex flex-row">
+        <div className="w-full p-2 scroll-1 scroll-tertiary overflow-auto">
+          <ul className="flex flex-row gap-2 w-fit h-24">
+            {slides.map((slide) => {
+              return (
+                <li className="relative h-full aspect-square bg-light-surface dark:bg-dark-surface rounded-lg overflow-hidden">
+                  <Image src={slide} layout="fill" objectFit="cover" />
+                </li>
+              );
+            })}
+          </ul>
+        </div>
         <button className="btn-text grid place-items-center">
           <MaterialIcon
             icon="chevron_right"

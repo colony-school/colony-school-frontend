@@ -122,7 +122,17 @@ const Feed = () => {
         {
           type: "slides",
           name: "Circular Motion",
-          slides: ["/images/brand/logo.svg", "/images/brand/logo.svg"],
+          slides: [
+            "/images/dummybase/attachments/slide-1.png",
+            "/images/dummybase/attachments/slide-2.png",
+            "/images/dummybase/attachments/slide-3.png",
+            "/images/dummybase/attachments/slide-4.png",
+            "/images/dummybase/attachments/slide-5.png",
+            "/images/dummybase/attachments/slide-6.png",
+            "/images/dummybase/attachments/slide-7.png",
+            "/images/dummybase/attachments/slide-8.png",
+            "/images/dummybase/attachments/slide-9.png",
+          ],
         },
       ],
     },
