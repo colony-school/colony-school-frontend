@@ -12,7 +12,7 @@ import { SubjectPeriod } from "@utils/types/subject";
 const PeriodSwapAttachment = ({
   periods,
 }: {
-  periods: Array<SubjectPeriod>;
+  periods: [SubjectPeriod, SubjectPeriod];
 }) => {
   return (
     <li className="flex flex-col md:grid md:grid-cols-2 bg-light-secondary-container dark:bg-dark-secondary-container">
@@ -24,9 +24,9 @@ const PeriodSwapAttachment = ({
           />
         }
         title={<h4 className="text-lg">Periods Swapped</h4>}
-        subhead={`${periods[0]?.name || "Unknown"} and ${
-          periods[1]?.name || "unknown"
-        }`}
+        subhead={
+          periods.length == 2 ? `${periods[0].name} and ${periods[1].name}` : ""
+        }
       />
     </li>
   );

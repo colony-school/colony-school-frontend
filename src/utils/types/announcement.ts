@@ -15,10 +15,10 @@ export type GlanceAnnouncement = {
 
 /**
  * An announcement or event from school
- * 
+ *
  * For Events and Announcements (list in `Events` from `events.tsx`)
  */
- export type ListedAnnouncement = {
+export type ListedAnnouncement = {
   id: number;
   title: string;
   type: "announcement" | "event";
@@ -26,10 +26,9 @@ export type GlanceAnnouncement = {
   image?: string;
 };
 
-
 /**
  * An announcement or event from school
- * 
+ *
  * For Events and Announcements (card in `Events` from `events.tsx`)
  */
 export type Announcement = {
@@ -45,5 +44,5 @@ export type Announcement = {
   eventEnd?: Date;
   periodEnd?: number;
   location?: string;
-  actions?: Array<Action>
+  actions?: Array<Action>;
 };

@@ -28,7 +28,7 @@ export type AnnouncementAttachment = {
 export type AssignmentAttachment = {
   type: "assignment";
   assignment: Assignment;
-}
+};
 
 // Yellow: Period and Payment
 export type SubjectPeriodAttachment = {
@@ -38,7 +38,7 @@ export type SubjectPeriodAttachment = {
 
 export type PeriodSwapAttachment = {
   type: "period-swap";
-  periods: Array<SubjectPeriod>;
+  periods: [SubjectPeriod, SubjectPeriod];
 };
 
 export type PaymentAttachement = {
@@ -48,7 +48,7 @@ export type PaymentAttachement = {
   perPersonOwed: number;
   unpaidPeople: Array<string>;
   unpaid: boolean;
-}
+};
 
 // Orange: Files
 export type FileAttachment = {
@@ -66,5 +66,5 @@ export type FileAttachmentUsePolicies = {
 export type SlidesAttachment = {
   type: "slides";
   name: string;
-  slides: Array<string>
-}
+  slides: Array<string>;
+};

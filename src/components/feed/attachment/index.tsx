@@ -36,7 +36,7 @@ const PostAttachments = ({
               />
             );
           case "period-swap":
-            return <PeriodSwapAttachment periods={attachment.periods} />;
+            return <PeriodSwapAttachment periods={[]} />;
           case "file":
             return (
               <FileAttachment
