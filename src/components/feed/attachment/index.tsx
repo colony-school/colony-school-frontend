@@ -1,14 +1,15 @@
 // Components
 import AnnouncementAttachment from "@components/feed/attachment/announcement";
 import AssignmentAttachment from "@components/feed/attachment/assignment";
+import InvalidAttachment from "@components/feed/attachment/invalid";
 import FileAttachment from "@components/feed/attachment/file";
+import PaymentAttachment from "@components/feed/attachment/payment";
 import PeriodSwapAttachment from "@components/feed/attachment/period-swap";
 import SlidesAttachment from "@components/feed/attachment/slides";
 import SubjectPeriodAttachment from "@components/feed/attachment/subject-period";
 
 // Utils
 import { Attachment } from "@utils/types/post";
-import PaymentAttachment from "./payment";
 
 /**
  * The bridge to all post attachments
@@ -36,7 +37,7 @@ const PostAttachments = ({
               />
             );
           case "period-swap":
-            return <PeriodSwapAttachment periods={[]} />;
+            return <PeriodSwapAttachment periods={attachment.periods} />;
           case "file":
             return (
               <FileAttachment
@@ -60,6 +61,10 @@ const PostAttachments = ({
                 unpaidPeople={attachment.unpaidPeople}
               />
             );
+          default:
+            return (
+              <InvalidAttachment />
+            )
         }
       })}
     </ul>
