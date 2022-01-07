@@ -10,10 +10,12 @@ const ClassFeedPage: NextPage = () => {
   return (
     <div className="flex flex-col sm:h-screen overflow-auto">
       <div className="hidden sm:block">
-        <TopAppBar title="Your Class" />
+        <TopAppBar title="Your Class" scrim={true} className="fixed z-10" />
       </div>
       <div className="flex flex-col">
-        <div className="h-64 bg-light-surface-variant dark:bg-dark-surface-variant" />
+        <div className="relative h-96 bg-light-surface-variant dark:bg-dark-surface-variant">
+          <div className="w-full h-full bg-[url(/images/dummybase/classes/405.jpg)] bg-cover bg-center" />
+        </div>
         <div className="flex flex-row justify-center translate-y-[-50%]">
           <ActionCard
             name="M.405"

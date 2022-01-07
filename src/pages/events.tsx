@@ -61,8 +61,9 @@ const EventItem = ({
           </div>
         </div>
         {event.image && (
-          <div className="relative h-full rounded-r-lg aspect-square bg-light-surface-variant dark:bg-dark-surface-variant">
-            <Image src={event.image} layout="fill" />
+          <div className="relative h-full rounded-r-lg aspect-square bg-light-surface-variant dark:bg-dark-surface-variant
+            overflow-hidden">
+            <Image src={event.image} layout="fill" objectFit="cover" />
           </div>
         )}
       </button>
@@ -99,7 +100,7 @@ const ActiveEventDisplay = ({
           <div className="flex flex-col overflow-auto">
             {event.image && (
               <div className="relative w-full h-48 bg-light-surface-variant dark:bg-dark-surface-variant">
-                <Image src={event.image} layout="fill" />
+                <Image src={event.image} layout="fill" objectFit="cover" />
               </div>
             )}
             {event.eventStart && event.eventEnd && (
@@ -210,7 +211,7 @@ const Events: NextPage = () => {
       title: "Banana Eating Contest",
       postDate: new Date(2021, 9, 14),
       type: "event",
-      image: "/images/brand/logo.svg",
+      image: "/images/dummybase/events/event-2.jpg",
     },
     {
       id: 3,
@@ -231,7 +232,7 @@ const Events: NextPage = () => {
     type: "announcement",
     postDate: new Date(2021, 9, 12),
     source: "https://youtu.be/dQw4w9WgXcQ",
-    image: "/images/brand/logo.svg",
+    image: "/images/dummybase/events/event-2.jpg",
     eventStart: new Date(2021, 9, 14, 11, 50),
     eventEnd: new Date(2021, 9, 14, 12, 40),
     periodStart: 4,

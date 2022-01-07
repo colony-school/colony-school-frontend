@@ -1,5 +1,5 @@
 // Modules
-import { format, set } from "date-fns";
+import { format } from "date-fns";
 
 // Components
 import MaterialIcon from "@components/global/icon";
