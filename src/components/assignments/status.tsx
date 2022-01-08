@@ -49,7 +49,7 @@ const Status = ({
   containerClassName?: string;
 }): JSX.Element => {
   return (
-    <div className={`flex flex-row gap-2 ${containerClassName || ""}`}>
+    <div className={`flex flex-row flex-wrap gap-2 ${containerClassName || ""}`}>
       {urgent && (
         <div
           className={`chip text-light-on-error-container bg-light-error-container
