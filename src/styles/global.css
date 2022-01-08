@@ -80,6 +80,31 @@
 }
 
 @layer utilities {
+  .container-primary {
+    @apply text-light-on-primary-container bg-light-primary-container
+      dark:text-dark-on-primary-container dark:bg-dark-primary-container;
+  }
+
+  .container-secondary {
+    @apply text-light-on-secondary-container bg-light-secondary-container
+      dark:text-dark-on-secondary-container dark:bg-dark-secondary-container;
+  }
+
+  .container-tertiary {
+    @apply text-light-on-tertiary-container bg-light-tertiary-container
+      dark:text-dark-on-tertiary-container dark:bg-dark-tertiary-container;
+  }
+
+  .container-surface {
+    @apply text-light-on-primary-container bg-light-surface-container
+      dark:text-dark-on-surface-container dark:bg-dark-surface-container;
+  }
+
+  .container-error {
+    @apply text-light-on-error-container bg-light-error-container
+      dark:text-dark-on-error-container dark:bg-dark-error-container;
+  }
+
   .max-lines-1 {
     @apply [display:-webkit-box] [-webkit-line-clamp:1] [-webkit-box-orient:vertical]
       overflow-hidden break-words text-ellipsis;
@@ -101,9 +126,8 @@
   .scroll-tertiary::-webkit-scrollbar {
     @apply bg-light-tertiary-container dark:bg-dark-tertiary-container;
   }
-  
+
   .scroll-tertiary::-webkit-scrollbar-thumb {
     @apply bg-light-tertiary dark:bg-dark-tertiary;
   }
-  
 }

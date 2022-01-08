@@ -8,24 +8,14 @@ const StatusChip = ({
   switch (status) {
     case "not-started":
       return (
-        <div
-          className={`chip text-light-on-tertiary-container bg-light-tertiary-container
-          dark:text-dark-on-tertiary-container dark:bg-dark-tertiary-container ${
-            className || ""
-          }`}
-        >
+        <div className={`chip container-tertiary ${className || ""}`}>
           Not started
         </div>
       );
 
     case "started":
       return (
-        <div
-          className={`chip text-light-on-secondary-container bg-light-secondary-container
-          dark:text-dark-on-secondary-container dark:bg-dark-secondary-container ${
-            className || ""
-          }`}
-        >
+        <div className={`chip container-secondary ${className || ""}`}>
           Started
         </div>
       );
@@ -49,21 +39,17 @@ const Status = ({
   containerClassName?: string;
 }): JSX.Element => {
   return (
-    <div className={`flex flex-row flex-wrap gap-2 ${containerClassName || ""}`}>
+    <div
+      className={`flex flex-row flex-wrap gap-2 ${containerClassName || ""}`}
+    >
       {urgent && (
-        <div
-          className={`chip text-light-on-error-container bg-light-error-container
-        dark:text-dark-on-error-container dark:bg-dark-error-container ${
-          chipClassName || ""
-        }`}
-        >
+        <div className={`chip cotnainer-error ${chipClassName || ""}`}>
           Urgent
         </div>
       )}
       {pastDue && (
         <div
-          className={`chip text-light-on-error bg-light-error
-          dark:text-dark-on-error dark:bg-dark-error ${chipClassName || ""}`}
+          className={`chip container-error ${chipClassName || ""}`}
         >
           Past due
         </div>
