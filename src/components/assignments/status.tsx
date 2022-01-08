@@ -8,14 +8,14 @@ const StatusChip = ({
   switch (status) {
     case "not-started":
       return (
-        <div className={`chip container-tertiary ${className || ""}`}>
+        <div className={`chip ${className || "container-tertiary"}`}>
           Not started
         </div>
       );
 
     case "started":
       return (
-        <div className={`chip container-secondary ${className || ""}`}>
+        <div className={`chip ${className || "container-secondary"}`}>
           Started
         </div>
       );
@@ -43,13 +43,13 @@ const Status = ({
       className={`flex flex-row flex-wrap gap-2 ${containerClassName || ""}`}
     >
       {urgent && (
-        <div className={`chip cotnainer-error ${chipClassName || ""}`}>
+        <div className={`chip ${chipClassName || "container-error"}`}>
           Urgent
         </div>
       )}
       {pastDue && (
         <div
-          className={`chip container-error ${chipClassName || ""}`}
+          className={`chip ${chipClassName || "container-error"}`}
         >
           Past due
         </div>
