@@ -22,11 +22,7 @@ const ClassFeedPage: NextPage = () => {
             moderator="Paniti P."
             currentClass={{
               name: "English 8",
-              periodStart: {
-                hours: 14,
-                minutes: 20,
-                seconds: 0,
-              },
+              periodStart: new Date (2022, 0, 8, 14, 20, 0),
               periodLength: 100,
             }}
           />

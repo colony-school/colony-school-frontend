@@ -1,5 +1,6 @@
 // Components
 import MaterialIcon from "@components/global/icon";
+import PeriodTimeLeft from "@components/subject-period/period-time-left";
 
 /**
  * An attempt to not look like Google Classroom
@@ -16,7 +17,7 @@ const ActionCard = ({
   moderator: string;
   currentClass: {
     name: string;
-    periodStart: { hours: number; minutes: number; seconds: number };
+    periodStart: Date;
     periodLength: number;
   };
 }): JSX.Element => {
@@ -44,7 +45,10 @@ const ActionCard = ({
             </button>
           </div>
         </div>
-        <progress className="progress"></progress>
+        <PeriodTimeLeft
+          periodStart={currentClass.periodStart}
+          periodLength={currentClass.periodLength}
+        />
       </div>
     </header>
   );

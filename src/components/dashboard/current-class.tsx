@@ -12,6 +12,7 @@ import Headline from "@components/global/headline";
 import MaterialIcon from "@components/global/icon";
 import { useEffect, useState } from "react";
 import { SubjectPeriod } from "@utils/types/subject";
+import PeriodTimeLeft from "@components/subject-period/period-time-left";
 
 /**
  * Ongoing class infobox
@@ -80,66 +81,6 @@ const ClassInfo = ({
   );
 };
 
-/**
- * Displays both text and progress bar representation of the passage of time within a period.
- *
- * Teachers may dislike this...
- * @param periodStart The start time of this class
- * @param periodLength The length of the period
- */
-const ClassTimeLeft = ({
-  periodStart,
-  periodLength,
-}: {
-  periodStart: Date;
-  periodLength: number;
-}): JSX.Element => {
-  // Add minutes to the start time to get the end time
-  const periodEnd = addMinutes(periodStart, periodLength);
-
-  // How much time is left until the period ends
-  const [timeLeft, setTimeLeft] = useState<Duration>(
-    intervalToDuration({
-      start: new Date(),
-      end: periodEnd,
-    })
-  );
-
-  // Updates timeLeft every second
-  useEffect(() => {
-    const clock = setInterval(
-      () =>
-        setTimeLeft(
-          intervalToDuration({
-            start: new Date(),
-            end: periodEnd,
-          })
-        ),
-      1000
-    );
-
-    return () => {
-      clearInterval(clock);
-    };
-  }, []);
-
-  return (
-    <div className="p-4">
-      <p>{formatDuration(timeLeft)} left</p>
-      <progress
-        value={
-          periodLength * 60 -
-          ((timeLeft.hours || 0) * 3600 +
-            (timeLeft.minutes || 0) * 60 +
-            (timeLeft.seconds || 0))
-        }
-        max={periodLength * 60}
-        className="progress"
-      />
-    </div>
-  );
-};
-
 const ClassActions = ({
   ggc,
   meet,
@@ -196,10 +137,13 @@ const CurrentClass = ({
         />
       </div>
       <div className="flex flex-col sm:grid sm:grid-cols-2 gap-3">
-        <ClassTimeLeft
-          periodStart={subjectPeriod.periodStart}
-          periodLength={subjectPeriod.periodLength}
-        />
+        <div className="p-4">
+          <PeriodTimeLeft
+            periodStart={subjectPeriod.periodStart}
+            periodLength={subjectPeriod.periodLength}
+            withLabel={true}
+          />
+        </div>
         <ClassActions
           ggc="MzQzNTA0NDkyMjgx"
           meet="https://meet.google.com/zbm-wnny-fsi"
