@@ -14,7 +14,7 @@ const AnnouncementAttachment = ({
   announcement: Announcement;
 }) => {
   return (
-    <li className="flex flex-col md:grid md:grid-cols-2 bg-light-primary-container dark:bg-dark-primary-container">
+    <li className="flex flex-col md:grid md:grid-cols-2 container-primary">
       <Title
         icon={
           <MaterialIcon

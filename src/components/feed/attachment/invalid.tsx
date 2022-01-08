@@ -3,7 +3,7 @@ import Title from "@components/global/title";
 
 const InvalidAttachment = () => {
   return (
-    <li className="bg-light-error-container dark:bg-dark-error-container">
+    <li className="container-error">
       <Title
         icon={
           <MaterialIcon
