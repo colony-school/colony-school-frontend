@@ -15,7 +15,7 @@ const PeriodSwapAttachment = ({
   periods: [SubjectPeriod, SubjectPeriod];
 }) => {
   return (
-    <li className="flex flex-col md:grid md:grid-cols-2 bg-light-secondary-container dark:bg-dark-secondary-container">
+    <li className="flex flex-col md:grid md:grid-cols-2 container-secondary">
       <Title
         icon={
           <MaterialIcon

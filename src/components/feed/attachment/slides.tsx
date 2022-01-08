@@ -13,7 +13,7 @@ const SlidesAttachment = ({
   slides: Array<string>;
 }): JSX.Element => {
   return (
-    <li className="flex flex-col md:grid md:grid-cols-2 md:items-start bg-light-tertiary-container dark:bg-dark-tertiary-container">
+    <li className="flex flex-col md:grid md:grid-cols-2 md:items-start container-tertiary">
       <Title
         icon={
           <MaterialIcon

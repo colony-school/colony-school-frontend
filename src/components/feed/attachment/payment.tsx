@@ -14,7 +14,7 @@ const PaymentAttachment = ({
   unpaidPeople: Array<string>;
 }) => {
   return (
-    <li className="flex flex-col md:grid md:grid-cols-2 bg-light-tertiary-container dark:bg-dark-tertiary-container">
+    <li className="flex flex-col md:grid md:grid-cols-2 container-tertiary">
       <Title
         icon={
           <MaterialIcon
