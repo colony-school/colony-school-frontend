@@ -28,6 +28,26 @@ export function to3LetterMonth(month: number): string {
 }
 
 /**
+ * Converts a day number into a human-readable day
+ *
+ * e.g. 2 -> FEB
+ * @param month Month number
+ * @returns 3 letter month
+ */
+export function weekToString(week: number): string {
+  const weeks = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return weeks[week];
+}
+
+/**
  * Handles date interval, shows the date only once if the date is the same
  *
  * ---

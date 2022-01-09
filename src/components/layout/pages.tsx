@@ -26,7 +26,7 @@ export const navGroups: Array<NavGroup> = [
       {
         name: "Schedule",
         icon: <MaterialIcon icon="schedule" />,
-        url: "/schedule",
+        url: "/1/405/schedule",
       },
       {
         name: "Your Assignments",
@@ -36,12 +36,12 @@ export const navGroups: Array<NavGroup> = [
       {
         name: "Your Class",
         icon: <MaterialIcon icon="groups" />,
-        url: "/class/1/405",
+        url: "/1/405/class",
       },
     ],
   },
   {
-    name: "School",
+    name: "Live Info",
     items: [
       { name: "Forms", icon: <MaterialIcon icon="edit" />, url: "/forms" },
       {
@@ -79,10 +79,10 @@ export const navGroups: Array<NavGroup> = [
  * * Navigation Rail (`NavRail` from `nav-rail.tsx`)
  */
 export const navItems = [
-  { name: "Dashboard", icon: <MaterialIcon icon="dashboard" />, url: "/" },
+  { name: "Dashboard",icon: <MaterialIcon icon="dashboard" />, url: "/" },
   { name: "Events", icon: <MaterialIcon icon="event" />, url: "/events" },
-  { name: "Schedule", icon: <MaterialIcon icon="schedule" />, url: "/schedule" },
+  { name: "Schedule", icon: <MaterialIcon icon="schedule" />,url: "/1/405/schedule", },
   { name: "To-do", icon: <MaterialIcon icon="assignment" />, url: "/assignments" },
-  { name: "Class", icon: <MaterialIcon icon="groups" />, url: "/class/1/405" },
+  { name: "Class", icon: <MaterialIcon icon="groups" />, url: "/1/405/class" },
   { name: "Database", icon: <MaterialIcon icon="table_chart" />, url: "/db" },
 ];
