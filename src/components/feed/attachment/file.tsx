@@ -3,20 +3,28 @@ import Headline from "@components/global/headline";
 import MaterialIcon from "@components/global/icon";
 
 // Types
-import { FileAttachmentUsePolicies } from "@utils/types/post";
+import { FileAttachmentUsePolicy } from "@utils/types/post";
 
+/**
+ * Lists the use policies of a file
+ *
+ * For File attachment (`FileAttachment` from `file.tsx`)
+ * @param usePolicies A list of use policies
+ */
 const UsePolicies = ({
   usePolicies,
 }: {
-  usePolicies: FileAttachmentUsePolicies;
+  usePolicies: Array<FileAttachmentUsePolicy>;
 }) => {
   return (
     <ul className="text-base">
-      {usePolicies.noCopy && <li>The user must not copy the material.</li>}
-      {usePolicies.noParaphrase && (
-        <li>The user must not paraphrase the material.</li>
-      )}
-      {usePolicies.noShare && <li>The user must not share the material.</li>}
+      {usePolicies.map((usePolicy) => {
+        return (
+          <li title={usePolicy.desc || usePolicy.summary}> {/* temporary stand-in for a custom card that appears on hover */}
+            {usePolicy.summary}
+          </li>
+        );
+      })}
     </ul>
   );
 };
@@ -33,7 +41,7 @@ const FileAttachment = ({
   usePolicies,
 }: {
   file: File;
-  usePolicies: FileAttachmentUsePolicies;
+  usePolicies: Array<FileAttachmentUsePolicy>;
 }) => {
   return (
     <li className="flex flex-col md:grid md:grid-cols-2 container-tertiary">

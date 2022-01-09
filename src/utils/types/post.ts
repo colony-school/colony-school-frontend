@@ -54,13 +54,15 @@ export type PaymentAttachement = {
 export type FileAttachment = {
   type: "file";
   file: File;
-  usePolicies: FileAttachmentUsePolicies;
+  usePolicies: Array<FileAttachmentUsePolicy>;
 };
 
-export type FileAttachmentUsePolicies = {
-  noParaphrase: boolean;
-  noCopy: boolean;
-  noShare: boolean;
+export type FileAttachmentUsePolicy = {
+  id: number;
+  icon?: string;
+  name: string;
+  summary: string;
+  desc?: string;
 };
 
 export type SlidesAttachment = {

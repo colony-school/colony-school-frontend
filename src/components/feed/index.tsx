@@ -89,11 +89,26 @@ const Feed = () => {
             size: 120483,
             type: "text/cpp",
           },
-          usePolicies: {
-            noCopy: true,
-            noParaphrase: true,
-            noShare: true,
-          },
+          usePolicies: [
+            {
+              id: 1,
+              name: "No Copy",
+              summary: "The user must not copy the material.",
+              desc: "The user must not copy the material word for word.",
+            },
+            {
+              id: 2,
+              name: "No Paraphrase",
+              summary: "The user must not paraphrase the material.",
+              desc: "The user must not paraphrase the material. Changing sentence structure and switching synonyms is prohibited.",
+            },
+            {
+              id: 3,
+              name: "No Share",
+              summary: "The user must not share the material.",
+              desc: "The user must not share the material. Methods include screen-sharing and sending the material elsewhere.",
+            },
+          ],
         },
         {
           type: "assignment",
