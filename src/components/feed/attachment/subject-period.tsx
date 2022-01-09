@@ -31,7 +31,6 @@ const SubjectPeriodAttachment = ({
           "dd/MM/yyyy"
         )} ${formatTime(
           subjectPeriod.periodStart,
-          undefined,
           subjectPeriod.periodLength
         )}`}
       />

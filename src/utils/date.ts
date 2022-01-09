@@ -35,24 +35,29 @@ export function to3LetterMonth(month: number): string {
  * Choose `endDate` or `duration`
  * @param startDate The date before
  * @param endDate The date after
- * @param duration The duration after the start date until the end
+ * @param duration The duration after the start date until the end in minutes
  */
+export function formatDate(startDate: Date, duration: number): string;
+export function formatDate(startDate: Date, endDate: Date): string;
 export function formatDate(
   startDate: Date,
-  endDate?: Date,
-  duration?: number
+  endDateOrDuration: number | Date
 ): string | void {
-  if (duration) {
+  // If duration is inputted
+  if (typeof endDateOrDuration === "number") {
     return `${format(startDate, "dd/MM/yyyy")}–${format(
-      addMinutes(startDate, duration),
+      addMinutes(startDate, endDateOrDuration),
       "dd/MM/yyyy"
     )}`;
-  } else if (endDate) {
-    if (differenceInDays(startDate || 0, endDate || 0) === 0) {
+  }
+
+  // If end date is inputted
+  else if (endDateOrDuration instanceof Date) {
+    if (differenceInDays(startDate || 0, endDateOrDuration || 0) === 0) {
       return format(startDate, "dd/MM/yyyy");
     } else {
       return `${format(startDate, "dd/MM/yyyy")}–${format(
-        endDate,
+        endDateOrDuration,
         "dd/MM/yyyy"
       )}`;
     }
@@ -69,19 +74,25 @@ export function formatDate(
  * @param endDate The date after
  * @param duration The duration after the start date until the end
  */
+export function formatTime(startDate: Date, duration: number): string;
+export function formatTime(startDate: Date, endDate: Date): string;
 export function formatTime(
   startDate: Date,
-  endDate?: Date,
-  duration?: number
+  endDateOrDuration: number | Date
 ): string | void {
-  if (duration) {
+  // If duration is inputted
+  if (typeof endDateOrDuration === "number") {
     return `${format(startDate, "HH:mm")}–${format(
-      addMinutes(startDate, duration),
+      addMinutes(startDate, endDateOrDuration),
       "HH:mm"
     )}`;
-  } else if (endDate) {
-    return `${format(startDate, "HH:mm")}–${format(endDate, "HH:mm")}`;
-  } else {
-    return "Invalid time";
+  }
+
+  // If end date is inputted
+  else if (endDateOrDuration instanceof Date) {
+    return `${format(startDate, "HH:mm")}–${format(
+      endDateOrDuration,
+      "HH:mm"
+    )}`;
   }
 }

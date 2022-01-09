@@ -25,7 +25,7 @@ const AnnouncementAttachment = ({
         title={<h4 className="text-lg">Event: {announcement.title}</h4>}
         subhead={announcement.desc}
       />
-      {announcement.eventStart && (
+      {announcement.eventStart && announcement.eventEnd && (
         <Title
           icon={
             <MaterialIcon
