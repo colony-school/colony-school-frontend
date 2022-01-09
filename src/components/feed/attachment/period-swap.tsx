@@ -3,7 +3,7 @@ import MaterialIcon from "@components/global/icon";
 import Title from "@components/global/title";
 
 // Types
-import { SubjectPeriod } from "@utils/types/subject";
+import { SubjectPeriod } from "@utils/types/subject/period";
 
 /**
  * Displays the periods wapped via both text and diagram

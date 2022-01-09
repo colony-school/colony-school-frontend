@@ -6,7 +6,7 @@ import MaterialIcon from "@components/global/icon";
 import Title from "@components/global/title";
 
 // Types
-import { SubjectPeriod } from "@utils/types/subject";
+import { SubjectPeriod } from "@utils/types/subject/period";
 
 // Utils
 import { formatTime } from "@utils/date";

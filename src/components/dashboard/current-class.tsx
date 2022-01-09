@@ -11,7 +11,7 @@ import {
 import Headline from "@components/global/headline";
 import MaterialIcon from "@components/global/icon";
 import { useEffect, useState } from "react";
-import { SubjectPeriod } from "@utils/types/subject";
+import { SubjectPeriod } from "@utils/types/subject/period";
 import PeriodTimeLeft from "@components/subject-period/period-time-left";
 
 /**

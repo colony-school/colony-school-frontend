@@ -1,5 +1,5 @@
 // Types
-import { SubjectPeriod } from "@utils/types/subject";
+import { SubjectPeriod } from "@utils/types/subject/period";
 
 const PeriodInfo = ({ subjectPeriod }: { subjectPeriod: SubjectPeriod }) => {
   return (

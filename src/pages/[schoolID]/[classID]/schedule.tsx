@@ -16,7 +16,7 @@ const SchedulePage: NextPage = () => {
         <div className="w-full overflow-auto">
           <Schedule
             schedule={{
-              scheduleStartTime: {
+              scheduleStart: {
                 hours: 8,
                 minutes: 30,
                 seconds: 0,
@@ -26,53 +26,72 @@ const SchedulePage: NextPage = () => {
                   weekDate: new Date(2022, 0, 10),
                   content: [
                     {
-                      name: "Meeting",
-                      instructors: [],
-                      periodStart: new Date(2022, 0, 10, 8, 30, 0),
+                      periodStart: { hours: 8, minutes: 30, seconds: 0 },
                       periodLength: 50,
-                      assignmentsDue: [],
+                      subject: {
+                        name: "Meeting",
+                        instructors: [],
+                      },
                     },
                     {
-                      name: "Chemistry",
-                      instructors: [{ name: "Thanthapatra Bunchuay" }],
-                      periodStart: new Date(2022, 0, 10, 9, 20, 0),
+                      periodStart: { hours: 9, minutes: 20, seconds: 0 },
                       periodLength: 50,
-                      assignmentsDue: [],
+                      subject: {
+                        name: "Chemistry",
+                        instructors: [
+                          { firstName: "Thanthapatra", lastName: "Bunchuay" },
+                        ],
+                      },
                     },
                     {
-                      name: "Fundamental Mathematics",
-                      instructors: [{ name: "Kritchapon Boonpoonmee" }],
-                      periodStart: new Date(2022, 0, 10, 10, 10, 0),
+                      periodStart: { hours: 10, minutes: 10, seconds: 0 },
                       periodLength: 100,
-                      assignmentsDue: [],
+                      subject: {
+                        name: "Fundamental Mathematics",
+                        instructors: [
+                          { firstName: "Kritchapon", lastName: "Boonpoonmee" },
+                        ],
+                      },
                     },
                     {
-                      name: "Thai",
-                      instructors: [{ name: "Supapon Khwansuwan" }],
-                      periodStart: new Date(2022, 0, 10, 12, 40, 0),
+                      periodStart: { hours: 12, minutes: 40, seconds: 0 },
                       periodLength: 50,
-                      assignmentsDue: [],
+                      subject: {
+                        name: "Thai",
+                        instructors: [
+                          { firstName: "Supapon", lastName: "Khwansuwan" },
+                        ],
+                      },
                     },
                     {
-                      name: "English",
-                      instructors: [{ name: "John Peter Smith" }],
-                      periodStart: new Date(2022, 0, 10, 13, 30, 0),
+                      periodStart: { hours: 13, minutes: 30, seconds: 0 },
                       periodLength: 50,
-                      assignmentsDue: [],
+                      subject: {
+                        name: "English",
+                        instructors: [
+                          { firstName: "John Peter", lastName: "Smith" },
+                        ],
+                      },
                     },
                     {
-                      name: "Additional Mathematics",
-                      instructors: [{ name: "Krissada Asavaskulkiet" }],
-                      periodStart: new Date(2022, 0, 10, 14, 20, 0),
+                      periodStart: { hours: 14, minutes: 20, seconds: 0 },
                       periodLength: 50,
-                      assignmentsDue: [],
+                      subject: {
+                        name: "Additional Mathematics",
+                        instructors: [
+                          { firstName: "Krissada ", lastName: "Asavaskulkiet" },
+                        ],
+                      },
                     },
                     {
-                      name: "Health",
-                      instructors: [{ name: "Rusman Manor" }],
-                      periodStart: new Date(2022, 0, 10, 15, 10, 0),
+                      periodStart: { hours: 15, minutes: 10, seconds: 0 },
                       periodLength: 50,
-                      assignmentsDue: [],
+                      subject: {
+                        name: "Health",
+                        instructors: [
+                          { firstName: "Rusman", lastName: " Manor" },
+                        ],
+                      },
                     },
                   ],
                 },
@@ -80,18 +99,24 @@ const SchedulePage: NextPage = () => {
                   weekDate: new Date(2022, 0, 11),
                   content: [
                     {
-                      name: "Chemistry",
-                      instructors: [{ name: "Thanthapatra Bunchuay" }],
-                      periodStart: new Date(2022, 0, 11, 8, 30, 0),
+                      periodStart: { hours: 8, minutes: 30, seconds: 0 },
                       periodLength: 100,
-                      assignmentsDue: [],
+                      subject: {
+                        name: "Chemistry",
+                        instructors: [
+                          { firstName: "Thanthapatra", lastName: " Bunchuay" },
+                        ],
+                      },
                     },
                     {
-                      name: "Earth and Space",
-                      instructors: [{ name: "Nattharika Rodsatid" }],
-                      periodStart: new Date(2022, 0, 11, 10, 10, 0),
+                      periodStart: { hours: 10, minutes: 10, seconds: 0 },
                       periodLength: 100,
-                      assignmentsDue: [],
+                      subject: {
+                        name: "Earth and Space",
+                        instructors: [
+                          { firstName: "Nattharika", lastName: "Rodsatid" },
+                        ],
+                      },
                     },
                   ],
                 },
@@ -101,11 +126,15 @@ const SchedulePage: NextPage = () => {
         </div>
         <PeriodInfo
           subjectPeriod={{
-            name: "Chemistry",
-            instructors: [{ name: "Thanthapatra Bunchuay" }],
             periodStart: new Date(2022, 0, 10, 10, 10, 0),
             periodLength: 50,
             assignmentsDue: [],
+            subject: {
+              name: "Chemistry",
+              instructors: [
+                { firstName: "Thanthapatra", lastName: " Bunchuay" },
+              ],
+            },
           }}
         />
       </div>

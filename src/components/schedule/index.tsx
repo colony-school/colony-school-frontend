@@ -2,7 +2,7 @@
 import { format, getDay, getHours, getMinutes } from "date-fns";
 
 // Types
-import { Schedule as ScheduleType } from "@utils/types/schedule";
+import { Schedule as ScheduleType } from "@utils/types/subject/schedule";
 
 // Utilities
 import { weekToString } from "@utils/date";
@@ -13,9 +13,7 @@ import { weekToString } from "@utils/date";
  */
 const Schedule = ({ schedule }: { schedule: ScheduleType }) => {
   const scheduleStartTime =
-    (schedule.scheduleStartTime.hours * 60 +
-      schedule.scheduleStartTime.minutes) *
-    2.5;
+    (schedule.scheduleStart.hours * 60 + schedule.scheduleStart.minutes) * 2.5;
 
   return (
     <figure className="flex flex-col gap-2 p-7 w-fit">
@@ -32,15 +30,15 @@ const Schedule = ({ schedule }: { schedule: ScheduleType }) => {
             </li>
             <li>
               <ul className="relative">
-                {scheduleWeek.content.map((subjectPeriod) => {
+                {scheduleWeek.content.map((scheduleItem) => {
                   return (
                     <li
                       className="absolute px-1"
                       style={{
-                        width: subjectPeriod.periodLength * 2.5,
+                        width: scheduleItem.periodLength * 2.5,
                         left:
-                          (getHours(subjectPeriod.periodStart) * 60 +
-                            getMinutes(subjectPeriod.periodStart)) *
+                          (scheduleItem.periodStart.hours * 60 +
+                            scheduleItem.periodStart.minutes) *
                             2.5 -
                           scheduleStartTime,
                       }}
@@ -51,10 +49,10 @@ const Schedule = ({ schedule }: { schedule: ScheduleType }) => {
                           hover:shadow focus-visible:shadow"
                       >
                         <p className="text-lg font-bold max-lines-1">
-                          {subjectPeriod.name}
+                          {scheduleItem.subject.name}
                         </p>
                         <p className="text-base max-lines-1">
-                          {subjectPeriod.instructors[0]?.name}
+                          {scheduleItem.subject.instructors[0]?.firstName}
                         </p>
                       </button>
                     </li>
