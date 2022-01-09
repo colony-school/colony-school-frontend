@@ -26,51 +26,53 @@ const PeriodInfo = ({ subjectPeriod }: { subjectPeriod: SubjectPeriod }) => {
           />
         </button>
       </div>
-      <div className="grid grid-cols-2">
-        <div className="pt-2">
-          <h3 className="sr-only">Class Information</h3>
-          <ClassInfo
-            instructors={subjectPeriod.subject.instructors}
-            periodStart={subjectPeriod.periodStart}
-            periodLength={subjectPeriod.periodLength}
-            dueNumber={subjectPeriod.assignmentsDue.length}
-            noPadding={true}
-          />
-        </div>
-        <div className="card-tonal flex flex-col rounded-t-lg">
-          <Title
-            icon={
-              <MaterialIcon
-                icon="link"
-                className="text-light-primary dark:text-dark-primary"
-              />
-            }
-            title={<h4>Related Posts</h4>}
-          />
-          <div className="h-40 px-4 overflow-auto scroll-1">
-            <ul className="flex flex-col gap-2 pb-4">
-              <MinifiedPost
-                post={{
-                  author: "Tempoom L.",
-                  postDate: new Date(2022, 0, 1, 0, 8, 39),
-                  attachments: [],
-                }}
-              />
-              <MinifiedPost
-                post={{
-                  author: "Sirawish S.",
-                  postDate: new Date(2021, 11, 30, 14, 16, 3),
-                  attachments: [],
-                }}
-              />
-              <MinifiedPost
-                post={{
-                  author: "Smart W.",
-                  postDate: new Date(2021, 11, 25, 9, 19, 58),
-                  attachments: [],
-                }}
-              />
-            </ul>
+      <div className="h-48 overflow-auto sm:overflow-hidden">
+        <div className="flex flex-col gap-4 sm:grid sm:grid-cols-2">
+          <div className="pt-2">
+            <h3 className="sr-only">Class Information</h3>
+            <ClassInfo
+              instructors={subjectPeriod.subject.instructors}
+              periodStart={subjectPeriod.periodStart}
+              periodLength={subjectPeriod.periodLength}
+              dueNumber={subjectPeriod.assignmentsDue.length}
+              noPadding={true}
+            />
+          </div>
+          <div className="card-tonal flex flex-col rounded-t-lg">
+            <Title
+              icon={
+                <MaterialIcon
+                  icon="link"
+                  className="text-light-primary dark:text-dark-primary"
+                />
+              }
+              title={<h4>Related Posts</h4>}
+            />
+            <div className="h-40 px-4 overflow-auto scroll-1">
+              <ul className="flex flex-col gap-2 pb-4">
+                <MinifiedPost
+                  post={{
+                    author: "Tempoom L.",
+                    postDate: new Date(2022, 0, 1, 0, 8, 39),
+                    attachments: [],
+                  }}
+                />
+                <MinifiedPost
+                  post={{
+                    author: "Sirawish S.",
+                    postDate: new Date(2021, 11, 30, 14, 16, 3),
+                    attachments: [],
+                  }}
+                />
+                <MinifiedPost
+                  post={{
+                    author: "Smart W.",
+                    postDate: new Date(2021, 11, 25, 9, 19, 58),
+                    attachments: [],
+                  }}
+                />
+              </ul>
+            </div>
           </div>
         </div>
       </div>
