@@ -8,11 +8,7 @@ import { Assignment } from "@utypes/assignment";
 export type SubjectPeriod = {
   name: string;
   instructors: Array<Instructor>;
-  periodStart: {
-    hours: number;
-    minutes: number;
-    seconds: number;
-  };
+  periodStart: Date;
   periodLength: number;
   assignmentsDue: Array<Assignment>;
 };

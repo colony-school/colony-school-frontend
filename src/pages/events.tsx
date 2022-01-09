@@ -8,11 +8,11 @@ import { useState } from "react";
 import MaterialIcon from "@components/global/icon";
 import Title from "@components/global/title";
 import Headline from "@components/global/headline";
+import Search from "@components/input/search";
 import TopAppBar from "@components/layout/top-app-bar";
 
 // Types
 import { Announcement, ListedAnnouncement } from "@utils/types/announcement";
-import Search from "@components/input/search";
 
 /**
  * Events and announcement listed in the list
@@ -61,8 +61,9 @@ const EventItem = ({
           </div>
         </div>
         {event.image && (
-          <div className="relative h-full rounded-r-lg aspect-square bg-light-surface-variant dark:bg-dark-surface-variant">
-            <Image src={event.image} layout="fill" />
+          <div className="relative h-full rounded-r-lg aspect-square bg-light-surface-variant dark:bg-dark-surface-variant
+            overflow-hidden">
+            <Image src={event.image} layout="fill" objectFit="cover" />
           </div>
         )}
       </button>
@@ -99,7 +100,7 @@ const ActiveEventDisplay = ({
           <div className="flex flex-col overflow-auto">
             {event.image && (
               <div className="relative w-full h-48 bg-light-surface-variant dark:bg-dark-surface-variant">
-                <Image src={event.image} layout="fill" />
+                <Image src={event.image} layout="fill" objectFit="cover" />
               </div>
             )}
             {event.eventStart && event.eventEnd && (
@@ -210,7 +211,7 @@ const Events: NextPage = () => {
       title: "Banana Eating Contest",
       postDate: new Date(2021, 9, 14),
       type: "event",
-      image: "/images/brand/logo.svg",
+      image: "/images/dummybase/events/event-2.jpg",
     },
     {
       id: 3,
@@ -224,14 +225,14 @@ const Events: NextPage = () => {
   const [activeEvent, setActiveEvent] = useState<Announcement>({
     id: 4,
     title: "Banana Eating Contest",
-    desc: "Sed turpis quam, euismod sit amet ullamcorper ut, facilisis sed nulla. Proin nisi felis, lobortis eget lacinia et, hendrerit \
-    sit amet orci. Fusce quis felis in velit dictum suscipit a in libero. In leo felis, consectetur in dignissim a, congue viverra \
-    orci. Proin sed est magna. Donec at risus sollicitudin, cursus ipsum ut, convallis risus. In convallis, est eget congue \
-    imperdiet, lorem augue imperdiet tortor, nec pretium orci neque et lacus.",
+    desc: "A banana is an elongated, edible fruit – botanically a berry – produced by several kinds of large herbaceous flowering plants \
+      in the genus Musa. In some countries, bananas used for cooking may be called “plantains”, distinguishing them from dessert bananas. \
+      The fruit is variable in size, color, and firmness, but is usually elongated and curved, with soft flesh rich in starch covered \
+      with a rind, which may be green, yellow, red, purple, or brown when ripe.",
     type: "announcement",
     postDate: new Date(2021, 9, 12),
     source: "https://youtu.be/dQw4w9WgXcQ",
-    image: "/images/brand/logo.svg",
+    image: "/images/dummybase/events/event-2.jpg",
     eventStart: new Date(2021, 9, 14, 11, 50),
     eventEnd: new Date(2021, 9, 14, 12, 40),
     periodStart: 4,
@@ -254,7 +255,10 @@ const Events: NextPage = () => {
           sm:rounded-tl-lg"
       >
         <div className="flex flex-col pl-4 pt-4">
-          <Search placeholder="Search events" onChange={(newQuery: string) => setQuery(newQuery)} />
+          <Search
+            placeholder="Search events"
+            onChange={(newQuery: string) => setQuery(newQuery)}
+          />
           <ul className="flex flex-col gap-4 px-4 pt-2 pb-8 max-h-full overflow-auto">
             {events.map((event) => {
               return (

@@ -24,7 +24,7 @@ const Search = ({
   return (
     <div className="px-4 pt-4 pb-2">
       <div
-        className="flex flex-row justify-between items-center w-full h-12 bg-light-surface dark:bg-dark-surface overflow-hidden shadow
+        className="flex flex-row justify-between items-center w-full h-12 container-surface overflow-hidden shadow
         rounded-full"
       >
         <button
@@ -38,7 +38,7 @@ const Search = ({
           <MaterialIcon icon="search" />
         </button>
         <input
-          className="block w-full h-full bg-light-surface dark:bg-dark-surface outline-none
+          className="block w-full h-full container-surface outline-none
           placeholder:text-light-on-surface placeholder:dark:text-dark-on-surface
           hover:transition-none hover:bg-light-primary-0.08-tlc hover:dark:bg-dark-primary-0.08-tlc
           focus:placeholder:text-light-on-surface-variant  focus:placeholder:dark:text-dark-on-surface-variant"

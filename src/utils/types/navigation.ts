@@ -1,6 +1,6 @@
 /**
  * An item for navigation
- * 
+ *
  * For all navigations
  */
 export type NavItem = {
@@ -11,7 +11,7 @@ export type NavItem = {
 
 /**
  * An group of navigation items
- * 
+ *
  * For Navigation Drawers (`NavDrawer` from `nav-drawer.tsx`)
  */
 export type NavGroup = {

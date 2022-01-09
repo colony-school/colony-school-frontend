@@ -25,11 +25,7 @@ const Dashboard: NextPage = () => {
               { name: "Dr John Peter Smith" },
               { name: "Mattana Tatanyang" },
             ],
-            periodStart: {
-              hours: 14,
-              minutes: 20,
-              seconds: 0,
-            },
+            periodStart: new Date(2022, 0, 6, 14, 20, 0),
             periodLength: 100,
             assignmentsDue: [
               {
