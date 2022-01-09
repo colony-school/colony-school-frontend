@@ -77,6 +77,10 @@
   .card-elevated {
     @apply container-surface shadow;
   }
+
+  .card-tonal {
+    @apply container-surface-variant;
+  }
 }
 
 @layer utilities {
@@ -98,6 +102,11 @@
   .container-surface {
     @apply text-light-on-surface bg-light-surface
       dark:text-dark-on-surface dark:bg-dark-surface;
+  }
+
+  .container-surface-variant {
+    @apply text-light-on-surface-variant bg-light-surface-variant
+      dark:text-dark-on-surface-variant dark:bg-dark-surface-variant;
   }
 
   .container-error {

@@ -10,6 +10,12 @@ export type Post = {
   attachments: Array<Attachment>;
 };
 
+export type MinifiedPost = {
+  author: string;
+  postDate: Date;
+  attachments: Array<Attachment>;
+}
+
 export type Attachment =
   | AnnouncementAttachment
   | AssignmentAttachment
