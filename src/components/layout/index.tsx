@@ -7,7 +7,7 @@ import NavBar from "@components/layout/nav-bar";
 import TopAppBar from "@components/layout/top-app-bar";
 
 // Data
-import { navItems } from "./pages";
+import { navItems } from "@components/layout/pages";
 
 /**
  * The layout for Colony School

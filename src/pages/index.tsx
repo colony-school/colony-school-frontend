@@ -20,11 +20,6 @@ const Dashboard: NextPage = () => {
         </div>
         <CurrentClass
           subjectPeriod={{
-            name: "English 8",
-            instructors: [
-              { name: "Dr John Peter Smith" },
-              { name: "Mattana Tatanyang" },
-            ],
             periodStart: new Date(2022, 0, 6, 14, 20, 0),
             periodLength: 100,
             assignmentsDue: [
@@ -38,6 +33,14 @@ const Dashboard: NextPage = () => {
                 urgent: false,
               },
             ],
+            subject: {
+              
+            name: "English 8",
+            instructors: [
+              { firstName: "John Peter", lastName: "Smith" },
+              { firstName: "Mattana", lastName: "Tatanyang" },
+            ],
+            }
           }}
         />
       </div>

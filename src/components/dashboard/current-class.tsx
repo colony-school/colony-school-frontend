@@ -1,85 +1,10 @@
-// Modules
-import {
-  addMinutes,
-  format,
-  formatDuration,
-  intervalToDuration,
-  set,
-} from "date-fns";
-
 // Components
-import Headline from "@components/global/headline";
 import MaterialIcon from "@components/global/icon";
-import { useEffect, useState } from "react";
-import { SubjectPeriod } from "@utils/types/subject";
+import ClassInfo from "@components/subject-period/class-info";
 import PeriodTimeLeft from "@components/subject-period/period-time-left";
 
-/**
- * Ongoing class infobox
- * @param instructors An array of instructors for this class
- * @param periodStart The start time of this class
- * @param periodLength The length of the period
- * @param dueNumber The number of assignments due this period
- */
-const ClassInfo = ({
-  instructors,
-  periodStart,
-  periodLength,
-  dueNumber,
-}: {
-  instructors: Array<{ name: string }>;
-  periodStart: Date;
-  periodLength: number;
-  dueNumber: number;
-}): JSX.Element => {
-  return (
-    <div className="flex flex-col gap-3 px-4 pb-4">
-      <Headline
-        icon={
-          <MaterialIcon
-            icon="person"
-            className="text-light-primary dark:text-dark-primary"
-          />
-        }
-        title={<h3 className="text-base">Instructor</h3>}
-        subhead={
-          <ul className="text-xl">
-            {instructors.map((instructor) => {
-              return <li key={instructor.name}>{instructor.name}</li>;
-            })}
-          </ul>
-        }
-        noPadding={true}
-      />
-      <Headline
-        icon={
-          <MaterialIcon
-            icon="schedule"
-            className="text-light-primary dark:text-dark-primary"
-          />
-        }
-        title={<h3 className="text-base">Time</h3>}
-        subhead={
-          <p className="text-xl">
-            {format(periodStart, "HH:mm")}–
-            {format(addMinutes(periodStart, periodLength), "HH:mm")}
-          </p>
-        }
-        noPadding={true}
-      />
-      <Headline
-        icon={
-          <MaterialIcon
-            icon="assignment"
-            className="text-light-primary dark:text-dark-primary"
-          />
-        }
-        subhead={<p className="text-xl">{dueNumber} assignments due</p>}
-        noPadding={true}
-      />
-    </div>
-  );
-};
+// Types
+import { SubjectPeriod } from "@utils/types/subject/period";
 
 const ClassActions = ({
   ggc,
@@ -127,10 +52,10 @@ const CurrentClass = ({
       <div className="flex flex-col sm:grid sm:grid-cols-2 gap-3">
         <div className="px-4 pb-4">
           <h2 className="text-xl">Current Class</h2>
-          <h3 className="text-5xl font-bold">{subjectPeriod.name}</h3>
+          <h3 className="text-5xl font-bold">{subjectPeriod.subject.name}</h3>
         </div>
         <ClassInfo
-          instructors={subjectPeriod.instructors}
+          instructors={subjectPeriod.subject.instructors}
           periodStart={subjectPeriod.periodStart}
           periodLength={subjectPeriod.periodLength}
           dueNumber={dueNumber}

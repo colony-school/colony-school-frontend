@@ -1,3 +1,5 @@
 export type Instructor = {
-  name: string;
+  firstName: string;
+  middleName?: string;
+  lastName: string;
 };

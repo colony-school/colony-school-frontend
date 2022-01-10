@@ -3,7 +3,7 @@ import NavDrawer from "@components/layout/nav-drawer";
 import NavRail from "@components/layout/nav-rail";
 
 // Data
-import { navGroups, navItems } from "./pages";
+import { navGroups, navItems } from "@components/layout/pages";
 
 /**
  * A dynamic way of navigating depending on screen size

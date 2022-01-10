@@ -1,14 +1,13 @@
 // Types from other files
-import { Instructor } from "@utypes/people";
-import { Assignment } from "@utypes/assignment";
+import { Assignment } from "@utils/types/assignment";
+import { Subject } from "@utils/types/subject";
 
 /**
  * A class period in a time schedule, not to be confused with the subject itself
  */
 export type SubjectPeriod = {
-  name: string;
-  instructors: Array<Instructor>;
   periodStart: Date;
   periodLength: number;
   assignmentsDue: Array<Assignment>;
+  subject: Subject;
 };

@@ -1,7 +1,7 @@
 // Types from other files
 import { Announcement } from "@utils/types/announcement";
 import { Assignment } from "@utils/types/assignment";
-import { SubjectPeriod } from "@utils/types/subject";
+import { SubjectPeriod } from "@utils/types/subject/period";
 
 export type Post = {
   author: string;
@@ -9,6 +9,12 @@ export type Post = {
   content: string;
   attachments: Array<Attachment>;
 };
+
+export type MinifiedPost = {
+  author: string;
+  postDate: Date;
+  attachments: Array<Attachment>;
+}
 
 export type Attachment =
   | AnnouncementAttachment
