@@ -12,13 +12,13 @@ import MaterialIcon from "@components/global/icon";
  * @param periodLength The length of the period
  * @param dueNumber The number of assignments due this period
  */
- const ClassInfo = ({
+const ClassInfo = ({
   instructors,
   periodStart,
   periodLength,
   dueNumber,
   noPadding,
-  className
+  className,
 }: {
   instructors: Array<{ firstName: string; lastName: string }>;
   periodStart: Date;
@@ -28,7 +28,11 @@ import MaterialIcon from "@components/global/icon";
   className?: string;
 }): JSX.Element => {
   return (
-    <div className={`flex flex-col gap-3 ${noPadding || "px-4 pb-4"} ${className || ""}`}>
+    <div
+      className={`flex flex-col gap-3 ${noPadding || "px-4 pb-4"} ${
+        className || ""
+      }`}
+    >
       <Headline
         icon={
           <MaterialIcon
@@ -39,13 +43,19 @@ import MaterialIcon from "@components/global/icon";
         title={<h3 className="text-base">Instructor</h3>}
         subhead={
           <ul className="text-xl">
-            {instructors.map((instructor) => {
-              return (
-                <li key={instructor.firstName}>
-                  {instructor.firstName} {instructor.lastName}
-                </li>
-              );
-            })}
+            {instructors.length == 0 ? (
+              <li className="text-light-error dark:text-dark-error">
+                No instructors
+              </li>
+            ) : (
+              instructors.map((instructor) => {
+                return (
+                  <li key={instructor.firstName}>
+                    {instructor.firstName} {instructor.lastName}
+                  </li>
+                );
+              })
+            )}
           </ul>
         }
         noPadding={true}
@@ -73,7 +83,11 @@ import MaterialIcon from "@components/global/icon";
             className="text-light-primary dark:text-dark-primary"
           />
         }
-        subhead={<p className="text-xl">{dueNumber} {dueNumber == 1 ? "assignment" : "assignments"} due</p>}
+        subhead={
+          <p className="text-xl">
+            {dueNumber} {dueNumber == 1 ? "assignment" : "assignments"} due
+          </p>
+        }
         noPadding={true}
       />
     </div>
