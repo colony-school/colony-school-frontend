@@ -114,7 +114,11 @@ const SchedulePage: NextPage = () => {
                         },
                         altNames: [],
                         instructors: [
-                          { firstName: "John Peter", lastName: "Smith" },
+                          {
+                            firstName: "John",
+                            middleName: "Peter",
+                            lastName: "Smith",
+                          },
                         ],
                       },
                     },
