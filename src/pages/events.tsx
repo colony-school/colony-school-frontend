@@ -51,8 +51,8 @@ const EventItem = ({
             }`}
           />
           <div>
-            <p className="font-bold">{event.title}</p>
-            <p>
+            <p className="font-bold max-lines-1">{event.title}</p>
+            <p className="max-lines-1">
               {event.type == "event" && "Event"}
               {event.type == "announcement" && "Announcement"}
               {" • "}
