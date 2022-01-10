@@ -18,7 +18,7 @@ const PeriodInfo = ({ subjectPeriod }: { subjectPeriod: SubjectPeriod }) => {
       aria-live="assertive"
     >
       <div className="flex flex-row justify-between items-start">
-        <h2 className="text-4xl font-bold">{subjectPeriod.subject.name}</h2>
+        <h2 className="text-4xl font-bold">{subjectPeriod.subject.enName.name}</h2>
         <button className="btn-text flex p-2 rounded-full">
           <MaterialIcon
             icon="close"

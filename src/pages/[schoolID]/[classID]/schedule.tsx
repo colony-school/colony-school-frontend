@@ -29,7 +29,16 @@ const SchedulePage: NextPage = () => {
                       periodStart: { hours: 8, minutes: 30, seconds: 0 },
                       periodLength: 50,
                       subject: {
-                        name: "Meeting",
+                        codes: {},
+                        localName: {
+                          name: "ประชุมระดับ",
+                          shortName: "ประชุม",
+                        },
+                        enName: {
+                          name: "Grade Meeting",
+                          shortName: "Meeting",
+                        },
+                        altNames: [],
                         instructors: [],
                       },
                     },
@@ -37,7 +46,16 @@ const SchedulePage: NextPage = () => {
                       periodStart: { hours: 9, minutes: 20, seconds: 0 },
                       periodLength: 50,
                       subject: {
-                        name: "Chemistry",
+                        codes: {},
+                        localName: {
+                          name: "เคมี",
+                          shortName: "เคมี",
+                        },
+                        enName: {
+                          name: "Chemistry",
+                          shortName: "Chem",
+                        },
+                        altNames: [],
                         instructors: [
                           { firstName: "Thanthapatra", lastName: "Bunchuay" },
                         ],
@@ -47,7 +65,16 @@ const SchedulePage: NextPage = () => {
                       periodStart: { hours: 10, minutes: 10, seconds: 0 },
                       periodLength: 100,
                       subject: {
-                        name: "Fundamental Mathematics",
+                        codes: {},
+                        localName: {
+                          name: "คณิตศาสตร์เพิ่มเติม",
+                          shortName: "คณิตเพิ่ม",
+                        },
+                        enName: {
+                          name: "Fundamental Mathematics",
+                          shortName: "Fun Maths",
+                        },
+                        altNames: [],
                         instructors: [
                           { firstName: "Kritchapon", lastName: "Boonpoonmee" },
                         ],
@@ -57,7 +84,16 @@ const SchedulePage: NextPage = () => {
                       periodStart: { hours: 12, minutes: 40, seconds: 0 },
                       periodLength: 50,
                       subject: {
-                        name: "Thai",
+                        codes: {},
+                        localName: {
+                          name: "ภาษาไทย",
+                          shortName: "ไทย",
+                        },
+                        enName: {
+                          name: "Thai",
+                          shortName: "Thai",
+                        },
+                        altNames: [],
                         instructors: [
                           { firstName: "Supapon", lastName: "Khwansuwan" },
                         ],
@@ -67,7 +103,16 @@ const SchedulePage: NextPage = () => {
                       periodStart: { hours: 13, minutes: 30, seconds: 0 },
                       periodLength: 50,
                       subject: {
-                        name: "English",
+                        codes: {},
+                        localName: {
+                          name: "ภาษาอังกฤษ",
+                          shortName: "อังกฤษ",
+                        },
+                        enName: {
+                          name: "English",
+                          shortName: "English",
+                        },
+                        altNames: [],
                         instructors: [
                           { firstName: "John Peter", lastName: "Smith" },
                         ],
@@ -77,7 +122,16 @@ const SchedulePage: NextPage = () => {
                       periodStart: { hours: 14, minutes: 20, seconds: 0 },
                       periodLength: 50,
                       subject: {
-                        name: "Additional Mathematics",
+                        codes: {},
+                        localName: {
+                          name: "คณิตศาสตร์เพิ่มเติม",
+                          shortName: "คณิตเพิ่ม",
+                        },
+                        enName: {
+                          name: "Additional Mathematics",
+                          shortName: "Addi Maths",
+                        },
+                        altNames: [],
                         instructors: [
                           { firstName: "Krissada ", lastName: "Asavaskulkiet" },
                         ],
@@ -87,7 +141,16 @@ const SchedulePage: NextPage = () => {
                       periodStart: { hours: 15, minutes: 10, seconds: 0 },
                       periodLength: 50,
                       subject: {
-                        name: "Health",
+                        codes: {},
+                        localName: {
+                          name: "ไทย",
+                          shortName: "ภาษาไทย",
+                        },
+                        enName: {
+                          name: "Health",
+                          shortName: "Health",
+                        },
+                        altNames: [],
                         instructors: [
                           { firstName: "Rusman", lastName: " Manor" },
                         ],
@@ -102,7 +165,16 @@ const SchedulePage: NextPage = () => {
                       periodStart: { hours: 8, minutes: 30, seconds: 0 },
                       periodLength: 100,
                       subject: {
-                        name: "Chemistry",
+                        codes: {},
+                        localName: {
+                          name: "เคมี",
+                          shortName: "เคมี",
+                        },
+                        enName: {
+                          name: "Chemistry",
+                          shortName: "Chem",
+                        },
+                        altNames: [],
                         instructors: [
                           { firstName: "Thanthapatra", lastName: " Bunchuay" },
                         ],
@@ -112,7 +184,16 @@ const SchedulePage: NextPage = () => {
                       periodStart: { hours: 10, minutes: 10, seconds: 0 },
                       periodLength: 100,
                       subject: {
-                        name: "Earth and Space",
+                        codes: {},
+                        localName: {
+                          name: "โลกและอวกาศ",
+                          shortName: "ล.และอ.",
+                        },
+                        enName: {
+                          name: "Earth and Space",
+                          shortName: "E&S",
+                        },
+                        altNames: [],
                         instructors: [
                           { firstName: "Nattharika", lastName: "Rodsatid" },
                         ],
@@ -122,7 +203,16 @@ const SchedulePage: NextPage = () => {
                       periodStart: { hours: 12, minutes: 40, seconds: 0 },
                       periodLength: 50,
                       subject: {
-                        name: "Music",
+                        codes: {},
+                        localName: {
+                          name: "ดนตรี",
+                          shortName: "ดนตรี",
+                        },
+                        enName: {
+                          name: "Music",
+                          shortName: "Music",
+                        },
+                        altNames: [],
                         instructors: [
                           { firstName: "Noppadon", lastName: "Keudpoka" },
                         ],
@@ -132,7 +222,16 @@ const SchedulePage: NextPage = () => {
                       periodStart: { hours: 13, minutes: 30, seconds: 0 },
                       periodLength: 50,
                       subject: {
-                        name: "Social",
+                        codes: {},
+                        localName: {
+                          name: "สังคมศึกษาและพลโลก",
+                          shortName: "สังคม",
+                        },
+                        enName: {
+                          name: "Social Studies",
+                          shortName: "Social",
+                        },
+                        altNames: [],
                         instructors: [
                           { firstName: "Noppadon", lastName: "Keudpoka" },
                         ],
@@ -142,7 +241,16 @@ const SchedulePage: NextPage = () => {
                       periodStart: { hours: 14, minutes: 20, seconds: 0 },
                       periodLength: 100,
                       subject: {
-                        name: "Physics",
+                        codes: {},
+                        localName: {
+                          name: "ฟิสิกส์",
+                          shortName: "ฟิสิกส์",
+                        },
+                        enName: {
+                          name: "Physics",
+                          shortName: "Physics",
+                        },
+                        altNames: [],
                         instructors: [
                           { firstName: "Niruth", lastName: "Prombutr" },
                         ],
@@ -152,16 +260,16 @@ const SchedulePage: NextPage = () => {
                 },
                 {
                   weekDate: new Date(2022, 0, 12),
-                  content: []
+                  content: [],
                 },
                 {
                   weekDate: new Date(2022, 0, 13),
-                  content: []
+                  content: [],
                 },
                 {
                   weekDate: new Date(2022, 0, 14),
-                  content: []
-                }
+                  content: [],
+                },
               ],
             }}
           />
@@ -172,7 +280,16 @@ const SchedulePage: NextPage = () => {
             periodLength: 100,
             assignmentsDue: [],
             subject: {
-              name: "Chemistry",
+              codes: {},
+              localName: {
+                name: "เคมี",
+                shortName: "เคมี",
+              },
+              enName: {
+                name: "Chemistry",
+                shortName: "Chem",
+              },
+              altNames: [],
               instructors: [
                 { firstName: "Thanthapatra", lastName: " Bunchuay" },
               ],

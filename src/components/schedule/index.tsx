@@ -49,7 +49,9 @@ const Schedule = ({ schedule }: { schedule: ScheduleType }) => {
                           hover:shadow focus-visible:shadow"
                       >
                         <p className="text-lg font-bold max-lines-1">
-                          {scheduleItem.subject.name}
+                          {scheduleItem.periodLength > 75
+                            ? scheduleItem.subject.enName.name
+                            : scheduleItem.subject.enName.shortName}
                         </p>
                         <p className="text-base max-lines-1">
                           {scheduleItem.subject.instructors[0]?.firstName}
