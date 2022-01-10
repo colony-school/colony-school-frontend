@@ -26,7 +26,7 @@ const PeriodInfo = ({ subjectPeriod }: { subjectPeriod: SubjectPeriod }) => {
           />
         </button>
       </div>
-      <div className="h-48 overflow-auto sm:overflow-hidden">
+      <div className="h-48 overflow-auto sm:h-fit sm:overflow-hidden">
         <div className="flex flex-col gap-4 sm:grid sm:grid-cols-2">
           <div className="pt-2">
             <h3 className="sr-only">Class Information</h3>
