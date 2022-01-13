@@ -14,7 +14,10 @@ const NavRail = ({
   const path = useRouter().asPath;
 
   return (
-    <nav className="flex flex-col items-center gap-1 w-fit h-screen p-1 bg-light-surface1 dark:bg-dark-surface1">
+    <nav
+      className="flex flex-col items-center gap-1 w-fit h-screen p-1 bg-light-surface1 dark:bg-dark-surface1
+      overflow-auto scroll-invisible"
+    >
       <Link href="/">
         <a className="flex flex-col gap-1 items-center m-4">
           <div className="relative w-10 aspect-square">
@@ -41,9 +44,15 @@ const NavRail = ({
               >
                 {item.icon}
               </div>
-              <div className={`${path != item.url && "h-0 overflow-hidden group-hover:h-fit"}`}>
-                <p className={`font-bold text-sm text-light-on-surface-variant dark:text-dark-on-surface-variant
-                  ${path != item.url && "hidden group-hover:block"}`}>
+              <div
+                className={`${
+                  path != item.url && "h-0 overflow-hidden group-hover:h-fit"
+                }`}
+              >
+                <p
+                  className={`font-bold text-sm text-light-on-surface-variant dark:text-dark-on-surface-variant
+                  ${path != item.url && "hidden group-hover:block"}`}
+                >
                   {item.name}
                 </p>
               </div>

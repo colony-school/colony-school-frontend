@@ -8,11 +8,7 @@ import { NavItem } from "@utils/types/navigation";
 /**
  * A persistent and convenient way to switch between primary destinations
  */
-const NavBar = ({
-  items,
-}: {
-  items: Array<NavItem>;
-}): JSX.Element => {
+const NavBar = ({ items }: { items: Array<NavItem> }): JSX.Element => {
   const path = useRouter().asPath;
 
   return (
@@ -21,8 +17,10 @@ const NavBar = ({
         <Link href={item.url} key={item.name}>
           <a className="flex flex-col items-center px-2 py-1 w-full">
             <div
-              className={`flex flex-row justify-center py-1 rounded-full
-              ${path === item.url && "px-4 bg-light-secondary-container dark:bg-dark-secondary-container"} `}
+              className={`flex flex-row justify-center py-1 rounded-full ${
+                path === item.url &&
+                "px-4 bg-light-secondary-container dark:bg-dark-secondary-container"
+              } `}
             >
               {item.icon}
             </div>
