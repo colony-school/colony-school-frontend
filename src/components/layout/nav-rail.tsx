@@ -35,10 +35,11 @@ const NavRail = ({
               <div
                 className={`flex flex-row items-center py-2 px-6 text-light-on-surface-variant dark:text-dark-on-surface-variant
                   rounded-full transition-colors group-hover:text-light-tertiary group-hover:dark:text-dark-tertiary
-                group-hover:bg-light-tertiary-container group-hover:dark:bg-dark-tertiary-container group-hover:transition-none
+                  group-hover:bg-light-tertiary-container group-hover:dark:bg-dark-tertiary-container group-hover:transition-none
                 ${
                   path == item.url
-                    ? "text-light-tertiary bg-light-secondary-container dark:text-dark-tertiary dark:bg-dark-secondary-container"
+                    ? "text-light-tertiary bg-light-secondary-container dark:text-dark-tertiary dark:bg-dark-secondary-container \
+                       group-focus:bg-light-secondary-container"
                     : "bg-transparent"
                 }`}
               >
