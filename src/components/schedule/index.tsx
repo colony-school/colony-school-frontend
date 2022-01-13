@@ -11,7 +11,7 @@ import { weekToString } from "@utils/date";
  * The schedule
  * @param schedule A list of lists of subject periods
  */
-const Schedule = ({ schedule }: { schedule: ScheduleType }) => {
+const Schedule = ({ schedule, openPeriodInfo }: { schedule: ScheduleType, openPeriodInfo: Function }) => {
   const scheduleStartTime =
     (schedule.scheduleStart.hours * 60 + schedule.scheduleStart.minutes) * 2.5;
 
@@ -47,6 +47,7 @@ const Schedule = ({ schedule }: { schedule: ScheduleType }) => {
                         className="card flex flex-col p-3 text-left text-light-on-surface bg-light-surface1
                         dark:text-dark-on-surface dark:bg-dark-surface1 transition-shadow overflow-hidden
                           hover:shadow focus-visible:shadow"
+                        onClick={() => openPeriodInfo(scheduleItem.subject.codes.thCode)}
                       >
                         <p className="text-lg font-bold max-lines-1">
                           {scheduleItem.periodLength > 75

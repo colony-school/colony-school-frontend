@@ -12,6 +12,7 @@ import { SubjectPeriod } from "@utils/types/subject/period";
 
 const SchedulePage: NextPage = () => {
   const [activeID, setActiveID] = useState<number>();
+  const [bottomSheetState, setBottomSheetState] = useState<number>(0);
   const [activeSubjectPeriod, setActiveSubjectPeriod] =
     useState<SubjectPeriod | null>({
       periodStart: new Date(2022, 0, 11, 8, 30, 0),
@@ -31,6 +32,11 @@ const SchedulePage: NextPage = () => {
         instructors: [{ firstName: "Thanthapatra", lastName: "Bunchuay" }],
       },
     });
+  
+  function openPeriodInfo(subjectTHCode: string) {
+    setBottomSheetState(1);
+    // setActiveSubjectPeriod(subjectPeriod);  // fetch
+  }
 
   return (
     <div className="flex flex-col sm:h-screen overflow-auto">
@@ -296,10 +302,13 @@ const SchedulePage: NextPage = () => {
               },
             ],
           }}
+          openPeriodInfo={openPeriodInfo}
         />
-        {activeSubjectPeriod && (
-          <PeriodInfo subjectPeriod={activeSubjectPeriod} />
-        )}
+        <PeriodInfo
+          subjectPeriod={activeSubjectPeriod}
+          bottomSheetState={bottomSheetState}
+          setBottomSheetState={setBottomSheetState}
+        />
       </div>
     </div>
   );
