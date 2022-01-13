@@ -34,17 +34,16 @@ const Dashboard: NextPage = () => {
               },
             ],
             subject: {
-              
-            name: "English 8",
-            instructors: [
-              { firstName: "John Peter", lastName: "Smith" },
-              { firstName: "Mattana", lastName: "Tatanyang" },
-            ],
-            }
+              name: "English 8",
+              instructors: [
+                { firstName: "John Peter", lastName: "Smith" },
+                { firstName: "Mattana", lastName: "Tatanyang" },
+              ],
+            },
           }}
         />
       </div>
-      <main className="grid grid-cols-[repeat(auto-fill,_minmax(16rem,_1fr))] lg:grid-cols-3 gap-7 p-7 h-full overflow-auto">
+      <main className="grid grid-cols-[repeat(auto-fill,_minmax(16rem,_1fr))] md:grid-cols-3 gap-7 p-7 h-full overflow-auto">
         <Featured
           featuredItems={[
             {
