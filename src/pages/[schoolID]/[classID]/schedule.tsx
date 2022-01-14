@@ -11,7 +11,7 @@ import PeriodInfo from "@components/schedule/period-info";
 import { SubjectPeriod } from "@utils/types/subject/period";
 
 const SchedulePage: NextPage = () => {
-  const [activeID, setActiveID] = useState<number>();
+  const [activeID, setActiveID] = useState<number | null>(null);
   const [bottomSheetState, setBottomSheetState] = useState<number>(0);
   const [activeSubjectPeriod, setActiveSubjectPeriod] =
     useState<SubjectPeriod | null>({
@@ -33,9 +33,14 @@ const SchedulePage: NextPage = () => {
       },
     });
   
-  function openPeriodInfo(subjectID: number) {
+  function openPeriodInfo(scheduleItemID: number) {
     setBottomSheetState(1);
-    // setActiveSubjectPeriod(subjectPeriod);  // fetch
+    setActiveID(scheduleItemID);
+  }
+
+  function closePeriodInfo() {
+    setBottomSheetState(0);
+    setActiveID(null);
   }
 
   return (
@@ -52,6 +57,7 @@ const SchedulePage: NextPage = () => {
                 weekDate: new Date(2022, 0, 10),
                 content: [
                   {
+                    id: 1,
                     periodStart: { hours: 8, minutes: 30, seconds: 0 },
                     periodLength: 50,
                     subject: {
@@ -69,6 +75,7 @@ const SchedulePage: NextPage = () => {
                     },
                   },
                   {
+                    id: 2,
                     periodStart: { hours: 9, minutes: 20, seconds: 0 },
                     periodLength: 50,
                     subject: {
@@ -88,6 +95,7 @@ const SchedulePage: NextPage = () => {
                     },
                   },
                   {
+                    id: 3,
                     periodStart: { hours: 10, minutes: 10, seconds: 0 },
                     periodLength: 100,
                     subject: {
@@ -107,6 +115,7 @@ const SchedulePage: NextPage = () => {
                     },
                   },
                   {
+                    id: 4,
                     periodStart: { hours: 12, minutes: 40, seconds: 0 },
                     periodLength: 50,
                     subject: {
@@ -126,6 +135,7 @@ const SchedulePage: NextPage = () => {
                     },
                   },
                   {
+                    id: 5,
                     periodStart: { hours: 13, minutes: 30, seconds: 0 },
                     periodLength: 50,
                     subject: {
@@ -149,6 +159,7 @@ const SchedulePage: NextPage = () => {
                     },
                   },
                   {
+                    id: 6,
                     periodStart: { hours: 14, minutes: 20, seconds: 0 },
                     periodLength: 50,
                     subject: {
@@ -168,6 +179,7 @@ const SchedulePage: NextPage = () => {
                     },
                   },
                   {
+                    id: 7,
                     periodStart: { hours: 15, minutes: 10, seconds: 0 },
                     periodLength: 50,
                     subject: {
@@ -192,6 +204,7 @@ const SchedulePage: NextPage = () => {
                 weekDate: new Date(2022, 0, 11),
                 content: [
                   {
+                    id: 8,
                     periodStart: { hours: 8, minutes: 30, seconds: 0 },
                     periodLength: 100,
                     subject: {
@@ -211,6 +224,7 @@ const SchedulePage: NextPage = () => {
                     },
                   },
                   {
+                    id: 9,
                     periodStart: { hours: 10, minutes: 10, seconds: 0 },
                     periodLength: 100,
                     subject: {
@@ -230,6 +244,7 @@ const SchedulePage: NextPage = () => {
                     },
                   },
                   {
+                    id: 10,
                     periodStart: { hours: 12, minutes: 40, seconds: 0 },
                     periodLength: 50,
                     subject: {
@@ -249,6 +264,7 @@ const SchedulePage: NextPage = () => {
                     },
                   },
                   {
+                    id: 11,
                     periodStart: { hours: 13, minutes: 30, seconds: 0 },
                     periodLength: 50,
                     subject: {
@@ -268,6 +284,7 @@ const SchedulePage: NextPage = () => {
                     },
                   },
                   {
+                    id: 12,
                     periodStart: { hours: 14, minutes: 20, seconds: 0 },
                     periodLength: 100,
                     subject: {
@@ -302,12 +319,14 @@ const SchedulePage: NextPage = () => {
               },
             ],
           }}
-          openPeriodInfo={openPeriodInfo}
+          activeID={activeID}
+          onClick={openPeriodInfo}
         />
         <PeriodInfo
           subjectPeriod={activeSubjectPeriod}
           bottomSheetState={bottomSheetState}
           setBottomSheetState={setBottomSheetState}
+          closePeriodInfo={closePeriodInfo}
         />
       </div>
     </div>

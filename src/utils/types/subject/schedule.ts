@@ -13,6 +13,7 @@ export type ScheduleWeek = {
 };
 
 export type ScheduleItem = {
+  id: number;
   periodStart: Time;
   periodLength: number;
   subject: Subject;
