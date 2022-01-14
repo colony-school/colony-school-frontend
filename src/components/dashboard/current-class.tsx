@@ -53,7 +53,7 @@ const CurrentClass = ({
       <div className="flex flex-col sm:grid sm:grid-cols-2 gap-3">
         <div className="px-4 pb-4">
           <h2 className="text-xl">Current Class</h2>
-          <h3 className="text-5xl font-bold">{subjectPeriod.subject.name}</h3>
+          <h3 className="text-5xl font-bold">{subjectPeriod.subject.localName.name}</h3>
         </div>
         <ClassInfo
           instructors={subjectPeriod.subject.instructors}
