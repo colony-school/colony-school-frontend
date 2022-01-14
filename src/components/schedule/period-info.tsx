@@ -21,10 +21,12 @@ const PeriodInfo = ({
   subjectPeriod,
   bottomSheetState,
   setBottomSheetState,
+  closePeriodInfo
 }: {
   subjectPeriod: SubjectPeriod | null;
   bottomSheetState: number;
   setBottomSheetState: Function;
+  closePeriodInfo: Function;
 }) => {
   return (
     <div className="flex flex-row justify-center w-full">
@@ -59,7 +61,7 @@ const PeriodInfo = ({
               </h2>
               <button
                 className="btn-text flex p-2 rounded-full"
-                onClick={() => setBottomSheetState(0)}
+                onClick={() => closePeriodInfo()}
               >
                 <MaterialIcon
                   icon="close"
