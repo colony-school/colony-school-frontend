@@ -29,8 +29,16 @@ const SlidesAttachment = ({
           <ul className="flex flex-row gap-2 w-fit h-24">
             {slides.map((slide, index) => {
               return (
-                <li className="relative h-full aspect-square bg-light-surface dark:bg-dark-surface rounded-lg overflow-hidden" key={index}>
-                  <Image src={slide} layout="fill" objectFit="cover" />
+                <li
+                  className="relative h-full aspect-square bg-light-surface dark:bg-dark-surface rounded-lg overflow-hidden"
+                  key={index}
+                >
+                  <Image
+                    src={slide}
+                    layout="fill"
+                    objectFit="cover"
+                    alt={`Slide ${index + 1}`}
+                  />
                 </li>
               );
             })}

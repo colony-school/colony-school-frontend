@@ -45,7 +45,7 @@ const PeriodTimeLeft = ({
     return () => {
       clearInterval(clock);
     };
-  }, []);
+  }, [periodEnd]);
 
   // Renders progress bar
   return (

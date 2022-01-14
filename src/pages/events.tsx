@@ -30,15 +30,18 @@ const EventItem = ({
   return (
     <li className="card bg-light-surface1 dark:bg-dark-surface1">
       <button
-        className={`card flex flex-row justify-between items-center gap-4 h-20 text-left transition-shadow ${
-          active
-            ? "text-light-on-primary-container bg-light-primary-container \
-               dark:text-dark-on-primary-container dark:bg-dark-primary-container shadow \
-               hover:shadow-md"
-            : "text-light-on-surface bg-light-surface1 dark:text-dark-on-surface dark:bg-dark-surface1 \
-               hover:bg-light-primary-0.08-tlc focus:bg-light-primary-0.12-tlc \
-               hover:dark:bg-dark-primary-0.08-tlc focus:dark:bg-dark-primary-0.12-tlc"
-        }`}
+        className={`card flex flex-row justify-between items-center gap-4 h-20 text-left transition-shadow
+          focus:ring-0 ${
+            active
+              ? "text-light-on-primary-container bg-light-primary-container \
+                dark:text-dark-on-primary-container dark:bg-dark-primary-container shadow \
+                hover:shadow-md focus-visible:shadow-md"
+              : "text-light-on-surface bg-light-surface1 dark:text-dark-on-surface dark:bg-dark-surface1 \
+                hover:bg-light-primary-0.08-tlc hover:dark:bg-dark-primary-0.08-tlc \
+                focus:bg-light-primary-0.12-tlc focus:dark:bg-dark-primary-0.12-tlc \
+                focus-visible:bg-light-surface1 focus-visible:dark:bg-dark-surface1 \
+                focus-visible:shadow"
+          }`}
         onClick={() => setActiveID(event.id)}
       >
         <div className="flex flex-row items-center px-4 gap-4">
@@ -61,9 +64,11 @@ const EventItem = ({
           </div>
         </div>
         {event.image && (
-          <div className="relative h-full rounded-r-lg aspect-square bg-light-surface-variant dark:bg-dark-surface-variant
-            overflow-hidden">
-            <Image src={event.image} layout="fill" objectFit="cover" />
+          <div
+            className="relative h-full rounded-r-lg aspect-square bg-light-surface-variant dark:bg-dark-surface-variant
+            overflow-hidden"
+          >
+            <Image src={event.image} layout="fill" objectFit="cover" alt="" />
           </div>
         )}
       </button>
@@ -100,7 +105,12 @@ const ActiveEventDisplay = ({
           <div className="flex flex-col overflow-auto">
             {event.image && (
               <div className="relative w-full h-48 bg-light-surface-variant dark:bg-dark-surface-variant">
-                <Image src={event.image} layout="fill" objectFit="cover" />
+                <Image
+                  src={event.image}
+                  layout="fill"
+                  objectFit="cover"
+                  alt={event.title}
+                />
               </div>
             )}
             {event.eventStart && event.eventEnd && (
