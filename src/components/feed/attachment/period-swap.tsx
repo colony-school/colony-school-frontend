@@ -25,7 +25,7 @@ const PeriodSwapAttachment = ({
         }
         title={<h4 className="text-lg">Periods Swapped</h4>}
         subhead={
-          periods.length == 2 ? `${periods[0].subject.localName.name} and ${periods[1].subject.localName.name}` : ""
+          periods.length == 2 ? `${periods[0].subject.enName.name} and ${periods[1].subject.enName.name}` : ""
         }
       />
     </li>

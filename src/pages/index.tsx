@@ -34,13 +34,15 @@ const Dashboard: NextPage = () => {
               },
             ],
             subject: {
-              
-            name: "English 8",
-            instructors: [
-              { firstName: "John Peter", lastName: "Smith" },
-              { firstName: "Mattana", lastName: "Tatanyang" },
-            ],
-            }
+              codes: {},
+              localName: { name: "ภาษาอังกฤษ", shortName: "ภาษาอังกฤษ" },
+              enName: { name: "English", shortName: "English" },
+              altNames: [],
+              instructors: [
+                { firstName: "John", middleName: "Peter", lastName: "Smith" },
+                { firstName: "Mattana", lastName: "Tatanyang" },
+              ],
+            },
           }}
         />
       </div>

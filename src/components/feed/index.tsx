@@ -6,6 +6,7 @@ import Post from "@components/feed/post";
 
 // Types
 import { Post as PostType } from "@utils/types/post";
+import { Blob } from "buffer";
 
 /**
  * A list of posts curiously curated by *not* an algorithm because why would we have an algorithm for this
@@ -37,8 +38,21 @@ const Feed = () => {
         {
           type: "subject-period",
           subjectPeriod: {
-            name: "Chinese",
-            instructors: [{ name: "Thanyapat Charoenporn" }],
+            subject: {
+              codes: {},
+              localName: {
+                name: "ภาษาจีน",
+                shortName: "ภาษาจีน",
+              },
+              enName: {
+                name: "Chinese",
+                shortName: "Chinese",
+              },
+              altNames: [],
+              instructors: [
+                { firstName: "Thanyapat", lastName: "Charoenporn" },
+              ],
+            },
             periodStart: new Date(2021, 8, 14, 11, 50, 0),
             periodLength: 50,
             assignmentsDue: [],
@@ -56,15 +70,41 @@ const Feed = () => {
           type: "period-swap",
           periods: [
             {
-              name: "Chemistry",
-              instructors: [{ name: "Thanthapatra Bunchuoy" }],
+              subject: {
+                codes: {},
+                localName: {
+                  name: "เคมี",
+                  shortName: "เคมี",
+                },
+                enName: {
+                  name: "Chemistry",
+                  shortName: "Chem",
+                },
+                altNames: [],
+                instructors: [
+                  { firstName: "Thanthapatra", lastName: "Bunchuay" },
+                ],
+              },
               periodStart: new Date(2021, 8, 7, 8, 30, 0),
               periodLength: 100,
               assignmentsDue: [],
             },
             {
-              name: "Earth and Space",
-              instructors: [{ name: "Nattharika Rodsatid" }],
+              subject: {
+                codes: {},
+                localName: {
+                  name: "โลกและอวกาศ",
+                  shortName: "ล.และอ.",
+                },
+                enName: {
+                  name: "Earth and Space",
+                  shortName: "E&S",
+                },
+                altNames: [],
+                instructors: [
+                  { firstName: "Nattharika", lastName: "Rodsatid" },
+                ],
+              },
               periodStart: new Date(2021, 8, 8, 9, 20, 0),
               periodLength: 50,
               assignmentsDue: [],
@@ -82,12 +122,9 @@ const Feed = () => {
         {
           type: "file",
           file: {
-            // this is not a file, just an object stand-in that looks like a file
-            lastModified: 0,
-            name: "tideman_2.cpp",
-            webkitRelativePath: "tideman_2.cpp",
-            size: 120483,
-            type: "text/cpp",
+            name: "tideman.c",
+            size: 6360,
+            url: "https://raw.githubusercontent.com/me50/SiravitPhokeed/b94f2f1ca5025f785be0f845ebdaffc29c8f4076/tideman.c?token=GHSAT0AAAAAABNTUSV32OBN7MNCZVYJ3LK6YPKRPHQ"
           },
           usePolicies: [
             {
@@ -167,8 +204,21 @@ const Feed = () => {
         {
           type: "subject-period",
           subjectPeriod: {
-            name: "Physics 1",
-            instructors: [{ name: "Niruth Prombutr" }],
+            subject: {
+              codes: {},
+              localName: {
+                name: "ฟิสิกส์",
+                shortName: "ฟิสิกส์",
+              },
+              enName: {
+                name: "Physics",
+                shortName: "Physics",
+              },
+              altNames: [],
+              instructors: [
+                { firstName: "Niruth", lastName: "Prombutr" },
+              ],
+            },
             periodStart: new Date(2021, 10, 9, 14, 20, 0),
             periodLength: 50,
             assignmentsDue: [],

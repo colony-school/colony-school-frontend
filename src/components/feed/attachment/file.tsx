@@ -3,6 +3,7 @@ import Headline from "@components/global/headline";
 import MaterialIcon from "@components/global/icon";
 
 // Types
+import { File } from "@utils/types/file";
 import { FileAttachmentUsePolicy } from "@utils/types/post";
 
 /**
