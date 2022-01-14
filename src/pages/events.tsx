@@ -173,8 +173,10 @@ const ActiveEventDisplay = ({
                 event.actions.map((action) => {
                   return (
                     <a
+                      key={action.name}
                       href={action.url}
                       target="_blank"
+                      rel="noreferrer"
                       className="btn btn-filled"
                     >
                       {action.name}
@@ -263,6 +265,7 @@ const Events: NextPage = () => {
             {events.map((event) => {
               return (
                 <EventItem
+                  key={event.id}
                   event={event}
                   active={activeID == event.id}
                   setActiveID={setActiveID}
