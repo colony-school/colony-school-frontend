@@ -2,16 +2,78 @@
 import { format, getDay, getHours, getMinutes } from "date-fns";
 
 // Types
-import { Schedule as ScheduleType } from "@utils/types/subject/schedule";
+import {
+  Schedule as ScheduleType,
+  ScheduleItem as ScheduleItemType,
+} from "@utils/types/subject/schedule";
 
 // Utilities
 import { weekToString } from "@utils/date";
 
 /**
+ * A subject period inside a schedule, only contains the subject name and the primary instructor
+ */
+const ScheduleItem = ({
+  scheduleItem,
+  scheduleStartTime,
+  active,
+  onClick,
+}: {
+  scheduleItem: ScheduleItemType;
+  scheduleStartTime: number;
+  active: boolean;
+  onClick: Function;
+}) => {
+  return (
+    <li
+      className="absolute px-1"
+      style={{
+        width: scheduleItem.periodLength * 2.5,
+        left:
+          (scheduleItem.periodStart.hours * 60 +
+            scheduleItem.periodStart.minutes) *
+            2.5 -
+          scheduleStartTime,
+      }}
+    >
+      <button
+        className={`card flex flex-col p-3 transition-shadow overflow-hidden ${
+            active
+              ? "text-light-on-secondary-container bg-light-secondary-container \
+                 dark:text-dark-on-secondary-container dark:bg-dark-secondary-container shadow \
+                 hover:shadow-md"
+              : "text-light-on-surface bg-light-surface1 dark:text-dark-on-surface dark:bg-dark-surface1 \
+                 hover:shadow focus:shadow focus:ring-0"
+          }`}
+        onClick={() => onClick(scheduleItem.id)}
+      >
+        <p className="text-lg font-bold max-lines-1">
+          {scheduleItem.periodLength > 75
+            ? scheduleItem.subject.enName.name
+            : scheduleItem.subject.enName.shortName}
+        </p>
+        <p className="text-base max-lines-1">
+          {scheduleItem.subject.instructors[0]?.firstName}
+        </p>
+      </button>
+    </li>
+  );
+};
+
+/**
  * The schedule
  * @param schedule A list of lists of subject periods
+ * @param
  */
-const Schedule = ({ schedule }: { schedule: ScheduleType }) => {
+const Schedule = ({
+  schedule,
+  activeID,
+  onClick,
+}: {
+  schedule: ScheduleType;
+  activeID: number | null;
+  onClick: Function;
+}) => {
   const scheduleStartTime =
     (schedule.scheduleStart.hours * 60 + schedule.scheduleStart.minutes) * 2.5;
 
@@ -32,33 +94,13 @@ const Schedule = ({ schedule }: { schedule: ScheduleType }) => {
               <ul className="relative">
                 {scheduleWeek.content.map((scheduleItem, index) => {
                   return (
-                    <li
-                      className="absolute px-1"
-                      style={{
-                        width: scheduleItem.periodLength * 2.5,
-                        left:
-                          (scheduleItem.periodStart.hours * 60 +
-                            scheduleItem.periodStart.minutes) *
-                            2.5 -
-                          scheduleStartTime,
-                      }}
+                    <ScheduleItem
+                      scheduleItem={scheduleItem}
+                      scheduleStartTime={scheduleStartTime}
+                      active={activeID === scheduleItem.id}
+                      onClick={onClick}
                       key={index}
-                    >
-                      <button
-                        className="card flex flex-col p-3 text-left text-light-on-surface bg-light-surface1
-                        dark:text-dark-on-surface dark:bg-dark-surface1 transition-shadow overflow-hidden
-                          hover:shadow focus-visible:shadow"
-                      >
-                        <p className="text-lg font-bold max-lines-1">
-                          {scheduleItem.periodLength > 75
-                            ? scheduleItem.subject.enName.name
-                            : scheduleItem.subject.enName.shortName}
-                        </p>
-                        <p className="text-base max-lines-1">
-                          {scheduleItem.subject.instructors[0]?.firstName}
-                        </p>
-                      </button>
-                    </li>
+                    />
                   );
                 })}
               </ul>

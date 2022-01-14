@@ -80,7 +80,6 @@ export const navGroups: Array<NavGroup> = [
  */
 export const navItems = [
   { name: "Dashboard",icon: <MaterialIcon icon="dashboard" />, url: "/" },
-  { name: "Events", icon: <MaterialIcon icon="event" />, url: "/events" },
   { name: "Schedule", icon: <MaterialIcon icon="schedule" />,url: "/1/405/schedule", },
   { name: "To-do", icon: <MaterialIcon icon="assignment" />, url: "/assignments" },
   { name: "Class", icon: <MaterialIcon icon="groups" />, url: "/1/405/class" },

@@ -46,7 +46,7 @@ const Dashboard: NextPage = () => {
           }}
         />
       </div>
-      <main className="grid grid-cols-[repeat(auto-fill,_minmax(16rem,_1fr))] lg:grid-cols-3 gap-7 p-7 h-full overflow-auto">
+      <main className="grid grid-cols-[repeat(auto-fill,_minmax(16rem,_1fr))] md:grid-cols-3 gap-7 p-7 h-full overflow-auto">
         <Featured
           featuredItems={[
             {
