@@ -18,11 +18,12 @@ const ClassActions = ({
       <a
         href={`https://classroom.google.com/u/c/${ggc}`}
         target="_blank"
+        rel="noreferrer"
         className="btn btn-outlined"
       >
         Classroom
       </a>
-      <a href={meet} target="_blank" className="btn btn-filled">
+      <a href={meet} target="_blank" rel="noreferrer" className="btn btn-filled">
         <MaterialIcon icon="videocam" />
         Join Meet
       </a>
