@@ -18,11 +18,12 @@ const ClassActions = ({
       <a
         href={`https://classroom.google.com/u/c/${ggc}`}
         target="_blank"
+        rel="noreferrer"
         className="btn btn-outlined"
       >
         Classroom
       </a>
-      <a href={meet} target="_blank" className="btn btn-filled">
+      <a href={meet} target="_blank" rel="noreferrer" className="btn btn-filled">
         <MaterialIcon icon="videocam" />
         Join Meet
       </a>
@@ -52,7 +53,7 @@ const CurrentClass = ({
       <div className="flex flex-col sm:grid sm:grid-cols-2 gap-3">
         <div className="px-4 pb-4">
           <h2 className="text-xl">Current Class</h2>
-          <h3 className="text-5xl font-bold">{subjectPeriod.subject.name}</h3>
+          <h3 className="text-5xl font-bold">{subjectPeriod.subject.enName.name}</h3>
         </div>
         <ClassInfo
           instructors={subjectPeriod.subject.instructors}

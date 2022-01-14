@@ -189,12 +189,12 @@ const SchedulePage: NextPage = () => {
                         shortName: "ภาษาไทย",
                       },
                       enName: {
-                        name: "Health",
-                        shortName: "Health",
+                        name: "Thai",
+                        shortName: "Thai",
                       },
                       altNames: [],
                       instructors: [
-                        { firstName: "Rusman", lastName: " Manor" },
+                        { firstName: "Supapon", lastName: "Khwansuwan" },
                       ],
                     },
                   },

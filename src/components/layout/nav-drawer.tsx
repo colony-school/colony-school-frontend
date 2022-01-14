@@ -67,6 +67,7 @@ const NavDrawer = ({ groups }: { groups: Array<NavGroup> }): JSX.Element => {
             src="/images/brand/logo.svg"
             layout="fill"
             objectFit="contain"
+            alt="Colony logo"
           />
         </div>
         <p>School</p>

@@ -34,9 +34,12 @@ const Dashboard: NextPage = () => {
               },
             ],
             subject: {
-              name: "English 8",
+              codes: {},
+              localName: { name: "ภาษาอังกฤษ", shortName: "ภาษาอังกฤษ" },
+              enName: { name: "English", shortName: "English" },
+              altNames: [],
               instructors: [
-                { firstName: "John Peter", lastName: "Smith" },
+                { firstName: "John", middleName: "Peter", lastName: "Smith" },
                 { firstName: "Mattana", lastName: "Tatanyang" },
               ],
             },
