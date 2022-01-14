@@ -38,6 +38,7 @@ const FeaturedItem = ({
             `}
             href={action.url}
             target="_blank"
+            rel="noreferrer"
             key={action.name}
           >
             {action.name}
