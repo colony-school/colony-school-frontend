@@ -17,9 +17,9 @@ const Schedule = ({ schedule }: { schedule: ScheduleType }) => {
 
   return (
     <figure className="flex flex-col gap-2 p-7 w-fit">
-      {schedule.content.map((scheduleWeek) => {
+      {schedule.content.map((scheduleWeek, index) => {
         return (
-          <ul className="flex flex-row gap-4">
+          <ul className="flex flex-row gap-4" key={index}>
             <li className="card container-primary p-3 w-40">
               <p className="text-lg font-bold">
                 {weekToString(getDay(scheduleWeek.weekDate))}
@@ -30,7 +30,7 @@ const Schedule = ({ schedule }: { schedule: ScheduleType }) => {
             </li>
             <li>
               <ul className="relative">
-                {scheduleWeek.content.map((scheduleItem) => {
+                {scheduleWeek.content.map((scheduleItem, index) => {
                   return (
                     <li
                       className="absolute px-1"
@@ -42,6 +42,7 @@ const Schedule = ({ schedule }: { schedule: ScheduleType }) => {
                             2.5 -
                           scheduleStartTime,
                       }}
+                      key={index}
                     >
                       <button
                         className="card flex flex-col p-3 text-left text-light-on-surface bg-light-surface1

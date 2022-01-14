@@ -1,6 +1,7 @@
 // Types from other files
 import { Announcement } from "@utils/types/announcement";
 import { Assignment } from "@utils/types/assignment";
+import { File } from "@utils/types/file";
 import { SubjectPeriod } from "@utils/types/subject/period";
 
 export type Post = {

@@ -20,7 +20,11 @@ const ClassInfo = ({
   noPadding,
   className,
 }: {
-  instructors: Array<{ firstName: string; lastName: string }>;
+  instructors: Array<{
+    firstName: string;
+    middleName?: string;
+    lastName: string;
+  }>;
   periodStart: Date;
   periodLength: number;
   dueNumber: number;
@@ -51,7 +55,7 @@ const ClassInfo = ({
               instructors.map((instructor) => {
                 return (
                   <li key={instructor.firstName}>
-                    {instructor.firstName} {instructor.lastName}
+                    {instructor.firstName} {instructor.middleName} {instructor.lastName}
                   </li>
                 );
               })

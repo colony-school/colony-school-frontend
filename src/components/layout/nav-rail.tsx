@@ -18,11 +18,16 @@ const NavRail = ({
       <Link href="/">
         <a className="flex flex-col gap-1 items-center m-4">
           <div className="relative w-10 aspect-square">
-            <Image src="/images/brand/logo.svg" layout="fill" />
+            <Image
+              src="/images/brand/logo.svg"
+              layout="fill"
+              alt="Colony logo"
+            />
           </div>
           <p className="font-bold text-sm text-center text-light-primary dark:text-dark-primary">
             School
           </p>
+          <h1 className="sr-only">Colony School</h1>
         </a>
       </Link>
       {items.map((item) => {
@@ -41,9 +46,15 @@ const NavRail = ({
               >
                 {item.icon}
               </div>
-              <div className={`${path != item.url && "h-0 overflow-hidden group-hover:h-fit"}`}>
-                <p className={`font-bold text-sm text-light-on-surface-variant dark:text-dark-on-surface-variant
-                  ${path != item.url && "hidden group-hover:block"}`}>
+              <div
+                className={`${
+                  path != item.url && "h-0 overflow-hidden group-hover:h-fit"
+                }`}
+              >
+                <p
+                  className={`font-bold text-sm text-light-on-surface-variant dark:text-dark-on-surface-variant
+                  ${path != item.url && "hidden group-hover:block"}`}
+                >
                   {item.name}
                 </p>
               </div>

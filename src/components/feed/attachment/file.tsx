@@ -3,6 +3,7 @@ import Headline from "@components/global/headline";
 import MaterialIcon from "@components/global/icon";
 
 // Types
+import { File } from "@utils/types/file";
 import { FileAttachmentUsePolicy } from "@utils/types/post";
 
 /**
@@ -20,7 +21,7 @@ const UsePolicies = ({
     <ul className="text-base">
       {usePolicies.map((usePolicy) => {
         return (
-          <li title={usePolicy.desc || usePolicy.summary}> {/* temporary stand-in for a custom card that appears on hover */}
+          <li title={usePolicy.desc || usePolicy.summary} key={usePolicy.id}> {/* temporary stand-in for a custom card that appears on hover */}
             {usePolicy.summary}
           </li>
         );

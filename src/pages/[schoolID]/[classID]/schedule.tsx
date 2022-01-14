@@ -156,7 +156,7 @@ const SchedulePage: NextPage = () => {
                         },
                         altNames: [],
                         instructors: [
-                          { firstName: "Rusman", lastName: " Manor" },
+                          { firstName: "Rusman", lastName: "Manor" },
                         ],
                       },
                     },
@@ -180,7 +180,7 @@ const SchedulePage: NextPage = () => {
                         },
                         altNames: [],
                         instructors: [
-                          { firstName: "Thanthapatra", lastName: " Bunchuay" },
+                          { firstName: "Thanthapatra", lastName: "Bunchuay" },
                         ],
                       },
                     },
