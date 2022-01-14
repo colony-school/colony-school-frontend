@@ -33,7 +33,7 @@ const SchedulePage: NextPage = () => {
       },
     });
   
-  function openPeriodInfo(subjectTHCode: string) {
+  function openPeriodInfo(subjectID: number) {
     setBottomSheetState(1);
     // setActiveSubjectPeriod(subjectPeriod);  // fetch
   }

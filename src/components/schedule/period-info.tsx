@@ -11,7 +11,7 @@ import ClassInfo from "@components/subject-period/class-info";
 import { SubjectPeriod } from "@utils/types/subject/period";
 
 // Animations
-import { slideUp } from "@utils/animations/components";
+import { bottomSheetAnim } from "@utils/animations/components";
 
 /**
  * Some additional information on the selected subject period in the schedule
@@ -29,19 +29,31 @@ const PeriodInfo = ({
   return (
     <div className="flex flex-row justify-center w-full">
       <AnimatePresence>
-        {(bottomSheetState != 0 && subjectPeriod) && 
+        {bottomSheetState != 0 && subjectPeriod && (
           <motion.section
             key="period-info"
             initial="hidden"
             animate="enter"
             exit="exit"
-            variants={slideUp}
+            variants={bottomSheetAnim}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="fixed bottom-16 p-4 w-[calc(100%-1rem)] bg-light-surface1 dark:bg-dark-surface1
-            lg:w-3/4 sm:bottom-0 sm:w-[calc(100%-6rem)] sm:rounded-t-lg overflow-hidden"
+            className="flex flex-col gap-4 fixed bottom-16 w-full rounded-t-lg bg-light-surface1 dark:bg-dark-surface1
+              lg:w-3/4 sm:bottom-0 sm:w-[calc(100%-6rem)] sm:pt-4 overflow-hidden"
             aria-live="assertive"
           >
-            <div className="flex flex-row justify-between items-start">
+            <button
+              className="flex flex-row justify-center w-full p-2 sm:hidden group"
+              onClick={() => {
+                if (bottomSheetState == 1) setBottomSheetState(2);
+                else setBottomSheetState(1);
+              }}
+            >
+              <div
+                className="h-2 w-32 rounded-full bg-light-surface-variant dark:bg-dark-surface-variant transition-colors
+                  group-hover:bg-light-surface5 group-hover:dark:bg-dark-surface5"
+              />
+            </button>
+            <div className="flex flex-row justify-between items-start px-4">
               <h2 className="text-4xl font-bold">
                 {subjectPeriod.subject.enName.name}
               </h2>
@@ -55,7 +67,11 @@ const PeriodInfo = ({
                 />
               </button>
             </div>
-            <div className="h-48 overflow-auto sm:h-fit sm:overflow-hidden">
+            <div
+              className={`px-4 sm:h-fit sm:overflow-hidden transition-[height] ${
+                bottomSheetState == 1 ? "h-48" : "h-96"
+              }`}
+            >
               <div className="flex flex-col gap-4 sm:grid sm:grid-cols-2">
                 <div className="pt-2">
                   <h3 className="sr-only">Class Information</h3>
@@ -106,7 +122,7 @@ const PeriodInfo = ({
               </div>
             </div>
           </motion.section>
-        }
+        )}
       </AnimatePresence>
     </div>
   );
