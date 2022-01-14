@@ -25,7 +25,7 @@ const SubjectPeriodAttachment = ({
             className="text-light-secondary dark:text-dark-secondary"
           />
         }
-        title={<h4 className="text-lg">Period: {subjectPeriod.name}</h4>}
+        title={<h4 className="text-lg">Period: {subjectPeriod.subject.localName.name}</h4>}
         subhead={`${format(
           subjectPeriod.periodStart,
           "dd/MM/yyyy"
