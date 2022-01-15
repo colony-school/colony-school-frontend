@@ -38,13 +38,13 @@ const ScheduleItem = ({
     >
       <button
         className={`card flex flex-col p-3 transition-shadow overflow-hidden ${
-            active
-              ? "text-light-on-secondary-container bg-light-secondary-container \
+          active
+            ? "text-light-on-secondary-container bg-light-secondary-container \
                  dark:text-dark-on-secondary-container dark:bg-dark-secondary-container shadow \
                  hover:shadow-md"
-              : "text-light-on-surface bg-light-surface1 dark:text-dark-on-surface dark:bg-dark-surface1 \
+            : "text-light-on-surface bg-light-surface1 dark:text-dark-on-surface dark:bg-dark-surface1 \
                  hover:shadow focus:shadow focus:ring-0"
-          }`}
+        }`}
         onClick={() => onClick(scheduleItem.id)}
       >
         <p className="text-lg font-bold max-lines-1">

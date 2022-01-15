@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 
 // Components
 import PostAttachments from "@components/feed/attachment";
+import PostActions from "@components/feed/post/actions";
 import Title from "@components/global/title";
 
 // Types
@@ -31,9 +32,7 @@ const Post = ({ post }: { post: PostType }) => {
       />
       <ReactMarkdown className="p-4">{post.content}</ReactMarkdown>
       <PostAttachments attachments={post.attachments} />
-      <div className="flex flex-row justify-end p-4">
-        <button className="btn btn-text">Open in Sidebar</button>
-      </div>
+      <PostActions attachments={post.attachments} />
     </li>
   );
 };
