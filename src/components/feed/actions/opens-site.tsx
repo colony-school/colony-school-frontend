@@ -20,6 +20,7 @@ const ActionOpensSite = ({ action }: { action: ActionOpensLink }) => {
           : action.importance == 3 && "btn-text"
       }`}
     >
+      {action.icon}
       {action.name}
     </a>
   );

@@ -22,6 +22,7 @@ const ActionTriggersFunction = ({
       }`}
       onClick={() => action.onClick()}
     >
+      {action.icon}
       {action.name}
     </button>
   );

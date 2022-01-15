@@ -9,6 +9,7 @@ import {
   ActionOpensLink,
   ActionTriggersFunction as ActionTriggersFunctionType,
 } from "@utils/types/feed/action";
+import MaterialIcon from "@components/global/icon";
 
 /**
  * Decides what type of action to render
@@ -57,6 +58,12 @@ const PostActions = ({
               ? "Announcement"
               : attachment.announcement.type == "event" && "Event"
           }`,
+          icon:
+            attachment.announcement.type == "announcement" ? (
+              <MaterialIcon icon="mail" />
+            ) : attachment.announcement.type == "event" ? (
+              <MaterialIcon icon="event" />
+            ) : undefined,
           importance: 1,
           url: `/events?id=${attachment.announcement.id}`,
         });
@@ -66,6 +73,7 @@ const PostActions = ({
         actions.push({
           type: "link",
           name: "Download",
+          icon: <MaterialIcon icon="download" />,
           importance: 1,
           url: attachment.file.url,
           external: true,
@@ -76,6 +84,7 @@ const PostActions = ({
         actions.push({
           type: "function",
           name: `Pay ฿${attachment.perPersonOwed.toFixed(2)}`,
+          icon: <MaterialIcon icon="payment" />,
           importance: 1,
           onClick: () => console.log("Paid!"),
         });
@@ -85,6 +94,7 @@ const PostActions = ({
         actions.push({
           type: "function",
           name: "Dispute",
+          icon: <MaterialIcon icon="report" />,
           importance: 2,
           onClick: () => console.log("Dispute!"),
         });
@@ -95,12 +105,14 @@ const PostActions = ({
           {
             type: "function",
             name: "See all Slides",
+            icon: <MaterialIcon icon="photo_album" />,
             importance: 1,
             onClick: () => console.log("See all slides!"),
           },
           {
             type: "function",
             name: "Contribute Slides",
+            icon: <MaterialIcon icon="add" />,
             importance: 2,
             onClick: () => console.log("Contribute slides!"),
           },
