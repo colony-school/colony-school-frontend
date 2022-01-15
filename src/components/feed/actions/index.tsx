@@ -1,5 +1,7 @@
-// Modules
-import Link from "next/link";
+// Components
+import ActionTriggersFunction from "@components/feed/actions/triggers-function";
+import ActionGoesToPage from "@components/feed/actions/goes-to-page";
+import ActionOpensSite from "@components/feed/actions/opens-site";
 
 // Types
 import { Attachment } from "@utils/types/feed/post";
@@ -7,10 +9,11 @@ import {
   ActionOpensLink,
   ActionTriggersFunction as ActionTriggersFunctionType,
 } from "@utils/types/feed/action";
-import ActionTriggersFunction from "./triggers-function";
-import ActionGoesToPage from "./goes-to-page";
-import ActionOpensSite from "./opens-site";
 
+/**
+ * Decides what type of action to render
+ * @param action An action object
+ */
 const PostAction = ({
   action,
 }: {

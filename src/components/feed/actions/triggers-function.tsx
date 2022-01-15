@@ -1,5 +1,10 @@
+// Types
 import { ActionTriggersFunction as ActionTriggersFunctionType } from "@utils/types/feed/action";
 
+/**
+ * This action triggers a function
+ * @param action An action object
+ */
 const ActionTriggersFunction = ({
   action,
 }: {
