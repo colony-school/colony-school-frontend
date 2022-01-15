@@ -1,0 +1,114 @@
+// Modules
+import Link from "next/link";
+
+// Types
+import { Attachment } from "@utils/types/feed/post";
+import {
+  ActionOpensLink,
+  ActionTriggersFunction as ActionTriggersFunctionType,
+} from "@utils/types/feed/action";
+import ActionTriggersFunction from "./triggers-function";
+import ActionGoesToPage from "./goes-to-page";
+import ActionOpensSite from "./opens-site";
+
+const PostAction = ({
+  action,
+}: {
+  action: ActionTriggersFunctionType | ActionOpensLink;
+}): JSX.Element => {
+  switch (action.type) {
+    case "function":
+      return <ActionTriggersFunction action={action} />;
+    case "link":
+      switch (action.external) {
+        case true:
+          return <ActionOpensSite action={action} />;
+        default:
+          return <ActionGoesToPage action={action} />;
+      }
+    default:
+      return <div className="btn">Invalid</div>;
+  }
+};
+
+/**
+ * Displays actions according to attachments
+ * @param attachments An array of attachments
+ */
+const PostActions = ({
+  attachments,
+}: {
+  attachments: Array<Attachment>;
+}): JSX.Element => {
+  // Initiate an empty array of actions
+  let actions: Array<ActionTriggersFunctionType | ActionOpensLink> = [];
+
+  // Loop through each action to determine what actions are available for this post
+  for (let attachment of attachments) {
+    if (attachment.type == "announcement") {
+      actions.push({
+        type: "link",
+        name: `View ${
+          attachment.announcement.type == "announcement"
+            ? "Announcement"
+            : attachment.announcement.type == "event" && "Event"
+        }`,
+        importance: 1,
+        url: `/events?id=${attachment.announcement.id}`,
+      });
+    } else if (attachment.type == "file") {
+      actions.push({
+        type: "link",
+        name: "Download",
+        importance: 1,
+        url: attachment.file.url,
+        external: true,
+      });
+    } else if (attachment.type == "payment") {
+      actions.push({
+        type: "function",
+        name: `Pay ฿${attachment.perPersonOwed.toFixed(2)}`,
+        importance: 1,
+        onClick: () => console.log("Paid!"),
+      });
+    } else if (attachment.type == "period-swap") {
+      actions.push({
+        type: "function",
+        name: "Dispute",
+        importance: 2,
+        onClick: () => console.log("Dispute!"),
+      });
+    } else if (attachment.type == "slides") {
+      actions = actions.concat([
+        {
+          type: "function",
+          name: "See all Slides",
+          importance: 1,
+          onClick: () => console.log("See all slides!"),
+        },
+        {
+          type: "function",
+          name: "Contribute Slides",
+          importance: 2,
+          onClick: () => console.log("Contribute slides!"),
+        },
+      ]);
+    }
+  }
+
+  // Ensure the most important action is on the right
+  actions.sort((a, b) => b.importance - a.importance);
+
+  // Maps the array into buttons
+  return (
+    <div className="flex flex-row flex-wrap justify-end gap-2 p-4">
+      <button className="btn btn-text">Open in Sidebar</button>
+      {actions.map((action) => (
+        <PostAction action={action} key={action.name} />
+      ))}
+    </div>
+  );
+};
+
+// Exports
+export default PostActions;

@@ -6,7 +6,7 @@ import Title from "@components/global/title";
 import { PostTitle } from "@components/feed/post";
 
 // Types
-import { MinifiedPost as MinifiedPostType } from "@utils/types/post";
+import { MinifiedPost as MinifiedPostType } from "@utils/types/feed/post";
 
 const MinifiedPost = ({ post }: { post: MinifiedPostType }) => {
   return (

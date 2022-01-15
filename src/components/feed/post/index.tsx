@@ -3,12 +3,12 @@ import { format } from "date-fns";
 import ReactMarkdown from "react-markdown";
 
 // Components
+import PostActions from "@components/feed/actions";
 import PostAttachments from "@components/feed/attachment";
-import PostActions from "@components/feed/post/actions";
 import Title from "@components/global/title";
 
 // Types
-import { Attachment, Post as PostType } from "@utils/types/post";
+import { Attachment, Post as PostType } from "@utils/types/feed/post";
 
 export const PostTitle = ({ attachments }: { attachments: Array<Attachment> }) => {
   // TODO: Post title should be generated from attachments

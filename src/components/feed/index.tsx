@@ -5,7 +5,7 @@ import { useState } from "react";
 import Post from "@components/feed/post";
 
 // Types
-import { Post as PostType } from "@utils/types/post";
+import { Post as PostType } from "@utils/types/feed/post";
 import { Blob } from "buffer";
 
 /**
