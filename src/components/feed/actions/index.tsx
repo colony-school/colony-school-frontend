@@ -45,54 +45,64 @@ const PostActions = ({
 
   // Loop through each action to determine what actions are available for this post
   for (let attachment of attachments) {
-    if (attachment.type == "announcement") {
-      actions.push({
-        type: "link",
-        name: `View ${
-          attachment.announcement.type == "announcement"
-            ? "Announcement"
-            : attachment.announcement.type == "event" && "Event"
-        }`,
-        importance: 1,
-        url: `/events?id=${attachment.announcement.id}`,
-      });
-    } else if (attachment.type == "file") {
-      actions.push({
-        type: "link",
-        name: "Download",
-        importance: 1,
-        url: attachment.file.url,
-        external: true,
-      });
-    } else if (attachment.type == "payment") {
-      actions.push({
-        type: "function",
-        name: `Pay ฿${attachment.perPersonOwed.toFixed(2)}`,
-        importance: 1,
-        onClick: () => console.log("Paid!"),
-      });
-    } else if (attachment.type == "period-swap") {
-      actions.push({
-        type: "function",
-        name: "Dispute",
-        importance: 2,
-        onClick: () => console.log("Dispute!"),
-      });
-    } else if (attachment.type == "slides") {
-      actions = actions.concat([
-        {
-          type: "function",
-          name: "See all Slides",
+    switch (attachment.type) {
+      case "announcement":
+        actions.push({
+          type: "link",
+          name: `View ${
+            attachment.announcement.type == "announcement"
+              ? "Announcement"
+              : attachment.announcement.type == "event" && "Event"
+          }`,
           importance: 1,
-          onClick: () => console.log("See all slides!"),
-        },
-        {
+          url: `/events?id=${attachment.announcement.id}`,
+        });
+        break;
+
+      case "file":
+        actions.push({
+          type: "link",
+          name: "Download",
+          importance: 1,
+          url: attachment.file.url,
+          external: true,
+        });
+        break;
+
+      case "payment":
+        actions.push({
           type: "function",
-          name: "Contribute Slides",
+          name: `Pay ฿${attachment.perPersonOwed.toFixed(2)}`,
+          importance: 1,
+          onClick: () => console.log("Paid!"),
+        });
+        break;
+
+      case "period-swap":
+        actions.push({
+          type: "function",
+          name: "Dispute",
           importance: 2,
-          onClick: () => console.log("Contribute slides!"),
-        },
-      ]);
+          onClick: () => console.log("Dispute!"),
+        });
+        break;
+
+      case "slides":
+        actions = actions.concat([
+          {
+            type: "function",
+            name: "See all Slides",
+            importance: 1,
+            onClick: () => console.log("See all slides!"),
+          },
+          {
+            type: "function",
+            name: "Contribute Slides",
+            importance: 2,
+            onClick: () => console.log("Contribute slides!"),
+          },
+        ]);
+        break;
     }
   }
 
