@@ -2,6 +2,7 @@
 import { Announcement } from "@utils/types/announcement";
 import { Assignment } from "@utils/types/assignment";
 import { File } from "@utils/types/file";
+import { Subject } from "@utils/types/subject";
 import { SubjectPeriod } from "@utils/types/subject/period";
 
 export type Post = {
@@ -15,7 +16,7 @@ export type MinifiedPost = {
   author: string;
   postDate: Date;
   attachments: Array<Attachment>;
-}
+};
 
 export type Attachment =
   | AnnouncementAttachment
@@ -25,6 +26,15 @@ export type Attachment =
   | PaymentAttachement
   | FileAttachment
   | SlidesAttachment;
+
+export type AttachmentTypes =
+  | "announcement"
+  | "assignment"
+  | "subject-period"
+  | "period-swap"
+  | "payment"
+  | "file"
+  | "slides";
 
 // Blue: Events and Announcements
 export type AnnouncementAttachment = {
@@ -75,5 +85,6 @@ export type FileAttachmentUsePolicy = {
 export type SlidesAttachment = {
   type: "slides";
   name: string;
+  subject: Subject
   slides: Array<string>;
 };
