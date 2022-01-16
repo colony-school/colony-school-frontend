@@ -124,7 +124,7 @@ const Feed = () => {
           file: {
             name: "tideman.c",
             size: 6360,
-            url: "https://raw.githubusercontent.com/me50/SiravitPhokeed/b94f2f1ca5025f785be0f845ebdaffc29c8f4076/tideman.c?token=GHSAT0AAAAAABNTUSV32OBN7MNCZVYJ3LK6YPKRPHQ"
+            url: "https://raw.githubusercontent.com/me50/SiravitPhokeed/b94f2f1ca5025f785be0f845ebdaffc29c8f4076/tideman.c?token=GHSAT0AAAAAABNTUSV32OBN7MNCZVYJ3LK6YPKRPHQ",
           },
           usePolicies: [
             {
@@ -189,6 +189,19 @@ const Feed = () => {
         {
           type: "slides",
           name: "Circular Motion",
+          subject: {
+            codes: {},
+            localName: {
+              name: "ฟิสิกส์",
+              shortName: "ฟิสิกส์",
+            },
+            enName: {
+              name: "Physics",
+              shortName: "Physics",
+            },
+            altNames: [],
+            instructors: [{ firstName: "Niruth", lastName: "Prombutr" }],
+          },
           slides: [
             "/images/dummybase/attachments/slide-1.png",
             "/images/dummybase/attachments/slide-2.png",
@@ -215,9 +228,7 @@ const Feed = () => {
                 shortName: "Physics",
               },
               altNames: [],
-              instructors: [
-                { firstName: "Niruth", lastName: "Prombutr" },
-              ],
+              instructors: [{ firstName: "Niruth", lastName: "Prombutr" }],
             },
             periodStart: new Date(2021, 10, 9, 14, 20, 0),
             periodLength: 50,
