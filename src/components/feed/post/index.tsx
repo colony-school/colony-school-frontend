@@ -22,7 +22,9 @@ const Post = ({ post }: { post: PostType }) => {
       <Title
         icon={<Monogram name={post.author} />}
         title={<PostTitle attachments={post.attachments} />}
-        subhead={`${post.author} • ${format(post.postDate, "dd/MM/yyyy")}`}
+        subhead={`${
+          post.author?.length > 0 ? post.author : "Unknown"
+        } • ${format(post.postDate, "dd/MM/yyyy")}`}
       />
       <ReactMarkdown className="p-4">{post.content}</ReactMarkdown>
       <PostAttachments attachments={post.attachments} />

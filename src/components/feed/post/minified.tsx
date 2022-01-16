@@ -20,7 +20,7 @@ const MinifiedPost = ({ post }: { post: MinifiedPostType }) => {
         <Title
           icon={<Monogram name={post.author} />}
           title={<PostTitle attachments={post.attachments} />}
-          subhead={`${post.author.length > 0 ? post.author : "Unknown"} • ${format(
+          subhead={`${post.author?.length > 0 ? post.author : "Unknown"} • ${format(
             post.postDate,
             "dd/MM/yyyy"
           )}`}
