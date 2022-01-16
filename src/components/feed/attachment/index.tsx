@@ -9,7 +9,7 @@ import SlidesAttachment from "@components/feed/attachment/slides";
 import SubjectPeriodAttachment from "@components/feed/attachment/subject-period";
 
 // Utils
-import { Attachment } from "@utils/types/post";
+import { Attachment } from "@utils/types/feed/post";
 
 /**
  * The bridge to all post attachments

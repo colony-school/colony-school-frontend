@@ -2,7 +2,7 @@
 import { AnimatePresence, motion } from "framer-motion";
 
 // Components
-import MinifiedPost from "@components/feed/post-minified";
+import MinifiedPost from "@components/feed/post/minified";
 import MaterialIcon from "@components/global/icon";
 import Title from "@components/global/title";
 import ClassInfo from "@components/subject-period/class-info";

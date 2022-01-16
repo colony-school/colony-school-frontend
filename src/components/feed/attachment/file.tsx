@@ -4,7 +4,7 @@ import MaterialIcon from "@components/global/icon";
 
 // Types
 import { File } from "@utils/types/file";
-import { FileAttachmentUsePolicy } from "@utils/types/post";
+import { FileAttachmentUsePolicy } from "@utils/types/feed/post";
 
 /**
  * Lists the use policies of a file
