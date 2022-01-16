@@ -2,7 +2,7 @@
 import { format } from "date-fns";
 
 // Components
-import PostTitle from "@components/feed/post";
+import PostTitle from "@components/feed/title";
 import Title from "@components/global/title";
 
 // Types
