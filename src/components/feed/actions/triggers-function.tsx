@@ -1,6 +1,9 @@
 // Types
 import { ActionTriggersFunction as ActionTriggersFunctionType } from "@utils/types/feed/action";
 
+// Utils
+import actionClassName from "@utils/action-class-name";
+
 /**
  * This action triggers a function
  * @param action An action object
@@ -13,13 +16,7 @@ const ActionTriggersFunction = ({
   return (
     <button
       key={action.name}
-      className={`btn ${
-        action.importance == 1
-          ? "btn-filled"
-          : action.importance == 2
-          ? "btn-outlined"
-          : action.importance == 3 && "btn-text"
-      }`}
+      className={actionClassName(action.importance)}
       onClick={() => action.onClick()}
     >
       {action.icon}

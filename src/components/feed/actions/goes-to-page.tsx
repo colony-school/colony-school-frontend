@@ -4,6 +4,9 @@ import Link from "next/link";
 // Types
 import { ActionOpensLink } from "@utils/types/feed/action";
 
+// Utils
+import actionClassName from "@utils/action-class-name";
+
 /**
  * This action goes to a page within Colony School
  * @param action An action object
@@ -13,13 +16,7 @@ const ActionGoesToPage = ({ action }: { action: ActionOpensLink }) => {
     <Link href={action.url}>
       <a
         key={action.name}
-        className={`btn ${
-          action.importance == 1
-            ? "btn-filled"
-            : action.importance == 2
-            ? "btn-outlined"
-            : action.importance == 3 && "btn-text"
-        }`}
+        className={actionClassName(action.importance)}
       >
         {action.icon}
         {action.name}
