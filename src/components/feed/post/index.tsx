@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown";
 
 // Components
 import PostActions from "@components/feed/actions";
+import Monogram from "@components/feed/monogram";
 import PostTitle from "@components/feed/title";
 import PostAttachments from "@components/feed/attachment";
 import Title from "@components/global/title";
@@ -19,14 +20,7 @@ const Post = ({ post }: { post: PostType }) => {
   return (
     <li className="w-full max-w-full sm:card sm:card-elevated sm:w-[74ch]">
       <Title
-        icon={
-          <div
-            className="grid place-items-center w-10 h-10 aspect-square
-            text-light-on-secondary font-medium bg-light-secondary rounded-full"
-          >
-            {post.author.length == 0 ? ":)" : post.author[0].toUpperCase()}
-          </div>
-        }
+        icon={<Monogram name={post.author} />}
         title={<PostTitle attachments={post.attachments} />}
         subhead={`${post.author} • ${format(post.postDate, "dd/MM/yyyy")}`}
       />
