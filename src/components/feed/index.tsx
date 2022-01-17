@@ -6,7 +6,6 @@ import Post from "@components/feed/post";
 
 // Types
 import { Post as PostType } from "@utils/types/feed/post";
-import { Blob } from "buffer";
 
 /**
  * A list of posts curiously curated by *not* an algorithm because why would we have an algorithm for this
@@ -56,6 +55,58 @@ const Feed = () => {
             periodStart: new Date(2021, 8, 14, 11, 50, 0),
             periodLength: 50,
             assignmentsDue: [],
+          },
+          relevantSchedule: {
+            scheduleStart: { hours: 8, minutes: 30, seconds: 0 },
+            content: [
+              {
+                weekDate: new Date(2021, 8, 14),
+                content: [
+                  {
+                    id: 27,
+                    periodStart: { hours: 8, minutes: 30, seconds: 0 },
+                    periodLength: 100,
+                  },
+                  {
+                    id: 28,
+                    periodStart: { hours: 10, minutes: 10, seconds: 0 },
+                    periodLength: 50,
+                  },
+                  {
+                    id: 29,
+                    periodStart: { hours: 11, minutes: 0, seconds: 0 },
+                    periodLength: 50,
+                  },
+                  {
+                    id: 30,
+                    periodStart: { hours: 11, minutes: 50, seconds: 0 },
+                    periodLength: 50,
+                    break: true,
+                  },
+                  {
+                    id: 31,
+                    periodStart: { hours: 12, minutes: 40, seconds: 0 },
+                    periodLength: 50,
+                    relevant: true,
+                  },
+                  {
+                    id: 32,
+                    periodStart: { hours: 13, minutes: 30, seconds: 0 },
+                    periodLength: 50,
+                  },
+                  {
+                    id: 33,
+                    periodStart: { hours: 14, minutes: 20, seconds: 0 },
+                    periodLength: 50,
+                  },
+                  {
+                    id: 34,
+                    periodStart: { hours: 15, minutes: 10, seconds: 0 },
+                    periodLength: 50,
+                  },
+                ],
+              },
+            ],
           },
         },
       ],
@@ -110,6 +161,100 @@ const Feed = () => {
               assignmentsDue: [],
             },
           ],
+          relevantSchedule: {
+            scheduleStart: { hours: 8, minutes: 30, seconds: 0 },
+            content: [
+              {
+                weekDate: new Date(2021, 8, 14),
+                content: [
+                  {
+                    id: 12,
+                    periodStart: { hours: 8, minutes: 30, seconds: 0 },
+                    periodLength: 100,
+                    relevant: true,
+                  },
+                  {
+                    id: 13,
+                    periodStart: { hours: 10, minutes: 10, seconds: 0 },
+                    periodLength: 100,
+                  },
+                  {
+                    id: 14,
+                    periodStart: { hours: 11, minutes: 50, seconds: 0 },
+                    periodLength: 50,
+                    break: true,
+                  },
+                  {
+                    id: 15,
+                    periodStart: { hours: 12, minutes: 40, seconds: 0 },
+                    periodLength: 50,
+                  },
+                  {
+                    id: 16,
+                    periodStart: { hours: 13, minutes: 30, seconds: 0 },
+                    periodLength: 50,
+                  },
+                  {
+                    id: 17,
+                    periodStart: { hours: 14, minutes: 20, seconds: 0 },
+                    periodLength: 50,
+                  },
+                  {
+                    id: 18,
+                    periodStart: { hours: 15, minutes: 10, seconds: 0 },
+                    periodLength: 50,
+                  },
+                ],
+              },
+              {
+                weekDate: new Date(2021, 8, 15),
+                content: [
+                  {
+                    id: 19,
+                    periodStart: { hours: 8, minutes: 30, seconds: 0 },
+                    periodLength: 50,
+                  },
+                  {
+                    id: 20,
+                    periodStart: { hours: 9, minutes: 20, seconds: 0 },
+                    periodLength: 50,
+                    relevant: true,
+                  },
+                  {
+                    id: 21,
+                    periodStart: { hours: 10, minutes: 10, seconds: 0 },
+                    periodLength: 100,
+                  },
+                  {
+                    id: 22,
+                    periodStart: { hours: 11, minutes: 50, seconds: 0 },
+                    periodLength: 50,
+                    break: true,
+                  },
+                  {
+                    id: 23,
+                    periodStart: { hours: 12, minutes: 40, seconds: 0 },
+                    periodLength: 50,
+                  },
+                  {
+                    id: 24,
+                    periodStart: { hours: 13, minutes: 30, seconds: 0 },
+                    periodLength: 50,
+                  },
+                  {
+                    id: 25,
+                    periodStart: { hours: 14, minutes: 20, seconds: 0 },
+                    periodLength: 50,
+                  },
+                  {
+                    id: 26,
+                    periodStart: { hours: 15, minutes: 10, seconds: 0 },
+                    periodLength: 50,
+                  },
+                ],
+              },
+            ],
+          },
         },
       ],
     },
@@ -233,6 +378,48 @@ const Feed = () => {
             periodStart: new Date(2021, 10, 9, 14, 20, 0),
             periodLength: 50,
             assignmentsDue: [],
+          },
+          relevantSchedule: {
+            scheduleStart: { hours: 8, minutes: 30, seconds: 0 },
+            content: [
+              {
+                weekDate: new Date(2021, 11, 7),
+                content: [
+                  {
+                    id: 1,
+                    periodStart: { hours: 8, minutes: 30, seconds: 0 },
+                    periodLength: 100,
+                  },
+                  {
+                    id: 2,
+                    periodStart: { hours: 10, minutes: 10, seconds: 0 },
+                    periodLength: 100,
+                  },
+                  {
+                    id: 3,
+                    periodStart: { hours: 11, minutes: 50, seconds: 0 },
+                    periodLength: 50,
+                    break: true,
+                  },
+                  {
+                    id: 4,
+                    periodStart: { hours: 12, minutes: 40, seconds: 0 },
+                    periodLength: 50,
+                  },
+                  {
+                    id: 5,
+                    periodStart: { hours: 13, minutes: 30, seconds: 0 },
+                    periodLength: 50,
+                  },
+                  {
+                    id: 6,
+                    periodStart: { hours: 14, minutes: 20, seconds: 0 },
+                    periodLength: 100,
+                    relevant: true,
+                  },
+                ],
+              },
+            ],
           },
         },
         {

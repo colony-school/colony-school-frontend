@@ -129,8 +129,8 @@ module.exports = {
     screens: {
       sm: "820px",
       md: "1240px",
-      lg: "1440px"
-    }
+      lg: "1440px",
+    },
   },
   plugins: [],
 };

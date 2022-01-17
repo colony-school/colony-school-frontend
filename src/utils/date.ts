@@ -28,6 +28,18 @@ export function to3LetterMonth(month: number): string {
 }
 
 /**
+ * Converts a day number into a 3 letter abbreviation for that day
+ *
+ * e.g. 2 -> MON
+ * @param month Month number
+ * @returns 3 letter day
+ */
+export function to3LetterDay(day: number): string {
+  const days = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"];
+  return days[day];
+}
+
+/**
  * Converts a day number into a human-readable day
  *
  * e.g. 2 -> FEB
