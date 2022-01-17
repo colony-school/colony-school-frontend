@@ -68,6 +68,7 @@ const ScheduleDiagram = ({ schedule }: { schedule: ScheduleDiagram }) => {
               <ScheduleDiagramItem
                 scheduleItem={scheduleItem}
                 scheduleStartTime={scheduleStartTime}
+                key={scheduleItem.id}
               />
             ))}
           </ul>
