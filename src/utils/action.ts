@@ -1,4 +1,4 @@
-export default function actionClassName(importance: number) {
+export function actionClassName(importance: number) {
   return `btn ${
     importance == 1
       ? "btn-filled"
