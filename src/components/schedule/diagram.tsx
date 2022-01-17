@@ -8,7 +8,7 @@ import {
 } from "@utils/types/subject/schedule/diagram";
 
 // Utils
-import { to3LetterDay, weekToString } from "@utils/date";
+import { to3LetterDay } from "@utils/date";
 
 /**
  * An item in the Schedule Diagram
@@ -58,8 +58,8 @@ const ScheduleDiagram = ({ schedule }: { schedule: ScheduleDiagram }) => {
 
   return (
     <figure className="flex flex-col gap-1 p-4">
-      {schedule.content.map((scheduleWeek) => (
-        <div className="flex flex-row gap-1">
+      {schedule.content.map((scheduleWeek, index) => (
+        <div className="flex flex-row gap-1" key={index}>
           <p
             className="flex flex-row items-center
             font-bold text-base text-light-on-secondary-container dark:text-dark-on-secondary-container
