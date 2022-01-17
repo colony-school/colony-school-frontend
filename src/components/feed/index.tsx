@@ -63,38 +63,44 @@ const Feed = () => {
                 weekDate: new Date(2021, 8, 14),
                 content: [
                   {
-                    id: 26,
+                    id: 27,
                     periodStart: { hours: 8, minutes: 30, seconds: 0 },
                     periodLength: 100,
                   },
                   {
-                    id: 27,
+                    id: 28,
                     periodStart: { hours: 10, minutes: 10, seconds: 0 },
                     periodLength: 50,
                   },
                   {
-                    id: 28,
+                    id: 29,
                     periodStart: { hours: 11, minutes: 0, seconds: 0 },
                     periodLength: 50,
                   },
                   {
-                    id: 29,
+                    id: 30,
+                    periodStart: { hours: 11, minutes: 50, seconds: 0 },
+                    periodLength: 50,
+                    break: true,
+                  },
+                  {
+                    id: 31,
                     periodStart: { hours: 12, minutes: 40, seconds: 0 },
                     periodLength: 50,
                     relevant: true,
                   },
                   {
-                    id: 30,
+                    id: 32,
                     periodStart: { hours: 13, minutes: 30, seconds: 0 },
                     periodLength: 50,
                   },
                   {
-                    id: 31,
+                    id: 33,
                     periodStart: { hours: 14, minutes: 20, seconds: 0 },
                     periodLength: 50,
                   },
                   {
-                    id: 32,
+                    id: 34,
                     periodStart: { hours: 15, minutes: 10, seconds: 0 },
                     periodLength: 50,
                   },
@@ -173,6 +179,12 @@ const Feed = () => {
                     periodLength: 100,
                   },
                   {
+                    id: 14,
+                    periodStart: { hours: 11, minutes: 50, seconds: 0 },
+                    periodLength: 50,
+                    break: true,
+                  },
+                  {
                     id: 15,
                     periodStart: { hours: 12, minutes: 40, seconds: 0 },
                     periodLength: 50,
@@ -215,21 +227,27 @@ const Feed = () => {
                   },
                   {
                     id: 22,
+                    periodStart: { hours: 11, minutes: 50, seconds: 0 },
+                    periodLength: 50,
+                    break: true,
+                  },
+                  {
+                    id: 23,
                     periodStart: { hours: 12, minutes: 40, seconds: 0 },
                     periodLength: 50,
                   },
                   {
-                    id: 23,
+                    id: 24,
                     periodStart: { hours: 13, minutes: 30, seconds: 0 },
                     periodLength: 50,
                   },
                   {
-                    id: 24,
+                    id: 25,
                     periodStart: { hours: 14, minutes: 20, seconds: 0 },
                     periodLength: 50,
                   },
                   {
-                    id: 25,
+                    id: 26,
                     periodStart: { hours: 15, minutes: 10, seconds: 0 },
                     periodLength: 50,
                   },
@@ -379,16 +397,22 @@ const Feed = () => {
                   },
                   {
                     id: 3,
+                    periodStart: { hours: 11, minutes: 50, seconds: 0 },
+                    periodLength: 50,
+                    break: true,
+                  },
+                  {
+                    id: 4,
                     periodStart: { hours: 12, minutes: 40, seconds: 0 },
                     periodLength: 50,
                   },
                   {
-                    id: 3,
+                    id: 5,
                     periodStart: { hours: 13, minutes: 30, seconds: 0 },
                     periodLength: 50,
                   },
                   {
-                    id: 3,
+                    id: 6,
                     periodStart: { hours: 14, minutes: 20, seconds: 0 },
                     periodLength: 100,
                     relevant: true,

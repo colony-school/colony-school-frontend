@@ -16,4 +16,5 @@ export type ScheduleDiagramItem = {
   periodStart: Time;
   periodLength: number;
   relevant?: boolean;
+  break?: boolean;
 };
