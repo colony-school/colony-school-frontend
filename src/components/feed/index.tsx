@@ -57,6 +57,10 @@ const Feed = () => {
             periodLength: 50,
             assignmentsDue: [],
           },
+          relevantSchedule: {
+            scheduleStart: { hours: 8, minutes: 30, seconds: 0 },
+            content: [{ weekDate: new Date(2021, 8, 14), content: [] }],
+          },
         },
       ],
     },
@@ -233,6 +237,42 @@ const Feed = () => {
             periodStart: new Date(2021, 10, 9, 14, 20, 0),
             periodLength: 50,
             assignmentsDue: [],
+          },
+          relevantSchedule: {
+            scheduleStart: { hours: 8, minutes: 30, seconds: 0 },
+            content: [
+              {
+                weekDate: new Date(2021, 8, 14),
+                content: [
+                  {
+                    id: 1,
+                    periodStart: { hours: 8, minutes: 30, seconds: 0 },
+                    periodLength: 100,
+                  },
+                  {
+                    id: 2,
+                    periodStart: { hours: 10, minutes: 10, seconds: 0 },
+                    periodLength: 100,
+                  },
+                  {
+                    id: 3,
+                    periodStart: { hours: 12, minutes: 40, seconds: 0 },
+                    periodLength: 50,
+                  },
+                  {
+                    id: 3,
+                    periodStart: { hours: 13, minutes: 30, seconds: 0 },
+                    periodLength: 50,
+                  },
+                  {
+                    id: 3,
+                    periodStart: { hours: 14, minutes: 20, seconds: 0 },
+                    periodLength: 100,
+                    relevant: true,
+                  },
+                ],
+              },
+            ],
           },
         },
         {

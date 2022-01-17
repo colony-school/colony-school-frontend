@@ -4,6 +4,7 @@ import { Assignment } from "@utils/types/assignment";
 import { File } from "@utils/types/file";
 import { Subject } from "@utils/types/subject";
 import { SubjectPeriod } from "@utils/types/subject/period";
+import { ScheduleDiagram } from "@utils/types/subject/schedule/diagram";
 
 export type Post = {
   author: string;
@@ -51,6 +52,7 @@ export type AssignmentAttachment = {
 export type SubjectPeriodAttachment = {
   type: "subject-period";
   subjectPeriod: SubjectPeriod;
+  relevantSchedule: ScheduleDiagram;
 };
 
 export type PeriodSwapAttachment = {
@@ -85,6 +87,6 @@ export type FileAttachmentUsePolicy = {
 export type SlidesAttachment = {
   type: "slides";
   name: string;
-  subject: Subject
+  subject: Subject;
   slides: Array<string>;
 };

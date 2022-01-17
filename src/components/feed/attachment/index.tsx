@@ -34,6 +34,7 @@ const PostAttachments = ({
             return (
               <SubjectPeriodAttachment
                 subjectPeriod={attachment.subjectPeriod}
+                relevantSchedule={attachment.relevantSchedule}
               />
             );
           case "period-swap":
