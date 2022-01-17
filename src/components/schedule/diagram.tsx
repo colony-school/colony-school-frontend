@@ -36,10 +36,10 @@ const ScheduleDiagramItem = ({
         className={`h-full w-full rounded-full ${
           scheduleItem.relevant
             ? scheduleItem.break
-              ? "outline outline-2 outline-light-secondary outline-offset-[-2px]"
+              ? "outline outline-2 outline-light-secondary dark:outline-dark-on-secondary outline-offset-[-2px]"
               : "bg-light-secondary dark:bg-dark-secondary"
             : scheduleItem.break
-            ? "outline outline-2 outline-light-on-secondary outline-offset-[-2px]"
+            ? "outline outline-2 outline-light-on-secondary dark:outline-dark-on-secondary outline-offset-[-2px]"
             : "bg-light-on-secondary dark:bg-dark-on-secondary"
         }`}
       ></div>
