@@ -6,7 +6,6 @@ import Post from "@components/feed/post";
 
 // Types
 import { Post as PostType } from "@utils/types/feed/post";
-import { Blob } from "buffer";
 
 /**
  * A list of posts curiously curated by *not* an algorithm because why would we have an algorithm for this
@@ -59,7 +58,49 @@ const Feed = () => {
           },
           relevantSchedule: {
             scheduleStart: { hours: 8, minutes: 30, seconds: 0 },
-            content: [{ weekDate: new Date(2021, 8, 14), content: [] }],
+            content: [
+              {
+                weekDate: new Date(2021, 8, 14),
+                content: [
+                  {
+                    id: 6,
+                    periodStart: { hours: 8, minutes: 30, seconds: 0 },
+                    periodLength: 100,
+                  },
+                  {
+                    id: 7,
+                    periodStart: { hours: 10, minutes: 10, seconds: 0 },
+                    periodLength: 50,
+                  },
+                  {
+                    id: 7,
+                    periodStart: { hours: 11, minutes: 0, seconds: 0 },
+                    periodLength: 50,
+                  },
+                  {
+                    id: 9,
+                    periodStart: { hours: 12, minutes: 40, seconds: 0 },
+                    periodLength: 50,
+                    relevant: true,
+                  },
+                  {
+                    id: 10,
+                    periodStart: { hours: 13, minutes: 30, seconds: 0 },
+                    periodLength: 50,
+                  },
+                  {
+                    id: 11,
+                    periodStart: { hours: 14, minutes: 20, seconds: 0 },
+                    periodLength: 50,
+                  },
+                  {
+                    id: 12,
+                    periodStart: { hours: 15, minutes: 10, seconds: 0 },
+                    periodLength: 50,
+                  },
+                ],
+              },
+            ],
           },
         },
       ],
@@ -242,7 +283,7 @@ const Feed = () => {
             scheduleStart: { hours: 8, minutes: 30, seconds: 0 },
             content: [
               {
-                weekDate: new Date(2021, 8, 14),
+                weekDate: new Date(2021, 11, 7),
                 content: [
                   {
                     id: 1,
