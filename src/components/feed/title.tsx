@@ -2,7 +2,7 @@
 import { Attachment } from "@utils/types/feed/post";
 
 // Utils
-import renderAttachmentNames from "@utils/find-in-attachments";
+import { renderAttachmentNames } from "@utils/attachment";
 
 /**
  * Renders a summary of attachments

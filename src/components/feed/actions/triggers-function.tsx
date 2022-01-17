@@ -2,7 +2,7 @@
 import { ActionTriggersFunction as ActionTriggersFunctionType } from "@utils/types/feed/action";
 
 // Utils
-import actionClassName from "@utils/action-class-name";
+import { actionClassName } from "@utils/action";
 
 /**
  * This action triggers a function

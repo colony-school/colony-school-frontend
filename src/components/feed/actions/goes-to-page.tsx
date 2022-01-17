@@ -5,7 +5,7 @@ import Link from "next/link";
 import { ActionOpensLink } from "@utils/types/feed/action";
 
 // Utils
-import actionClassName from "@utils/action-class-name";
+import { actionClassName } from "@utils/action";
 
 /**
  * This action goes to a page within Colony School

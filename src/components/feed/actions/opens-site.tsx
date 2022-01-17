@@ -2,7 +2,7 @@
 import { ActionOpensLink } from "@utils/types/feed/action";
 
 // Utils
-import actionClassName from "@utils/action-class-name";
+import { actionClassName } from "@utils/action";
 
 /**
  * This action opens a link on a completely new tab
