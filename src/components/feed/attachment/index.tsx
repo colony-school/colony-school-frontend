@@ -38,7 +38,12 @@ const PostAttachments = ({
               />
             );
           case "period-swap":
-            return <PeriodSwapAttachment periods={attachment.periods} />;
+            return (
+              <PeriodSwapAttachment
+                periods={attachment.periods}
+                relevantSchedule={attachment.relevantSchedule}
+              />
+            );
           case "file":
             return (
               <FileAttachment
@@ -63,9 +68,7 @@ const PostAttachments = ({
               />
             );
           default:
-            return (
-              <InvalidAttachment />
-            )
+            return <InvalidAttachment />;
         }
       })}
     </ul>

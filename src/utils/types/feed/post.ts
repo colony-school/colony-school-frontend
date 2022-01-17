@@ -58,6 +58,7 @@ export type SubjectPeriodAttachment = {
 export type PeriodSwapAttachment = {
   type: "period-swap";
   periods: [SubjectPeriod, SubjectPeriod];
+  relevantSchedule: ScheduleDiagram;
 };
 
 export type PaymentAttachement = {

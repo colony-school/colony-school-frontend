@@ -1,8 +1,10 @@
 // Components
 import MaterialIcon from "@components/global/icon";
 import Title from "@components/global/title";
+import ScheduleDiagram from "@components/schedule/diagram";
 
 // Types
+import { ScheduleDiagram as ScheduleDiagramType } from "@utils/types/subject/schedule/diagram";
 import { SubjectPeriod } from "@utils/types/subject/period";
 
 /**
@@ -11,8 +13,10 @@ import { SubjectPeriod } from "@utils/types/subject/period";
  */
 const PeriodSwapAttachment = ({
   periods,
+  relevantSchedule,
 }: {
   periods: [SubjectPeriod, SubjectPeriod];
+  relevantSchedule: ScheduleDiagramType;
 }) => {
   return (
     <li className="flex flex-col md:grid md:grid-cols-2 container-secondary">
@@ -25,9 +29,12 @@ const PeriodSwapAttachment = ({
         }
         title={<h4 className="text-lg">Periods Swapped</h4>}
         subhead={
-          periods.length == 2 ? `${periods[0].subject.enName.name} and ${periods[1].subject.enName.name}` : ""
+          periods.length == 2
+            ? `${periods[0].subject.enName.name} and ${periods[1].subject.enName.name}`
+            : ""
         }
       />
+      <ScheduleDiagram schedule={relevantSchedule} />
     </li>
   );
 };

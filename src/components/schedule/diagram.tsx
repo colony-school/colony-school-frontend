@@ -52,8 +52,6 @@ const ScheduleDiagram = ({ schedule }: { schedule: ScheduleDiagram }) => {
   const scheduleStartTime =
     (schedule.scheduleStart.hours * 60 + schedule.scheduleStart.minutes) * 0.4;
 
-  console.log(schedule.content);
-
   return (
     <figure className="flex flex-col gap-1 p-4">
       {schedule.content.map((scheduleWeek) => (
@@ -61,7 +59,7 @@ const ScheduleDiagram = ({ schedule }: { schedule: ScheduleDiagram }) => {
           <p
             className="flex flex-row items-center
             font-bold text-base text-light-on-secondary-container dark:text-dark-on-secondary-container
-            min-w-8 h-6"
+            w-10 h-6 max-lines-1"
           >
             {to3LetterDay(getDay(scheduleWeek.weekDate))}
           </p>
