@@ -1,25 +1,19 @@
 // Modules
-import {
-  format,
-  formatDistanceToNow,
-  formatDuration,
-  getUnixTime,
-  intervalToDuration,
-  isPast,
-} from "date-fns";
+import { format, formatDuration, intervalToDuration, isPast } from "date-fns";
 import { NextPage } from "next";
+import { useState } from "react";
 
 // Components
 import Status from "@components/assignments/status";
+import Headline from "@components/global/headline";
+import MaterialIcon from "@components/global/icon";
+import Title from "@components/global/title";
 import Search from "@components/input/search";
 import TopAppBar from "@components/layout/top-app-bar";
 
 // Types
 import { Assignment } from "@utils/types/assignment";
-import { useState } from "react";
-import Title from "@components/global/title";
-import MaterialIcon from "@components/global/icon";
-import { formatDistanceToNowStrict } from "date-fns/esm";
+import FilterChip from "@components/input/chip/filter";
 
 const AssignmentItem = ({
   assignment,
@@ -94,7 +88,7 @@ const ActiveAssignmentDisplay = ({
             { format: ["years", "months", "days", "hours"] }
           )}
         />
-        <Title
+        <Headline
           icon={
             <MaterialIcon
               icon="assignment"
@@ -102,7 +96,14 @@ const ActiveAssignmentDisplay = ({
             />
           }
           title={<h3>Status</h3>}
-          subhead="// TODO"
+          subhead={
+            <FilterChip
+              name="Urgent"
+              onClick={(active: boolean) => console.log(active)}
+              value={false}
+            />
+          }
+          gap={4}
         />
       </div>
     </div>
