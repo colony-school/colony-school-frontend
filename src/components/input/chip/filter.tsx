@@ -1,6 +1,8 @@
 // Modules
-import MaterialIcon from "@components/global/icon";
 import { useState } from "react";
+
+// Components
+import MaterialIcon from "@components/global/icon/material";
 
 /**
  * Filter chips use tags or descriptive words to filter content,

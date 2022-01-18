@@ -2,19 +2,20 @@
 import { format, formatDuration, intervalToDuration, isPast } from "date-fns";
 import { NextPage } from "next";
 import { useState } from "react";
+import ReactMarkdown from "react-markdown";
 
 // Components
 import Status from "@components/assignments/status";
 import Headline from "@components/global/headline";
-import MaterialIcon from "@components/global/icon";
+import MaterialIcon from "@components/global/icon/material";
 import Title from "@components/global/title";
+import FilterChip from "@components/input/chip/filter";
+import ChoiceChip from "@components/input/chip/choice";
 import Search from "@components/input/search";
 import TopAppBar from "@components/layout/top-app-bar";
 
 // Types
 import { Assignment } from "@utils/types/assignment";
-import FilterChip from "@components/input/chip/filter";
-import ChoiceChip from "@components/input/chip/choice";
 
 const AssignmentItem = ({
   assignment,
@@ -163,6 +164,20 @@ const ActiveAssignmentDisplay = ({
         }
         gap={4}
       />
+      <ReactMarkdown className="p-4">{assignment.desc}</ReactMarkdown>
+      <div className="flex flex-row justify-end items-center gap-2 p-4">
+        <button className="btn btn-outlined">Compose about</button>
+        {assignment.source && (
+          <a
+            href={assignment.source}
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-filled"
+          >
+            Open in Classroom
+          </a>
+        )}
+      </div>
     </div>
   );
 };
@@ -183,6 +198,7 @@ const AssignmentsPage: NextPage = () => {
       due: new Date(2021, 10, 6, 23, 59),
       status: "not-started",
       urgent: false,
+      source: "https://cs50.harvard.edu/x/2022/psets/3/tideman/",
     },
     {
       id: 18,
@@ -207,6 +223,7 @@ const AssignmentsPage: NextPage = () => {
     due: new Date(2021, 10, 6, 23, 59),
     status: "not-started",
     urgent: false,
+    source: "https://cs50.harvard.edu/x/2022/psets/3/tideman/",
   });
 
   const [query, setQuery] = useState<string>();

@@ -1,6 +1,6 @@
 // Components
 import Headline from "@components/global/headline";
-import MaterialIcon from "@components/global/icon";
+import MaterialIcon from "@components/global/icon/material";
 
 // Types
 import { File } from "@utils/types/file";

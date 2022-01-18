@@ -1,4 +1,5 @@
-import MaterialIcon from "@components/global/icon";
+// Components
+import MaterialIcon from "@components/global/icon/material";
 import Title from "@components/global/title";
 
 const InvalidAttachment = () => {

@@ -4,7 +4,7 @@ import Link from "next/link";
 
 // Components
 import Title from "@components/global/title";
-import MaterialIcon from "@components/global/icon";
+import MaterialIcon from "@components/global/icon/material";
 
 // Types
 import { GlanceAnnouncement } from "@utils/types/announcement";

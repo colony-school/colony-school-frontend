@@ -2,6 +2,7 @@
 import ActionTriggersFunction from "@components/feed/actions/triggers-function";
 import ActionGoesToPage from "@components/feed/actions/goes-to-page";
 import ActionOpensSite from "@components/feed/actions/opens-site";
+import MaterialIcon from "@components/global/icon/material";
 
 // Types
 import { Attachment } from "@utils/types/feed/post";
@@ -9,7 +10,6 @@ import {
   ActionOpensLink,
   ActionTriggersFunction as ActionTriggersFunctionType,
 } from "@utils/types/feed/action";
-import MaterialIcon from "@components/global/icon";
 
 /**
  * Decides what type of action to render

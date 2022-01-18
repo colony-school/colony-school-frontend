@@ -2,7 +2,7 @@
 import { useState } from "react";
 
 // Components
-import MaterialIcon from "@components/global/icon";
+import MaterialIcon from "@components/global/icon/material";
 
 /**
  * A search bar

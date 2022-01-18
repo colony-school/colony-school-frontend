@@ -1,5 +1,5 @@
 // Components
-import MaterialIcon from "@components/global/icon";
+import MaterialIcon from "@components/global/icon/material";
 import Title from "@components/global/title";
 
 const PaymentAttachment = ({

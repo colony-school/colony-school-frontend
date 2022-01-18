@@ -1,5 +1,8 @@
-import MaterialIcon from "@components/global/icon";
+// Modules
 import { useState } from "react";
+
+// Components
+import MaterialIcon from "@components/global/icon/material";
 
 const ChoiceChip = ({
   choices,

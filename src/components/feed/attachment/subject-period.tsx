@@ -3,7 +3,7 @@ import { format } from "date-fns";
 
 // Components
 import ScheduleDiagram from "@components/schedule/diagram";
-import MaterialIcon from "@components/global/icon";
+import MaterialIcon from "@components/global/icon/material";
 import Title from "@components/global/title";
 
 // Types

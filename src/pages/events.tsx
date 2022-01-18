@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useState } from "react";
 
 // Components
-import MaterialIcon from "@components/global/icon";
+import MaterialIcon from "@components/global/icon/material";
 import Title from "@components/global/title";
 import Headline from "@components/global/headline";
 import Search from "@components/input/search";

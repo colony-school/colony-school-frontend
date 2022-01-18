@@ -1,8 +1,5 @@
-// Modules
-import { useRouter } from "next/router";
-
 // Components
-import MaterialIcon from "@components/global/icon";
+import MaterialIcon from "@components/global/icon/material";
 
 /**
  * Displays information and actions at the top of a screen
