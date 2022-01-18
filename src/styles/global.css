@@ -99,7 +99,7 @@
   }
 
   .list-page-search {
-    @apply pt-12 p-6 sm:pt-8 sm:pl-8 sm:pr-4;
+    @apply pt-12 pb-2 px-6 sm:pt-8 sm:p-0 sm:pl-8 sm:pr-4;
   }
 
   .list-page-list-container {
