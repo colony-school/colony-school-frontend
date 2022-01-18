@@ -23,7 +23,7 @@ const AssignmentItem = ({
   return (
     <li className={`list-page-list-item ${active ? "active" : "not-active"}`}>
       <button
-        className="flex flex-row justify-between items-end p-4 h-20"
+        className="flex flex-col gap-2 sm:flex-row sm:justify-between sm:items-end p-4 sm:h-20"
         onClick={() => {
           setActiveID(assignment.id);
         }}
@@ -36,11 +36,13 @@ const AssignmentItem = ({
             {format(assignment.due, "dd/MM/yyyy")}
           </p>
         </div>
-        <Status
-          status={assignment.status}
-          urgent={assignment.urgent}
-          pastDue={getUnixTime(assignment.due) < getUnixTime(new Date())}
-        />
+        <div className="flex flex-row w-full justify-end sm:w-fit">
+          <Status
+            status={assignment.status}
+            urgent={assignment.urgent}
+            pastDue={getUnixTime(assignment.due) < getUnixTime(new Date())}
+          />
+        </div>
       </button>
     </li>
   );

@@ -104,7 +104,12 @@ const Announcements = ({
               key={announcements[0].name}
             />
             {announcements.slice(1).map((announcement) => {
-              return <AnnouncementItem announcement={announcement} key={announcement.id} />;
+              return (
+                <AnnouncementItem
+                  announcement={announcement}
+                  key={announcement.id}
+                />
+              );
             })}
           </ul>
           <div className="flex flex-row justify-end p-4">
