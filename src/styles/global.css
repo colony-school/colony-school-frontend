@@ -86,6 +86,16 @@
   .card-tonal {
     @apply container-surface-variant;
   }
+
+  /* List Page */
+  .list-page {
+    @apply flex flex-col gap-4 sm:grid sm:grid-cols-[2fr_3fr] sm:gap-0 h-full
+      bg-light-surface3 dark:bg-dark-surface3 sm:rounded-tl-lg
+  }
+
+  .list-side {
+    @apply flex flex-col pl-4 pt-4;
+  }
 }
 
 @layer utilities {
