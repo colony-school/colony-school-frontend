@@ -1,7 +1,9 @@
 // Modules
+import { format, getUnixTime } from "date-fns";
 import { NextPage } from "next";
 
 // Components
+import Status from "@components/assignments/status";
 import Search from "@components/input/search";
 import TopAppBar from "@components/layout/top-app-bar";
 
@@ -21,12 +23,24 @@ const AssignmentItem = ({
   return (
     <li className={`list-page-list-item ${active ? "active" : "not-active"}`}>
       <button
-        className="p-4 h-20"
+        className="flex flex-row justify-between items-end p-4 h-20"
         onClick={() => {
           setActiveID(assignment.id);
         }}
       >
-        Assignment Item
+        <div className="flex flex-col">
+          <p className="font-bold max-lines-1">{assignment.name}</p>
+          <p className="max-lines-1">
+            {assignment.subject}
+            {" • "}
+            {format(assignment.due, "dd/MM/yyyy")}
+          </p>
+        </div>
+        <Status
+          status={assignment.status}
+          urgent={assignment.urgent}
+          pastDue={getUnixTime(assignment.due) < getUnixTime(new Date())}
+        />
       </button>
     </li>
   );
@@ -53,7 +67,7 @@ const AssignmentsPage: NextPage = () => {
       id: 18,
       name: "Lecture #2",
       desc: "Circular motion lecture",
-      subject: "Physics 1",
+      subject: "Physics",
       due: new Date(2022, 0, 8, 23, 59, 59),
       status: "started",
       urgent: false,
@@ -74,6 +88,8 @@ const AssignmentsPage: NextPage = () => {
     urgent: false,
   });
 
+  const [query, setQuery] = useState<string>();
+
   return (
     <div className="flex flex-col sm:h-screen bg-light-surface2 dark:bg-dark-surface2">
       <div className="hidden sm:block">
@@ -82,7 +98,10 @@ const AssignmentsPage: NextPage = () => {
       <div className="list-page">
         <div className="list-page-left">
           <div className="list-page-search">
-            <Search placeholder="Search assignments" />
+            <Search
+              placeholder="Search assignments"
+              onChange={(newQuery: string) => setQuery(newQuery)}
+            />
           </div>
           <div className="list-page-list-container">
             <ul className="list-page-list">

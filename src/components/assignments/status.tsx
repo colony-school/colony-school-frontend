@@ -49,7 +49,11 @@ const Status = ({
       )}
       {pastDue && (
         <div
-          className={`chip ${chipClassName || "container-error"}`}
+          className={`chip ${
+            chipClassName ||
+            "text-light-on-error bg-light-error \
+             dark:text-dark-on-error dark:bg-dark-error"
+          }`}
         >
           Past due
         </div>
