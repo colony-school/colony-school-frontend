@@ -77,18 +77,28 @@ const ActiveAssignmentDisplay = ({
           icon={
             <MaterialIcon
               icon={
-                isPast(assignment.due) ? "assignment_late" : "hourglass_full"
+                isPast(assignment.due)
+                  ? assignment.status == "done"
+                    ? "hourglass_bottom"
+                    : "assignment_late"
+                  : "hourglass_top"
               }
               className="text-light-primary dark:text-dark-primary"
             />
           }
           title={
-            <h3>{isPast(assignment.due) ? "Past Due by" : "Time Left"}</h3>
+            <h3>
+              {isPast(assignment.due)
+                ? assignment.status == "done"
+                  ? "Was Due"
+                  : "Past Due"
+                : "Time Left"}
+            </h3>
           }
-          subhead={formatDuration(
+          subhead={`${formatDuration(
             intervalToDuration({ start: assignment.due, end: new Date() }),
             { format: ["years", "months", "days", "hours"] }
-          )}
+          )} ${isPast(assignment.due) ? "ago" : "left"}`}
         />
       </div>
       <Headline
