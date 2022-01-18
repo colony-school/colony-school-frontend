@@ -90,7 +90,7 @@
   /* List Page */
   .list-page {
     @apply flex flex-col gap-4 sm:grid sm:grid-cols-[2fr_3fr] sm:gap-0 sm:rounded-tl-lg
-      bg-light-surface3;
+      bg-light-surface3 dark:bg-dark-surface3;
   }
 
   /* Left side of List Page */
@@ -103,7 +103,7 @@
   }
 
   .list-page-list-container {
-    @apply h-[calc(100vh-16.5rem)] sm:h-[calc(100vh-12.75rem)] overflow-auto scroll-invisible;
+    @apply h-[calc(100vh-16.5rem)] sm:h-[calc(100vh-14.25rem)] overflow-auto scroll-invisible;
   }
 
   .list-page-list {

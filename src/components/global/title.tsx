@@ -5,7 +5,7 @@ const Title = ({
   noPadding,
   className,
 }: {
-  icon: JSX.Element;
+  icon?: JSX.Element;
   title: JSX.Element;
   subhead?: string;
   noPadding?: boolean;

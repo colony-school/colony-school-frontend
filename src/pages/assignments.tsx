@@ -1,5 +1,12 @@
 // Modules
-import { format, getUnixTime } from "date-fns";
+import {
+  format,
+  formatDistanceToNow,
+  formatDuration,
+  getUnixTime,
+  intervalToDuration,
+  isPast,
+} from "date-fns";
 import { NextPage } from "next";
 
 // Components
@@ -10,6 +17,9 @@ import TopAppBar from "@components/layout/top-app-bar";
 // Types
 import { Assignment } from "@utils/types/assignment";
 import { useState } from "react";
+import Title from "@components/global/title";
+import MaterialIcon from "@components/global/icon";
+import { formatDistanceToNowStrict } from "date-fns/esm";
 
 const AssignmentItem = ({
   assignment,
@@ -40,11 +50,62 @@ const AssignmentItem = ({
           <Status
             status={assignment.status}
             urgent={assignment.urgent}
-            pastDue={getUnixTime(assignment.due) < getUnixTime(new Date())}
+            pastDue={isPast(assignment.due)}
           />
         </div>
       </button>
     </li>
+  );
+};
+
+const ActiveAssignmentDisplay = ({
+  assignment,
+}: {
+  assignment: Assignment;
+}) => {
+  return (
+    <div className="card card-elevated">
+      <Title title={<h2>{assignment.name}</h2>} subhead={assignment.subject} />
+      <div className="flex flex-col sm:grid sm:grid-cols-2">
+        <Title
+          icon={
+            <MaterialIcon
+              icon="calendar_today"
+              className="text-light-primary dark:text-dark-primary"
+            />
+          }
+          title={<h3>Due Date</h3>}
+          subhead={format(assignment.due, "dd/MM/yyyy HH:mm")}
+        />
+        <Title
+          icon={
+            <MaterialIcon
+              icon={
+                isPast(assignment.due) ? "assignment_late" : "hourglass_full"
+              }
+              className="text-light-primary dark:text-dark-primary"
+            />
+          }
+          title={
+            <h3>{isPast(assignment.due) ? "Past Due by" : "Time Left"}</h3>
+          }
+          subhead={formatDuration(
+            intervalToDuration({ start: assignment.due, end: new Date() }),
+            { format: ["years", "months", "days", "hours"] }
+          )}
+        />
+        <Title
+          icon={
+            <MaterialIcon
+              icon="assignment"
+              className="text-light-primary dark:text-dark-primary"
+            />
+          }
+          title={<h3>Status</h3>}
+          subhead="// TODO"
+        />
+      </div>
+    </div>
   );
 };
 
@@ -119,9 +180,7 @@ const AssignmentsPage: NextPage = () => {
           </div>
         </div>
         <div className="list-page-right">
-          <div className="card card-elevated p-4">
-            Lorem ipsum dolor sit amet
-          </div>
+          <ActiveAssignmentDisplay assignment={activeAssignment} />
         </div>
       </div>
     </div>
