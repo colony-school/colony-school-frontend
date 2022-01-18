@@ -110,6 +110,7 @@ const AssignmentsPage: NextPage = () => {
                   assignment={assignment}
                   active={activeID == assignment.id}
                   setActiveID={setActiveID}
+                  key={assignment.id}
                 />
               ))}
             </ul>
