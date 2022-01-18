@@ -12,22 +12,23 @@ import { useState } from "react";
 const FilterChip = ({
   name,
   onClick,
-  activeStyle,
+  style,
   value,
 }: {
   name: string;
   onClick: Function;
-  activeStyle?: string;
+  style?: { active: string; inactive: string };
   value?: boolean;
 }) => {
   const [active, setActive] = useState<boolean>(value || false);
 
   return (
     <button
-      className={`chip transition-opacity ${
+      className={`chip ring-0 ${
         active
-          ? activeStyle || "container-secondary"
-          : "outline-2 outline-light-outline dark:outline-dark-outline outline-offset-[-2px]"
+          ? `transition-shadow hover:shadow focus-visible:shadow ${style?.active || "container-secondary"}`
+          : `outline-2 outline-light-outline dark:outline-dark-outline outline-offset-[-2px]
+            ${style?.inactive || ""}`
       }`}
       onClick={() => {
         setActive(!active);

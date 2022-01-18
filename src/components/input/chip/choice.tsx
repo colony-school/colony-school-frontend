@@ -9,7 +9,7 @@ const ChoiceChip = ({
   choices: Array<{
     id: any;
     name: string;
-    activeStyle?: string;
+    style?: { active: string; inactive: string };
   }>;
   onChange: Function;
   value: any;
@@ -22,13 +22,15 @@ const ChoiceChip = ({
         <button
           className={`chip rounded-none first:rounded-l last:rounded-r ${
             choice.id == activeID
-              ? choice.activeStyle || "container-secondary"
-              : "outline-2 outline-light-outline dark:outline-dark-outline outline-offset-[-2px]"
+              ? `ring-0 ${choice.style?.active || "container-secondary"}`
+              : `outline-2 outline-light-outline dark:outline-dark-outline outline-offset-[-2px]
+                ${choice.style?.inactive}`
           }`}
           onClick={() => {
             setActiveID(choice.id);
             onChange(activeID);
           }}
+          aria-disabled={choice.id == activeID}
         >
           {choice.id == activeID && (
             <MaterialIcon icon="check" className="text-lg" />
