@@ -152,7 +152,10 @@ const ActiveAssignmentDisplay = ({
               value={assignment.urgent}
             />
             {isPast(assignment.due) && (
-              <div className="chip text-light-on-error bg-light-error">
+              <div
+                className="chip text-light-on-error dark:text-dark-on-error
+                  bg-light-error dark:bg-dark-error"
+              >
                 Past Due
               </div>
             )}

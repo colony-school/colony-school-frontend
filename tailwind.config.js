@@ -57,8 +57,8 @@ module.exports = {
           "on-primary": "#00315b",
           "primary-container": "#004881",
           "on-primary-container": "#d1e4ff",
-          "primary-0.08": "#d0bcff", // temp
-          "primary-0.12": "#d0bcff", // temp
+          "primary-0.08": "#93bdf2",
+          "primary-0.12": "#8cb7eb",
           "primary-0.08-tlc": "#9fc9ff08",
           "primary-0.12-tlc": "#9fc9ff0c",
           secondary: "#e8c429",
