@@ -31,6 +31,7 @@ const ChoiceChip = ({
             onChange(activeID);
           }}
           aria-disabled={choice.id == activeID}
+          key={choice.id}
         >
           {choice.id == activeID && (
             <MaterialIcon icon="check" className="text-lg" />
