@@ -109,7 +109,7 @@ module.exports = {
         none: "0",
         xs: "0.03125rem",
         sm: "0.25rem",
-        default: "0.5rem",
+        DEFAULT: "0.5rem",
         lg: "0.75rem",
         xl: "0.9375rem",
         "2xl": "1.75rem",
