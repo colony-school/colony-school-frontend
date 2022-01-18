@@ -28,20 +28,9 @@ const EventItem = ({
   setActiveID: Function;
 }): JSX.Element => {
   return (
-    <li className="card bg-light-surface1 dark:bg-dark-surface1">
+    <li className={`list-page-list-item ${active ? "active" : "not-active"}`}>
       <button
-        className={`card flex flex-row justify-between items-center gap-4 h-20 text-left transition-shadow
-          focus:ring-0 ${
-            active
-              ? "text-light-on-primary-container bg-light-primary-container \
-                dark:text-dark-on-primary-container dark:bg-dark-primary-container shadow \
-                hover:shadow-md focus-visible:shadow-md"
-              : "text-light-on-surface bg-light-surface1 dark:text-dark-on-surface dark:bg-dark-surface1 \
-                hover:bg-light-primary-0.08-tlc hover:dark:bg-dark-primary-0.08-tlc \
-                focus:bg-light-primary-0.12-tlc focus:dark:bg-dark-primary-0.12-tlc \
-                focus-visible:bg-light-surface1 focus-visible:dark:bg-dark-surface1 \
-                focus-visible:shadow"
-          }`}
+        className="flex flex-row justify-between items-center gap-4 h-20"
         onClick={() => setActiveID(event.id)}
       >
         <div className="flex flex-row items-center px-4 gap-4">
@@ -89,112 +78,108 @@ const ActiveEventDisplay = ({
     differenceInDays(event.eventStart || 0, event.eventEnd || 0) === 0;
 
   return (
-    <div className="card card-elevated overflow-hidden">
-      <div className="card h-[calc(100vh-11.25rem)] overflow-auto">
-        <div className="flex flex-col">
-          <Title
+    <div className="card card-elevated flex flex-col">
+      <Title
+        icon={
+          <MaterialIcon
+            icon="event"
+            className="text-4xl text-light-primary dark:text-dark-primary"
+          />
+        }
+        title={<h2 className="font-bold">{event.title}</h2>}
+        subhead="Event"
+      />
+      <div className="flex flex-col overflow-auto">
+        {event.image && (
+          <div className="relative w-full h-48 bg-light-surface-variant dark:bg-dark-surface-variant">
+            <Image
+              src={event.image}
+              layout="fill"
+              objectFit="cover"
+              alt={event.title}
+            />
+          </div>
+        )}
+        {event.eventStart && event.eventEnd && (
+          <div className="grid grid-cols-2">
+            <Headline
+              icon={
+                <MaterialIcon
+                  icon="calendar_today"
+                  className="text-light-primary dark:text-dark-primary"
+                />
+              }
+              title={<h3 className="text-base">Date</h3>}
+              subhead={
+                <time>
+                  {format(event.eventStart, "dd/MM/yyyy")}
+                  {oneDayEvent
+                    ? ""
+                    : "–" + format(event.eventEnd, "dd/MM/yyyy")}
+                </time>
+              }
+            />
+            <Headline
+              icon={
+                <MaterialIcon
+                  icon="schedule"
+                  className="text-light-primary dark:text-dark-primary"
+                />
+              }
+              title={<h3 className="text-base">Time</h3>}
+              subhead={
+                <time>
+                  {format(event.eventStart, "HH:mm")}–
+                  {format(event.eventEnd, "HH:mm")}
+                  {event.periodStart &&
+                    event.periodEnd &&
+                    ` (Period ${event.periodStart}–${event.periodEnd})`}
+                </time>
+              }
+            />
+          </div>
+        )}
+        {event.location && (
+          <Headline
             icon={
               <MaterialIcon
-                icon="event"
-                className="text-4xl text-light-primary dark:text-dark-primary"
+                icon="place"
+                className="text-light-primary dark:text-dark-primary"
               />
             }
-            title={<h2 className="font-bold">{event.title}</h2>}
-            subhead="Event"
-          />
-          <div className="flex flex-col overflow-auto">
-            {event.image && (
-              <div className="relative w-full h-48 bg-light-surface-variant dark:bg-dark-surface-variant">
-                <Image
-                  src={event.image}
-                  layout="fill"
-                  objectFit="cover"
-                  alt={event.title}
-                />
-              </div>
-            )}
-            {event.eventStart && event.eventEnd && (
-              <div className="grid grid-cols-2">
-                <Headline
-                  icon={
-                    <MaterialIcon
-                      icon="calendar_today"
-                      className="text-light-primary dark:text-dark-primary"
-                    />
-                  }
-                  title={<h3 className="text-base">Date</h3>}
-                  subhead={
-                    <time>
-                      {format(event.eventStart, "dd/MM/yyyy")}
-                      {oneDayEvent
-                        ? ""
-                        : "–" + format(event.eventEnd, "dd/MM/yyyy")}
-                    </time>
-                  }
-                />
-                <Headline
-                  icon={
-                    <MaterialIcon
-                      icon="schedule"
-                      className="text-light-primary dark:text-dark-primary"
-                    />
-                  }
-                  title={<h3 className="text-base">Time</h3>}
-                  subhead={
-                    <time>
-                      {format(event.eventStart, "HH:mm")}–
-                      {format(event.eventEnd, "HH:mm")}
-                      {event.periodStart &&
-                        event.periodEnd &&
-                        ` (Period ${event.periodStart}–${event.periodEnd})`}
-                    </time>
-                  }
-                />
-              </div>
-            )}
-            {event.location && (
-              <Headline
-                icon={
+            title={<h3 className="text-base">Location</h3>}
+            subhead={
+              <div className="flex flex-row gap-2 items-center">
+                <p>{event.location}</p>
+                <button className="btn-text flex p-0 rounded-full">
                   <MaterialIcon
-                    icon="place"
-                    className="text-light-primary dark:text-dark-primary"
+                    icon="map"
+                    className="text-light-secondary dark:text-dark-secondary"
                   />
-                }
-                title={<h3 className="text-base">Location</h3>}
-                subhead={
-                  <div className="flex flex-row gap-2 items-center">
-                    <p>{event.location}</p>
-                    <button className="btn-text flex p-0 rounded-full">
-                      <MaterialIcon
-                        icon="map"
-                        className="text-light-secondary dark:text-dark-secondary"
-                      />
-                    </button>
-                  </div>
-                }
-              />
-            )}
-            <p className="p-4">{event.desc}</p>
-            <div className="flex flex-row justify-end gap-2 p-4">
-              <a href={event.source} className="btn btn-outlined">
-                Read source
-              </a>
-              {event.actions &&
-                event.actions.map((action) => {
-                  return (
-                    <a
-                      key={action.name}
-                      href={action.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="btn btn-filled"
-                    >
-                      {action.name}
-                    </a>
-                  );
-                })}
-            </div>
-          </div>
+                </button>
+              </div>
+            }
+          />
+        )}
+        <p className="p-4">{event.desc}</p>
+        <div className="flex flex-row justify-end gap-2 p-4">
+          <a href={event.source} className="btn btn-outlined">
+            Read source
+          </a>
+          {event.actions &&
+            event.actions.map((action) => {
+              return (
+                <a
+                  key={action.name}
+                  href={action.url}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-filled"
+                >
+                  {action.name}
+                </a>
+              );
+            })}
         </div>
       </div>
     </div>
@@ -262,29 +247,30 @@ const Events: NextPage = () => {
       <div className="hidden sm:block">
         <TopAppBar title="Events and Announcements" />
       </div>
-      <div
-        className="flex flex-col gap-4 sm:grid sm:grid-cols-[2fr_3fr] sm:gap-0 h-full bg-light-surface3 dark:bg-dark-surface3
-          sm:rounded-tl-lg"
-      >
-        <div className="flex flex-col pl-4 pt-4">
-          <Search
-            placeholder="Search events"
-            onChange={(newQuery: string) => setQuery(newQuery)}
-          />
-          <ul className="flex flex-col gap-4 px-4 pt-2 pb-8 max-h-full overflow-auto">
-            {events.map((event) => {
-              return (
-                <EventItem
-                  key={event.id}
-                  event={event}
-                  active={activeID == event.id}
-                  setActiveID={setActiveID}
-                />
-              );
-            })}
-          </ul>
+      <div className="list-page">
+        <div className="list-page-left">
+          <div className="list-page-search">
+            <Search
+              placeholder="Search events"
+              onChange={(newQuery: string) => setQuery(newQuery)}
+            />
+          </div>
+          <div className="list-page-list-container">
+            <ul className="list-page-list">
+              {events.map((event) => {
+                return (
+                  <EventItem
+                    key={event.id}
+                    event={event}
+                    active={activeID == event.id}
+                    setActiveID={setActiveID}
+                  />
+                );
+              })}
+            </ul>
+          </div>
         </div>
-        <div className="p-8 h-full">
+        <div className="list-page-right">
           <ActiveEventDisplay event={activeEvent} />
         </div>
       </div>

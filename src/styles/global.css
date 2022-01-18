@@ -89,12 +89,51 @@
 
   /* List Page */
   .list-page {
-    @apply flex flex-col gap-4 sm:grid sm:grid-cols-[2fr_3fr] sm:gap-0 h-full
-      bg-light-surface3 dark:bg-dark-surface3 sm:rounded-tl-lg
+    @apply flex flex-col gap-4 sm:grid sm:grid-cols-[2fr_3fr] sm:gap-0 sm:rounded-tl-lg
+      bg-light-surface3;
   }
 
-  .list-side {
-    @apply flex flex-col pl-4 pt-4;
+  /* Left side of List Page */
+  .list-page-left {
+    @apply flex flex-col gap-2;
+  }
+
+  .list-page-search {
+    @apply pt-8 pl-8 pr-4;
+  }
+
+  .list-page-list-container {
+    @apply h-[calc(100vh-14rem)] sm:h-[calc(100vh-12.75rem)] overflow-auto scroll-invisible;
+  }
+
+  .list-page-list {
+    @apply flex flex-col gap-4 pt-2 pb-4 pl-8 pr-4;
+  }
+
+  .list-page-list-item {
+    @apply card bg-light-surface1 dark:bg-dark-surface1;
+  }
+
+  .list-page-list-item button {
+    @apply card text-left transition-shadow focus:ring-0;
+  }
+
+  .list-page-list-item.not-active button {
+    @apply text-light-on-surface bg-light-surface1 dark:text-dark-on-surface dark:bg-dark-surface1
+      hover:bg-light-primary-0.08-tlc hover:dark:bg-dark-primary-0.08-tlc
+      focus:bg-light-primary-0.12-tlc focus:dark:bg-dark-primary-0.12-tlc
+      focus-visible:bg-light-surface1 focus-visible:dark:bg-dark-surface1
+      focus-visible:shadow;
+  }
+
+  .list-page-list-item.active button {
+    @apply text-light-on-primary-container bg-light-primary-container
+      dark:text-dark-on-primary-container dark:bg-dark-primary-container shadow
+      hover:shadow-md focus-visible:shadow-md;
+  }
+
+  .list-page-right {
+    @apply hidden sm:block sm:py-8 sm:pl-4 sm:pr-8 sm:h-[calc(100vh-7.25rem)] sm:overflow-auto;
   }
 }
 
