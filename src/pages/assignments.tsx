@@ -14,6 +14,7 @@ import TopAppBar from "@components/layout/top-app-bar";
 // Types
 import { Assignment } from "@utils/types/assignment";
 import FilterChip from "@components/input/chip/filter";
+import ChoiceChip from "@components/input/chip/choice";
 
 const AssignmentItem = ({
   assignment,
@@ -88,32 +89,41 @@ const ActiveAssignmentDisplay = ({
             { format: ["years", "months", "days", "hours"] }
           )}
         />
-        <Headline
-          icon={
-            <MaterialIcon
-              icon="assignment"
-              className="self-center text-light-primary dark:text-dark-primary"
-            />
-          }
-          title={<h3 className="w-full text-xl font-medium">Status</h3>}
-          subhead={
-            <div className="flex flex-row gap-2">
-              <FilterChip
-                name="Urgent"
-                onClick={(active: boolean) => {}}
-                activeStyle="container-error"
-                value={false}
-              />
-              {isPast(assignment.due) && (
-                <div className="chip text-light-on-error bg-light-error">
-                  Past Due
-                </div>
-              )}
-            </div>
-          }
-          gap={4}
-        />
       </div>
+      <Headline
+        icon={
+          <MaterialIcon
+            icon="assignment"
+            className="self-center text-light-primary dark:text-dark-primary"
+          />
+        }
+        title={<h3 className="w-full text-xl font-medium">Status</h3>}
+        subhead={
+          <div className="flex flex-row gap-2">
+            <ChoiceChip
+              choices={[
+                { id: "not-started", name: "Not started", activeStyle: "container-tertiary" },
+                { id: "started", name: "Started", activeStyle: "container-secondary" },
+                { id: "done", name: "Done", activeStyle: "container-primary" },
+              ]}
+              onChange={(id: string) => {}}
+              value={assignment.status}
+            />
+            <FilterChip
+              name="Urgent"
+              onClick={(active: boolean) => {}}
+              activeStyle="container-error"
+              value={false}
+            />
+            {isPast(assignment.due) && (
+              <div className="chip text-light-on-error bg-light-error">
+                Past Due
+              </div>
+            )}
+          </div>
+        }
+        gap={4}
+      />
     </div>
   );
 };

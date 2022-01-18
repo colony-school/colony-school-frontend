@@ -24,14 +24,14 @@ const FilterChip = ({
 
   return (
     <button
-      className={`chip ${
+      className={`chip transition-opacity ${
         active
           ? activeStyle || "container-secondary"
           : "outline-2 outline-light-outline dark:outline-dark-outline outline-offset-[-2px]"
       }`}
       onClick={() => {
-        onClick(active);
         setActive(!active);
+        onClick(active);
       }}
     >
       {active && <MaterialIcon icon="check" className="text-lg" />}
