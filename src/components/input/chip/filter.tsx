@@ -1,4 +1,5 @@
 // Modules
+import MaterialIcon from "@components/global/icon";
 import { useState } from "react";
 
 /**
@@ -11,22 +12,29 @@ import { useState } from "react";
 const FilterChip = ({
   name,
   onClick,
+  activeStyle,
   value,
 }: {
   name: string;
   onClick: Function;
+  activeStyle?: string;
   value?: boolean;
 }) => {
   const [active, setActive] = useState<boolean>(value || false);
 
   return (
     <button
-      className="chip border border-light-outline dark:border-dark-outline"
+      className={`chip ${
+        active
+          ? activeStyle || "container-secondary"
+          : "outline-2 outline-light-outline dark:outline-dark-outline outline-offset-[-2px]"
+      }`}
       onClick={() => {
         onClick(active);
         setActive(!active);
       }}
     >
+      {active && <MaterialIcon icon="check" className="text-lg" />}
       {name}
     </button>
   );

@@ -71,7 +71,8 @@
 
   /* Chip */
   .chip {
-    @apply py-[6px] px-3 text-base font-medium rounded;
+    @apply flex flex-row gap-2 items-center
+      py-[6px] px-3 text-base font-medium rounded;
   }
 
   /* Card */

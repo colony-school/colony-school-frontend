@@ -92,16 +92,24 @@ const ActiveAssignmentDisplay = ({
           icon={
             <MaterialIcon
               icon="assignment"
-              className="text-light-primary dark:text-dark-primary"
+              className="self-center text-light-primary dark:text-dark-primary"
             />
           }
-          title={<h3>Status</h3>}
+          title={<h3 className="w-full text-xl font-medium">Status</h3>}
           subhead={
-            <FilterChip
-              name="Urgent"
-              onClick={(active: boolean) => console.log(active)}
-              value={false}
-            />
+            <div className="flex flex-row gap-2">
+              <FilterChip
+                name="Urgent"
+                onClick={(active: boolean) => {}}
+                activeStyle="container-error"
+                value={false}
+              />
+              {isPast(assignment.due) && (
+                <div className="chip text-light-on-error bg-light-error">
+                  Past Due
+                </div>
+              )}
+            </div>
           }
           gap={4}
         />
