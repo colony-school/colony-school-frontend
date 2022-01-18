@@ -7,7 +7,7 @@ const MaterialIcon = ({
 }) => (
   <i
     aria-hidden="true"
-    className={`material-icons ${className || ""}`}
+    className={`material-icons [user-select:none] ${className || ""}`}
     translate="no"
   >
     {icon}
