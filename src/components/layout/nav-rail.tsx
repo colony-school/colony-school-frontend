@@ -15,11 +15,11 @@ const NavRail = ({
 
   return (
     <nav
-      className="flex flex-col items-center gap-1 w-fit h-screen p-1 bg-light-surface1 dark:bg-dark-surface1
-      overflow-auto scroll-invisible"
+      className="flex flex-col items-center gap-1 w-fit h-screen p-1
+        bg-light-surface1 dark:bg-dark-surface1 overflow-auto scroll-invisible"
     >
       <Link href="/">
-        <a className="flex flex-col gap-1 items-center m-4">
+        <a className="flex flex-col gap-1 items-center px-6 py-4">
           <div className="relative w-10 aspect-square">
             <Image
               src="/images/brand/logo.svg"
@@ -36,17 +36,23 @@ const NavRail = ({
       {items.map((item) => {
         return (
           <Link href={item.url} key={item.name}>
-            <a className="flex flex-col justify-center items-center gap-1 p-2 h-20 group">
+            <a
+              className="flex flex-col justify-center items-center gap-1 p-2 h-20 group
+              focus-visible:bg-light-primary-0.12-tlc focus-visible:dark:bg-dark-primary-0.12-tlc ring-0"
+            >
               <div
-                className={`flex flex-row items-center py-2 px-6 text-light-on-surface-variant dark:text-dark-on-surface-variant
-                  rounded-full transition-colors group-hover:text-light-tertiary group-hover:dark:text-dark-tertiary
-                  group-hover:bg-light-tertiary-container group-hover:dark:bg-dark-tertiary-container group-hover:transition-none
-                ${
-                  path == item.url
-                    ? "text-light-tertiary bg-light-secondary-container dark:text-dark-tertiary dark:bg-dark-secondary-container \
-                       group-focus:bg-light-secondary-container"
-                    : "bg-transparent"
-                }`}
+                className={`flex flex-row items-center py-2 px-6
+                text-light-on-surface-variant dark:text-dark-on-surface-variant
+                  rounded-full ${
+                    path == item.url
+                      ? "text-light-tertiary bg-light-secondary-container dark:text-dark-tertiary \
+                       dark:bg-dark-secondary-container \
+                       transition-shadow group-hover:shadow \
+                       group-focus:shadow-none"
+                      : "bg-transparent transition-colors group-hover:text-light-tertiary \
+                       group-hover:dark:text-dark-tertiary group-hover:bg-light-tertiary-container \
+                       group-hover:dark:bg-dark-tertiary-container group-hover:transition-none"
+                  }`}
               >
                 {item.icon}
               </div>

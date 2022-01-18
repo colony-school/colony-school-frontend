@@ -15,11 +15,11 @@ const Item = ({ item }: { item: NavItem }): JSX.Element => {
   return (
     <Link href={item.url}>
       <a
-        className={`flex flex-row gap-3 items-center px-6 py-4 rounded-full group transition-colors
-        hover:bg-light-tertiary-container hover:dark:bg-dark-tertiary-container hover:transition-none
+        className={`flex flex-row gap-3 items-center px-6 py-4 rounded-full group
         ${
-          path == item.url &&
-          "bg-light-secondary-container dark:bg-dark-secondary-container"
+          path == item.url
+            ? "bg-light-secondary-container dark:bg-dark-secondary-container transition-all hover:shadow"
+            : "hover:bg-light-tertiary-container hover:dark:bg-dark-tertiary-container transition-colors hover:transition-none"
         }`}
       >
         <div
