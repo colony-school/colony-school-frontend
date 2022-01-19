@@ -31,12 +31,16 @@ const RelatedPosts = ({ filter }: { filter: Function }): JSX.Element => {
         <h3 className="text-3xl">Related Posts</h3>
       </header>
       <ul className="flex flex-col gap-4 items-center pb-8">
-        {feed.length == 0
-          ? <div className="card card-tonal flex flex-col items-center gap-4 p-4">
-            <p className="text-center">No posts yet. Now go contribute to society and compose one!</p>
+        {feed.length == 0 ? (
+          <div className="card card-tonal flex flex-col items-center gap-4 p-4">
+            <p className="text-center">
+              No posts yet. Now go contribute to society and compose one!
+            </p>
             <button className="btn btn-text">Okie Dokie</button>
           </div>
-          : feed.map((post) => <Post post={post} />)}
+        ) : (
+          feed.map((post, index) => <Post post={post} key={index} />)
+        )}
       </ul>
     </div>
   );

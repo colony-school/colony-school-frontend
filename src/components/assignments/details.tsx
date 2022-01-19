@@ -74,7 +74,7 @@ const AssignmentDetails = ({
         }
         title={<h3 className="w-full text-xl font-medium">Status</h3>}
         subhead={
-          <div className="flex flex-row gap-2">
+          <div className="flex flex-row flex-wrap gap-2">
             <ChoiceChip
               choices={[
                 {
