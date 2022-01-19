@@ -19,7 +19,7 @@ const Feed = () => {
   return (
     <ul className="flex flex-col gap-4 items-center pb-8 sm:px-8">
       {feed.map((post, index) => {
-        return <Post post={post} key={index} />;
+        return <Post post={post} className="sm:w-[74ch]" key={index} />;
       })}
     </ul>
   );

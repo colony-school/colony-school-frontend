@@ -16,9 +16,9 @@ import { Post as PostType } from "@utils/types/feed/post";
  * An entry in the class feed
  * @param post A post object
  */
-const Post = ({ post }: { post: PostType }) => {
+const Post = ({ post, className }: { post: PostType, className?: string }) => {
   return (
-    <li className="w-full max-w-full sm:card sm:card-elevated sm:w-[74ch]">
+    <li className={`w-full max-w-full sm:card sm:card-elevated ${className}`}>
       <Title
         icon={<Monogram name={post.author} />}
         title={<PostTitle attachments={post.attachments} />}

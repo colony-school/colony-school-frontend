@@ -36,10 +36,12 @@ const RelatedPosts = ({ filter }: { filter: Function }): JSX.Element => {
             <p className="text-center">
               No posts yet. Now go contribute to society and compose one!
             </p>
-            <button className="btn btn-text">Okie Dokie</button>
+            <button className="btn btn-text">Compose about this</button>
           </div>
         ) : (
-          feed.map((post, index) => <Post post={post} key={index} />)
+          feed.map((post, index) => (
+            <Post post={post} key={index} />
+          ))
         )}
       </ul>
     </div>
