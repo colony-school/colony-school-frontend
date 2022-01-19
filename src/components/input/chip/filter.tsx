@@ -26,9 +26,13 @@ const FilterChip = ({
 
   return (
     <button
+      role="checkbox"
+      aria-checked={active}
       className={`chip ring-0 ${
         active
-          ? `transition-shadow hover:shadow focus-visible:shadow ${style?.active || "container-secondary"}`
+          ? `transition-shadow hover:shadow focus-visible:shadow ${
+              style?.active || "container-secondary"
+            }`
           : `outline-2 outline-light-outline dark:outline-dark-outline outline-offset-[-2px]
             ${style?.inactive || ""}`
       }`}
@@ -38,7 +42,7 @@ const FilterChip = ({
       }}
     >
       {active && <MaterialIcon icon="check" className="text-lg" />}
-      {name}
+      <p>{name}</p>
     </button>
   );
 };

@@ -17,11 +17,16 @@ const Feed = () => {
   const [feed, setFeed] = useState<Array<PostType>>(dummyFeed);
 
   return (
-    <ul className="flex flex-col gap-4 items-center pb-8 sm:px-8">
+    <section
+      role="feed"
+      className="flex flex-col gap-4 items-center pb-8 sm:px-8"
+    >
       {feed.map((post, index) => {
-        return <Post post={post} className="sm:w-[74ch]" key={index} />;
+        return (
+            <Post post={post} index={index} className="sm:w-[74ch]" key={index} />
+        );
       })}
-    </ul>
+    </section>
   );
 };
 

@@ -20,9 +20,12 @@ const ChoiceChip = ({
   const [activeID, setActiveID] = useState(value);
 
   return (
-    <div className="flex flex-row gap-1">
+    <div className="flex flex-row gap-1" role="radiogroup">
       {choices.map((choice) => (
         <button
+          role="radio"
+          aria-checked={choice.id == activeID}
+          aria-labeledby={choice.id}
           className={`chip rounded-none first:rounded-l last:rounded-r ${
             choice.id == activeID
               ? `ring-0 ${choice.style?.active || "container-secondary"}`
@@ -33,13 +36,12 @@ const ChoiceChip = ({
             setActiveID(choice.id);
             onChange(activeID);
           }}
-          aria-disabled={choice.id == activeID}
           key={choice.id}
         >
           {choice.id == activeID && (
             <MaterialIcon icon="check" className="text-lg" />
           )}
-          {choice.name}
+          <p id={choice.id}>{choice.name}</p>
         </button>
       ))}
     </div>

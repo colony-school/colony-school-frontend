@@ -84,8 +84,8 @@ const AssignmentDetails = ({
                     active: "container-tertiary",
                     inactive:
                       "transition-colors \
-                      hover:bg-light-tertiary-0.08-tlc hover:dark:bg-dark-tertiary-0.08-tlc transition-none \
-                      focus:bg-light-tertiary-0.12-tlc focus:dark:bg-dark-tertiary-0.12-tlc ring-0",
+                        hover:bg-light-tertiary-0.08-tlc hover:dark:bg-dark-tertiary-0.08-tlc transition-none \
+                        focus:bg-light-tertiary-0.12-tlc focus:dark:bg-dark-tertiary-0.12-tlc ring-0",
                   },
                 },
                 {
@@ -95,8 +95,8 @@ const AssignmentDetails = ({
                     active: "container-secondary",
                     inactive:
                       "transition-colors \
-                      hover:bg-light-secondary-0.08-tlc hover:dark:bg-dark-secondary-0.08-tlc transition-none \
-                      focus:bg-light-secondary-0.12-tlc focus:dark:bg-dark-secondary-0.12-tlc ring-0",
+                        hover:bg-light-secondary-0.08-tlc hover:dark:bg-dark-secondary-0.08-tlc transition-none \
+                        focus:bg-light-secondary-0.12-tlc focus:dark:bg-dark-secondary-0.12-tlc ring-0",
                   },
                 },
                 {
@@ -106,8 +106,8 @@ const AssignmentDetails = ({
                     active: "container-primary",
                     inactive:
                       "transition-colors \
-                      hover:bg-light-primary-0.08-tlc hover:dark:bg-dark-primary-0.08-tlc transition-none \
-                      focus:bg-light-primary-0.12-tlc focus:dark:bg-dark-primary-0.12-tlc ring-0",
+                        hover:bg-light-primary-0.08-tlc hover:dark:bg-dark-primary-0.08-tlc transition-none \
+                        focus:bg-light-primary-0.12-tlc focus:dark:bg-dark-primary-0.12-tlc ring-0",
                   },
                 },
               ]}
@@ -121,15 +121,15 @@ const AssignmentDetails = ({
                 active: "container-error",
                 inactive:
                   "transition-colors \
-                  hover:bg-light-error-0.08-tlc hover:dark:bg-dark-error-0.08-tlc transition-none \
-                  focus:bg-light-error-0.12-tlc focus:dark:bg-dark-error-0.12-tlc ring-0",
+                    hover:bg-light-error-0.08-tlc hover:dark:bg-dark-error-0.08-tlc transition-none \
+                    focus:bg-light-error-0.12-tlc focus:dark:bg-dark-error-0.12-tlc ring-0",
               }}
               value={assignment.urgent}
             />
-            {isPast(assignment.due) && (
+            {isPast(assignment.due) && assignment.status != "done" && (
               <div
                 className="chip text-light-on-error dark:text-dark-on-error
-                  bg-light-error dark:bg-dark-error"
+                    bg-light-error dark:bg-dark-error"
               >
                 Past Due
               </div>
@@ -138,6 +138,7 @@ const AssignmentDetails = ({
         }
         gap={4}
       />
+      <h3 className="sr-only">Description</h3>
       <ReactMarkdown className="p-4">{assignment.desc}</ReactMarkdown>
       <div className="flex flex-row justify-end items-center gap-2 p-4">
         <button className="btn btn-outlined">Compose about</button>
@@ -154,6 +155,6 @@ const AssignmentDetails = ({
       </div>
     </div>
   );
-}
+};
 
 export default AssignmentDetails;

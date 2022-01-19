@@ -16,9 +16,20 @@ import { Post as PostType } from "@utils/types/feed/post";
  * An entry in the class feed
  * @param post A post object
  */
-const Post = ({ post, className }: { post: PostType, className?: string }) => {
+const Post = ({
+  post,
+  index,
+  className,
+}: {
+  post: PostType;
+  index: number;
+  className?: string;
+}) => {
   return (
-    <li className={`w-full max-w-full sm:card sm:card-elevated ${className}`}>
+    <article
+      aria-posinset={index}
+      className={`w-full max-w-full sm:card sm:card-elevated ${className}`}
+    >
       <Title
         icon={<Monogram name={post.author} />}
         title={<PostTitle attachments={post.attachments} />}
@@ -29,7 +40,7 @@ const Post = ({ post, className }: { post: PostType, className?: string }) => {
       <ReactMarkdown className="p-4">{post.content}</ReactMarkdown>
       <PostAttachments attachments={post.attachments} />
       <PostActions attachments={post.attachments} />
-    </li>
+    </article>
   );
 };
 
