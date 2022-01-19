@@ -23,7 +23,7 @@ const AssignmentItem = ({
   return (
     <li className={`list-page-list-item ${active ? "active" : "not-active"}`}>
       <button
-        className="flex flex-col gap-2 sm:flex-row sm:justify-between sm:items-end p-4 sm:h-20"
+        className="flex flex-col gap-2 md:flex-row md:justify-between md:items-end p-4 md:h-20"
         onClick={() => {
           setActiveID(assignment.id);
         }}
@@ -36,7 +36,7 @@ const AssignmentItem = ({
             {format(assignment.due, "dd/MM/yyyy")}
           </p>
         </div>
-        <div className="flex flex-row w-full justify-end sm:w-fit">
+        <div className="flex flex-row w-full justify-end md:w-fit">
           <Status
             status={assignment.status}
             urgent={assignment.urgent}

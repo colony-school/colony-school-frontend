@@ -3,13 +3,15 @@ import { NextPage } from "next";
 import { useState } from "react";
 
 // Components
-import AssignmentDetails from "@components/assignments/details"
+import AssignmentDetails from "@components/assignments/details";
 import AssignmentItem from "@components/assignments/item";
+import RelatedPosts from "@components/feed/related";
 import Search from "@components/input/search";
 import TopAppBar from "@components/layout/top-app-bar";
 
 // Types
 import { Assignment } from "@utils/types/assignment";
+import { Post } from "@utils/types/feed/post";
 
 const ActiveAssignmentDisplay = ({
   assignment,
@@ -17,9 +19,22 @@ const ActiveAssignmentDisplay = ({
   assignment: Assignment;
 }) => {
   return (
-    <div className="card card-elevated">
-      <AssignmentDetails assignment={assignment} />
-    </div>
+    <main className="flex flex-col">
+      <article className="card card-elevated">
+        <AssignmentDetails assignment={assignment} />
+      </article>
+      <div>
+        <RelatedPosts
+          filter={(post: Post) => {
+            return post.attachments.find(
+              (attachment) =>
+                attachment.type == "assignment" &&
+                attachment.assignment.id == assignment.id
+            );
+          }}
+        />
+      </div>
+    </main>
   );
 };
 
