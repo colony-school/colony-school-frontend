@@ -108,7 +108,7 @@
   }
 
   .list-page-list {
-    @apply flex flex-col gap-4 px-6 sm:pt-2 sm:pb-4 sm:pl-8 sm:pr-4;
+    @apply grid grid-cols-[repeat(auto-fill,minmax(24rem,1fr))] gap-4 px-6 sm:pt-2 sm:pb-4 sm:pl-8 sm:pr-4;
   }
 
   .list-page-list-item {
