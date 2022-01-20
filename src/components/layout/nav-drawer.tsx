@@ -32,7 +32,7 @@ const SkipToContent = () => (
  * A nav item with hover and active. Only active when the client URL is the same with item URL.
  */
 const Item = ({ item }: { item: NavItem }): JSX.Element => {
-  const path = useRouter().asPath;
+  const path = useRouter().pathname;
 
   return (
     <Link href={item.url}>

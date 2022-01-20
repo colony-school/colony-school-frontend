@@ -11,7 +11,7 @@ const NavRail = ({
 }: {
   items: Array<{ name: string; icon: JSX.Element; url: string }>;
 }) => {
-  const path = useRouter().asPath;
+  const path = useRouter().pathname;
 
   return (
     <nav

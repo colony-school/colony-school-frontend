@@ -9,7 +9,7 @@ import { NavItem } from "@utils/types/navigation";
  * A persistent and convenient way to switch between primary destinations
  */
 const NavBar = ({ items }: { items: Array<NavItem> }): JSX.Element => {
-  const path = useRouter().asPath;
+  const path = useRouter().pathname;
 
   return (
     <nav className="flex flex-row justify-between p-2 bg-light-surface2 dark:bg-dark-surface2 shadow">
