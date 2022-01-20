@@ -40,7 +40,7 @@ const RelatedPosts = ({ filter }: { filter: Function }): JSX.Element => {
           </div>
         ) : (
           feed.map((post, index) => (
-            <Post post={post} key={index} />
+            <Post post={post} index={index} key={index} />
           ))
         )}
       </ul>
