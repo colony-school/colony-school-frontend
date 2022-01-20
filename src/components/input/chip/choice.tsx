@@ -25,7 +25,7 @@ const ChoiceChip = ({
         <button
           role="radio"
           aria-checked={choice.id == activeID}
-          aria-labeledby={choice.id}
+          aria-labelledby={choice.id}
           className={`chip rounded-none first:rounded-l last:rounded-r ${
             choice.id == activeID
               ? `ring-0 ${choice.style?.active || "container-secondary"}`
