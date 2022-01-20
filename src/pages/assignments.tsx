@@ -91,7 +91,7 @@ const AssignmentsPage: NextPage = () => {
       </div>
       <div className="list-page">
         <div className="list-page-left">
-          <div className="list-page-search">
+          <div className="list-page-search" id="main-content">
             <Search
               placeholder="Search assignments"
               onChange={(newQuery: string) => setQuery(newQuery)}

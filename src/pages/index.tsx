@@ -13,7 +13,7 @@ import TopAppBar from "@components/layout/top-app-bar";
  */
 const Dashboard: NextPage = () => {
   return (
-    <div className="flex flex-col sm:h-screen">
+    <div className="flex flex-col sm:h-screen" id="main-content">
       <div>
         <div className="hidden sm:block">
           <TopAppBar title="Dashboard" />

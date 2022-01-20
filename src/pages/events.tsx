@@ -249,7 +249,7 @@ const Events: NextPage = () => {
       </div>
       <div className="list-page">
         <div className="list-page-left">
-          <div className="list-page-search">
+          <div className="list-page-search" id="main-content">
             <Search
               placeholder="Search events"
               onChange={(newQuery: string) => setQuery(newQuery)}
