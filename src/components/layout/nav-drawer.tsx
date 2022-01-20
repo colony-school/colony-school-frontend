@@ -12,7 +12,7 @@ import { NavItem, NavGroup } from "@utils/types/navigation";
 /**
  * A skip to navigation button that only displays when it gains focus
  */
-const SkipToContent = () => (
+const SkipNavigation = () => (
   <a
     aria-labelledby="nav-p-skip"
     href="#main-content"
@@ -22,7 +22,10 @@ const SkipToContent = () => (
       className="flex flex-row gap-3 items-center px-6 py-4 rounded-full
       bg-light-tertiary-container dark:bg-dark-tertiary-container"
     >
-      <MaterialIcon icon="skip_next" />
+      <MaterialIcon
+        icon="skip_next"
+        className="text-light-tertiary dark:text-dark-tertiary"
+      />
       <p id="nav-p-skip">Skip Navigation</p>
     </div>
   </a>
@@ -37,6 +40,7 @@ const Item = ({ item }: { item: NavItem }): JSX.Element => {
   return (
     <Link href={item.url}>
       <a
+        aria-current="page"
         aria-labelledby={`nav-${item.url}`}
         className={`flex flex-row gap-3 items-center px-6 py-4 rounded-full ring-0 group
         ${
@@ -72,7 +76,6 @@ const Group = ({ group }: { group: NavGroup }): JSX.Element => {
       <h2 className="p-4 font-bold font-light-on-surface-variant dark:font-dark-on-surface-variant">
         {group.name}
       </h2>
-
       {group.items.map((item) => {
         return <Item item={item} key={item.name} />;
       })}
@@ -102,7 +105,7 @@ const NavDrawer = ({ groups }: { groups: Array<NavGroup> }): JSX.Element => {
         </div>
         <p>School</p>
       </div>
-      <SkipToContent />
+      <SkipNavigation />
       <nav>
         {groups.map((group) => {
           return <Group group={group} key={group.name} />;
