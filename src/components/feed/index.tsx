@@ -23,7 +23,7 @@ const Feed = () => {
     >
       {feed.map((post, index) => {
         return (
-            <Post post={post} index={index} className="sm:w-[74ch]" key={index} />
+          <Post post={post} index={index} className="sm:w-[74ch]" key={index} />
         );
       })}
     </section>

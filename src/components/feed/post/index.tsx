@@ -28,6 +28,7 @@ const Post = ({
   return (
     <article
       aria-posinset={index}
+      aria-setsize={-1}
       className={`w-full max-w-full sm:card sm:card-elevated ${className}`}
     >
       <Title
