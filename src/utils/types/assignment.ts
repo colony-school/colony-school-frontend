@@ -6,4 +6,5 @@ export type Assignment = {
   due: Date;
   status: "not-started" | "started" | "done";
   urgent: boolean;
+  source?: string;
 };

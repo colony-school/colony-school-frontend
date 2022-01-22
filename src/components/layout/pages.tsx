@@ -1,5 +1,5 @@
 // Components
-import MaterialIcon from "@components/global/icon";
+import MaterialIcon from "@components/global/icon/material";
 
 // Types
 import { NavGroup } from "@utils/types/navigation";

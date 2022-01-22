@@ -1,10 +1,9 @@
 // Components
 import Title from "@components/global/title";
-import MaterialIcon from "@components/global/icon";
+import MaterialIcon from "@components/global/icon/material";
 
 // Types
 import { FeaturedItem as FeaturedItemType } from "@utils/types/featured";
-import { Action } from "@utils/types/action";
 
 /**
  * A featured item, for Featured Card (`Featured` from `featured.tsx`)

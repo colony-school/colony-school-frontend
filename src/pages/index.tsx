@@ -13,7 +13,7 @@ import TopAppBar from "@components/layout/top-app-bar";
  */
 const Dashboard: NextPage = () => {
   return (
-    <div className="flex flex-col sm:h-screen">
+    <div className="flex flex-col sm:h-screen" id="main-content">
       <div>
         <div className="hidden sm:block">
           <TopAppBar title="Dashboard" />
@@ -46,7 +46,7 @@ const Dashboard: NextPage = () => {
           }}
         />
       </div>
-      <main className="grid grid-cols-[repeat(auto-fill,_minmax(16rem,_1fr))] md:grid-cols-3 gap-7 p-7 h-full overflow-auto">
+      <main className="grid grid-cols-[repeat(auto-fill,minmax(18rem,_1fr))] md:grid-cols-3 gap-7 p-7 h-full overflow-auto">
         <Featured
           featuredItems={[
             {

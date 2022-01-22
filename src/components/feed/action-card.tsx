@@ -1,5 +1,5 @@
 // Components
-import MaterialIcon from "@components/global/icon";
+import MaterialIcon from "@components/global/icon/material";
 import PeriodTimeLeft from "@components/subject-period/period-time-left";
 
 /**

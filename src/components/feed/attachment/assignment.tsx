@@ -1,14 +1,14 @@
 // Modules
+import { format } from "date-fns";
 import getUnixTime from "date-fns/getUnixTime";
 
 // Components
 import Status from "@components/assignments/status";
-import MaterialIcon from "@components/global/icon";
+import MaterialIcon from "@components/global/icon/material";
 import Title from "@components/global/title";
 
 // Types
 import { Assignment as AssignmentAttachment } from "@utils/types/assignment";
-import { format } from "date-fns";
 
 /**
  *

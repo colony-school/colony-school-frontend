@@ -32,7 +32,7 @@ const SchedulePage: NextPage = () => {
         instructors: [{ firstName: "Thanthapatra", lastName: "Bunchuay" }],
       },
     });
-  
+
   function openPeriodInfo(scheduleItemID: number) {
     setBottomSheetState(1);
     setActiveID(scheduleItemID);
@@ -48,7 +48,10 @@ const SchedulePage: NextPage = () => {
       <div className="hidden sm:block">
         <TopAppBar title="Schedule" />
       </div>
-      <div className="h-[calc(100vh-7.25rem)] w-full overflow-auto scroll-1">
+      <div
+        className="h-[calc(100vh-7.25rem)] w-full overflow-auto scroll-1"
+        id="main-content"
+      >
         <Schedule
           schedule={{
             scheduleStart: { hours: 8, minutes: 30, seconds: 0 },

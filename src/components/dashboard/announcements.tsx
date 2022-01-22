@@ -4,7 +4,7 @@ import Link from "next/link";
 
 // Components
 import Title from "@components/global/title";
-import MaterialIcon from "@components/global/icon";
+import MaterialIcon from "@components/global/icon/material";
 
 // Types
 import { GlanceAnnouncement } from "@utils/types/announcement";
@@ -104,7 +104,12 @@ const Announcements = ({
               key={announcements[0].name}
             />
             {announcements.slice(1).map((announcement) => {
-              return <AnnouncementItem announcement={announcement} key={announcement.id} />;
+              return (
+                <AnnouncementItem
+                  announcement={announcement}
+                  key={announcement.id}
+                />
+              );
             })}
           </ul>
           <div className="flex flex-row justify-end p-4">
