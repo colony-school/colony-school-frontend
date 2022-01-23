@@ -22,8 +22,6 @@ const UsePolicies = ({
       {usePolicies.map((usePolicy) => {
         return (
           <li title={usePolicy.desc || usePolicy.summary} key={usePolicy.id}>
-            {" "}
-            {/* temporary stand-in for a custom card that appears on hover */}
             {usePolicy.summary}
           </li>
         );

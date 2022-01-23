@@ -28,7 +28,7 @@ const FilterChip = ({
     <button
       role="checkbox"
       aria-checked={active}
-      className={`chip  ${
+      className={`chip ${
         active
           ? `transition-shadow hover:shadow focus-visible:shadow ${
               style?.active || "container-secondary"

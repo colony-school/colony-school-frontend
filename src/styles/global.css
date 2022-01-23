@@ -111,7 +111,7 @@
   }
 
   .list-page-list-item button {
-    @apply card text-left transition-shadow ;
+    @apply card text-left transition-shadow;
   }
 
   .list-page-list-item.not-active button {

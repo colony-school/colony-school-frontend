@@ -93,7 +93,7 @@ const AssignmentDetails = ({
                     inactive:
                       "transition-colors \
                         hover:bg-light-tertiary-0.08-tlc hover:dark:bg-dark-tertiary-0.08-tlc transition-none \
-                        focus:bg-light-tertiary-0.12-tlc focus:dark:bg-dark-tertiary-0.12-tlc ",
+                        focus:bg-light-tertiary-0.12-tlc focus:dark:bg-dark-tertiary-0.12-tlc",
                   },
                 },
                 {
@@ -104,7 +104,7 @@ const AssignmentDetails = ({
                     inactive:
                       "transition-colors \
                         hover:bg-light-secondary-0.08-tlc hover:dark:bg-dark-secondary-0.08-tlc transition-none \
-                        focus:bg-light-secondary-0.12-tlc focus:dark:bg-dark-secondary-0.12-tlc ",
+                        focus:bg-light-secondary-0.12-tlc focus:dark:bg-dark-secondary-0.12-tlc",
                   },
                 },
                 {
@@ -115,7 +115,7 @@ const AssignmentDetails = ({
                     inactive:
                       "transition-colors \
                         hover:bg-light-primary-0.08-tlc hover:dark:bg-dark-primary-0.08-tlc transition-none \
-                        focus:bg-light-primary-0.12-tlc focus:dark:bg-dark-primary-0.12-tlc ",
+                        focus:bg-light-primary-0.12-tlc focus:dark:bg-dark-primary-0.12-tlc",
                   },
                 },
               ]}
@@ -130,7 +130,7 @@ const AssignmentDetails = ({
                 inactive:
                   "transition-colors \
                     hover:bg-light-error-0.08-tlc hover:dark:bg-dark-error-0.08-tlc transition-none \
-                    focus:bg-light-error-0.12-tlc focus:dark:bg-dark-error-0.12-tlc ",
+                    focus:bg-light-error-0.12-tlc focus:dark:bg-dark-error-0.12-tlc",
               }}
               value={assignment.urgent}
             />
