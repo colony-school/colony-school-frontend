@@ -39,7 +39,7 @@ const PeriodInfo = ({
             exit="exit"
             variants={bottomSheetAnim}
             transition={{ duration: 0.2, ease: "easeOut" }}
-            className="flex flex-col gap-4 fixed bottom-16 w-full rounded-t-lg bg-light-surface1 dark:bg-dark-surface1
+            className="flex flex-col gap-4 fixed bottom-16 w-full rounded-t-lg bg-light-surface1 dark:bg-dark-surface1 shadow-lg
               lg:w-3/4 sm:bottom-0 sm:w-[calc(100%-6rem)] sm:pt-4 overflow-hidden"
             aria-live="assertive"
           >
