@@ -28,7 +28,7 @@ const RelatedPosts = ({ filter }: { filter: Function }): JSX.Element => {
           icon="attach_file"
           className="text-5xl text-light-primary dark:text-dark-primary"
         />
-        <h3 className="text-3xl">Related Posts</h3>
+        <h3 className="font-display text-3xl">Related Posts</h3>
       </header>
       <ul className="flex flex-col gap-4 items-center pb-8">
         {feed.length == 0 ? (

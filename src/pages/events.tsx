@@ -86,7 +86,7 @@ const ActiveEventDisplay = ({
             className="text-4xl text-light-primary dark:text-dark-primary"
           />
         }
-        title={<h2 className="font-bold">{event.title}</h2>}
+        title={<h2 className="font-display">{event.title}</h2>}
         subhead="Event"
       />
       <div className="flex flex-col overflow-auto">
