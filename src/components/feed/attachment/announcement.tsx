@@ -22,7 +22,9 @@ const AnnouncementAttachment = ({
             className="text-light-primary dark:text-dark-primary"
           />
         }
-        title={<h4 className="text-lg">Event: {announcement.title}</h4>}
+        title={
+          <h4 className="font-display text-lg">Event: {announcement.title}</h4>
+        }
         subhead={announcement.desc}
       />
       {announcement.eventStart && announcement.eventEnd && (
