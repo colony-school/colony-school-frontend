@@ -94,7 +94,7 @@ const Announcements = ({
             className="text-light-primary dark:text-dark-primary"
           />
         }
-        title={<h3>Announcements</h3>}
+        title={<h3 className="font-display">Announcements</h3>}
       />
       {announcements.length > 0 ? (
         <>
