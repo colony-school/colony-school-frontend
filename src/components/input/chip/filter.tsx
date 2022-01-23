@@ -28,12 +28,12 @@ const FilterChip = ({
     <button
       role="checkbox"
       aria-checked={active}
-      className={`chip ring-0 ${
+      className={`chip ${
         active
           ? `transition-shadow hover:shadow focus-visible:shadow ${
               style?.active || "container-secondary"
             }`
-          : `outline-2 outline-light-outline dark:outline-dark-outline outline-offset-[-2px]
+          : `outline outline-2 outline-light-outline dark:outline-dark-outline outline-offset-[-2px]
             ${style?.inactive || ""}`
       }`}
       onClick={() => {

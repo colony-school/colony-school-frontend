@@ -21,7 +21,7 @@ const SubjectPeriodAttachment = ({
   relevantSchedule: ScheduleDiagramType;
 }) => {
   return (
-    <li className="flex flex-col md:grid md:grid-cols-2 container-secondary">
+    <li className="flex flex-col sm:grid sm:grid-cols-2 container-secondary">
       <Title
         icon={
           <MaterialIcon
@@ -30,7 +30,7 @@ const SubjectPeriodAttachment = ({
           />
         }
         title={
-          <h4 className="text-lg">
+          <h4 className="font-display text-lg">
             Period: {subjectPeriod.subject.enName.name}
           </h4>
         }

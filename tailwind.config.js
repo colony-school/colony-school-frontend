@@ -115,6 +115,7 @@ module.exports = {
         "9xl": "4rem",
       },
       fontFamily: {
+        display: ["Poppins", "Kanit", "ui-sans-serif", "system-ui"],
         sans: ["Inter", "Noto Sans Thai", "ui-sans-serif", "system-ui"],
       },
       borderRadius: {

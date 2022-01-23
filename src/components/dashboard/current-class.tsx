@@ -51,7 +51,7 @@ const CurrentClass = ({
       dark:text-dark-on-surface dark:bg-dark-surface2"
     >
       <div className="flex flex-col sm:grid sm:grid-cols-2 gap-3">
-        <div className="px-4 pb-4">
+        <div className="px-4 pb-4 font-display">
           <h2 className="text-xl">Current Class</h2>
           <h3 className="text-5xl font-bold">{subjectPeriod.subject.enName.name}</h3>
         </div>

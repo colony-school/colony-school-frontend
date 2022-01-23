@@ -22,19 +22,28 @@ const PostAttachments = ({
 }) => {
   return (
     <ul className="flex flex-col gap-2">
-      {attachments.map((attachment) => {
+      {attachments.map((attachment, index) => {
         switch (attachment.type) {
           case "announcement":
             return (
-              <AnnouncementAttachment announcement={attachment.announcement} />
+              <AnnouncementAttachment
+                announcement={attachment.announcement}
+                key={index}
+              />
             );
           case "assignment":
-            return <AssignmentAttachment assignment={attachment.assignment} />;
+            return (
+              <AssignmentAttachment
+                assignment={attachment.assignment}
+                key={index}
+              />
+            );
           case "subject-period":
             return (
               <SubjectPeriodAttachment
                 subjectPeriod={attachment.subjectPeriod}
                 relevantSchedule={attachment.relevantSchedule}
+                key={index}
               />
             );
           case "period-swap":
@@ -42,6 +51,7 @@ const PostAttachments = ({
               <PeriodSwapAttachment
                 periods={attachment.periods}
                 relevantSchedule={attachment.relevantSchedule}
+                key={index}
               />
             );
           case "file":
@@ -49,6 +59,7 @@ const PostAttachments = ({
               <FileAttachment
                 file={attachment.file}
                 usePolicies={attachment.usePolicies}
+                key={index}
               />
             );
           case "slides":
@@ -56,6 +67,7 @@ const PostAttachments = ({
               <SlidesAttachment
                 name={attachment.name}
                 slides={attachment.slides}
+                key={index}
               />
             );
           case "payment":
@@ -65,6 +77,7 @@ const PostAttachments = ({
                 totalOwed={attachment.totalOwed}
                 perPersonOwed={attachment.perPersonOwed}
                 unpaidPeople={attachment.unpaidPeople}
+                key={index}
               />
             );
           default:

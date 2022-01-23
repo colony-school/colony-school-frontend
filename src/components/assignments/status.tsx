@@ -29,12 +29,14 @@ const Status = ({
   status,
   urgent,
   pastDue,
+  minified,
   chipClassName,
   containerClassName,
 }: {
   status: "not-started" | "started" | "done";
   urgent: boolean;
   pastDue: boolean;
+  minified?: boolean;
   chipClassName?: string;
   containerClassName?: string;
 }): JSX.Element => {
@@ -58,7 +60,9 @@ const Status = ({
           Past due
         </div>
       )}
-      <StatusChip status={status} className={chipClassName} />
+      {minified && (pastDue || urgent) || (
+        <StatusChip status={status} className={chipClassName} />
+      )}
     </div>
   );
 };

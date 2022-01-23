@@ -43,7 +43,7 @@ const ScheduleItem = ({
                  dark:text-dark-on-secondary-container dark:bg-dark-secondary-container shadow \
                  hover:shadow-md"
             : "text-light-on-surface bg-light-surface1 dark:text-dark-on-surface dark:bg-dark-surface1 \
-                 hover:shadow focus:shadow focus:ring-0"
+                 hover:shadow focus:shadow "
         }`}
         onClick={() => onClick(scheduleItem.id)}
       >
@@ -83,7 +83,7 @@ const Schedule = ({
         return (
           <ul className="flex flex-row gap-4" key={index}>
             <li className="card container-primary p-3 w-40">
-              <p className="text-lg font-bold">
+              <p className="text-lg font-display font-bold">
                 {weekToString(getDay(scheduleWeek.weekDate))}
               </p>
               <p className="text-base">

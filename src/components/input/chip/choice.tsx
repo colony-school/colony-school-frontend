@@ -28,9 +28,9 @@ const ChoiceChip = ({
           aria-labelledby={choice.id}
           className={`chip rounded-none first:rounded-l last:rounded-r ${
             choice.id == activeID
-              ? `ring-0 ${choice.style?.active || "container-secondary"}`
-              : `outline-2 outline-light-outline dark:outline-dark-outline outline-offset-[-2px]
-                ${choice.style?.inactive}`
+              ? ` ${choice.style?.active || "container-secondary"}`
+              : `outline outline-2 outline-light-outline dark:outline-dark-outline outline-offset-[-2px]
+                ${choice.style?.inactive || ""}`
           }`}
           onClick={() => {
             setActiveID(choice.id);
