@@ -43,7 +43,7 @@ const ScheduleItem = ({
                  dark:text-dark-on-secondary-container dark:bg-dark-secondary-container shadow \
                  hover:shadow-md"
             : "text-light-on-surface bg-light-surface1 dark:text-dark-on-surface dark:bg-dark-surface1 \
-                 hover:shadow focus:shadow focus:ring-0"
+                 hover:shadow focus:shadow "
         }`}
         onClick={() => onClick(scheduleItem.id)}
       >

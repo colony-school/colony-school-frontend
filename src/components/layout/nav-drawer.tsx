@@ -16,7 +16,7 @@ const SkipNavigation = (): JSX.Element => (
   <a
     aria-labelledby="nav-p-skip"
     href="#main-content"
-    className="sr-only focus:not-sr-only ring-0"
+    className="sr-only focus:not-sr-only "
   >
     <div
       className="flex flex-row gap-3 items-center px-6 py-4 rounded-full
@@ -45,7 +45,7 @@ const Item = ({
     <a
       aria-current="page"
       aria-labelledby={`nav-${item.url}`}
-      className={`flex flex-row gap-3 items-center px-6 py-4 rounded-full ring-0 group
+      className={`flex flex-row gap-3 items-center px-6 py-4 rounded-full  group
         ${
           active
             ? "bg-light-secondary-container dark:bg-dark-secondary-container transition-all \
@@ -94,7 +94,8 @@ const Group = ({
  * @param items List of nav items, each containes name and URL
  */
 const NavDrawer = ({ groups }: { groups: Array<NavGroup> }): JSX.Element => {
-  const path = useRouter().asPath.split("?")[0];
+  // Removes queries (?) and fragments (#)
+  const path = useRouter().asPath.split(/\?|#/)[0];
 
   return (
     <div className="flex flex-col p-3 h-screen bg-light-surface1 overflow-auto scroll-invisible dark:bg-dark-surface1">
