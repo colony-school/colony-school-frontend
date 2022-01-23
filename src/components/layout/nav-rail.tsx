@@ -80,7 +80,7 @@ const NavRail = ({
         </a>
       </Link>
       {items.map((item) => {
-        return <NavRailItem item={item} active={path == item.url} />;
+        return <NavRailItem item={item} active={path == item.url} key={item.name} />;
       })}
     </nav>
   );

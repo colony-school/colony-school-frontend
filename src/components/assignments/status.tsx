@@ -36,7 +36,7 @@ const Status = ({
   status: "not-started" | "started" | "done";
   urgent: boolean;
   pastDue: boolean;
-  minified: boolean;
+  minified?: boolean;
   chipClassName?: string;
   containerClassName?: string;
 }): JSX.Element => {
