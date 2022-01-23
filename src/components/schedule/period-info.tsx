@@ -56,7 +56,7 @@ const PeriodInfo = ({
               />
             </button>
             <div className="flex flex-row justify-between items-start px-4">
-              <h2 className="text-4xl font-bold">
+              <h2 className="text-4xl font-display font-bold">
                 {subjectPeriod.subject.enName.name}
               </h2>
               <button
@@ -93,7 +93,7 @@ const PeriodInfo = ({
                         className="text-light-primary dark:text-dark-primary"
                       />
                     }
-                    title={<h4>Related Posts</h4>}
+                    title={<h4 className="font-display">Related Posts</h4>}
                   />
                   <div className="h-40 px-4 overflow-auto scroll-1">
                     <ul className="flex flex-col gap-2 pb-4">

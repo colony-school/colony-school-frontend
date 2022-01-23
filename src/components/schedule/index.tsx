@@ -83,7 +83,7 @@ const Schedule = ({
         return (
           <ul className="flex flex-row gap-4" key={index}>
             <li className="card container-primary p-3 w-40">
-              <p className="text-lg font-bold">
+              <p className="text-lg font-display font-bold">
                 {weekToString(getDay(scheduleWeek.weekDate))}
               </p>
               <p className="text-base">
