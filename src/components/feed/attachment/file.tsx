@@ -21,7 +21,9 @@ const UsePolicies = ({
     <ul className="text-base">
       {usePolicies.map((usePolicy) => {
         return (
-          <li title={usePolicy.desc || usePolicy.summary} key={usePolicy.id}> {/* temporary stand-in for a custom card that appears on hover */}
+          <li title={usePolicy.desc || usePolicy.summary} key={usePolicy.id}>
+            {" "}
+            {/* temporary stand-in for a custom card that appears on hover */}
             {usePolicy.summary}
           </li>
         );
@@ -45,7 +47,7 @@ const FileAttachment = ({
   usePolicies: Array<FileAttachmentUsePolicy>;
 }) => {
   return (
-    <li className="flex flex-col md:grid md:grid-cols-2 container-tertiary">
+    <li className="flex flex-col sm:grid sm:grid-cols-2 container-tertiary">
       <Headline
         icon={
           <MaterialIcon
@@ -53,10 +55,11 @@ const FileAttachment = ({
             className="text-light-tertiary dark:text-dark-tertiary"
           />
         }
-        title={<h4 className="text-lg font-medium">File: {file.name}</h4>}
+        title={<h4 className="font-display text-lg">File: {file.name}</h4>}
         subhead={
           <p className="text-base">{(file.size / 1000).toFixed(0)} kB</p>
         }
+        gap={4}
       />
       <Headline
         icon={
@@ -65,8 +68,9 @@ const FileAttachment = ({
             className="text-light-tertiary dark:text-dark-tertiary"
           />
         }
-        title={<h4 className="text-lg font-medium">Use Policy</h4>}
+        title={<h4 className="font-display text-lg">Use Policy</h4>}
         subhead={<UsePolicies usePolicies={usePolicies} />}
+        gap={4}
       />
     </li>
   );

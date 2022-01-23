@@ -29,11 +29,11 @@ const PostTitle = ({ attachments }: { attachments: Array<Attachment> }) => {
         </h3>
       );
     } else {
-      return <h3>Periods Swapped</h3>;
+      return <h3 className="font-display">Periods Swapped</h3>;
     }
   } else if (attachmentTypes.includes("slides")) {
     return (
-      <h3>
+      <h3 className="font-display">
         Material about{" "}
         {attachments
           .map((attachment) =>
@@ -45,19 +45,19 @@ const PostTitle = ({ attachments }: { attachments: Array<Attachment> }) => {
     );
   } else if (attachmentTypes.includes("payment")) {
     if (attachments.length > 1) {
-      return <h3>Payment about {renderAttachmentNames(attachments)}</h3>;
+      return <h3 className="font-display">Payment about {renderAttachmentNames(attachments)}</h3>;
     } else {
-      return <h3>Distributed Payment</h3>;
+      return <h3 className="font-display">Distributed Payment</h3>;
     }
   } else if (attachmentTypes.includes("file")) {
     if (attachments.length > 1) {
-      return <h3>File about {renderAttachmentNames(attachments)}</h3>;
+      return <h3 className="font-display">File about {renderAttachmentNames(attachments)}</h3>;
     } else {
-      return <h3>Attached File</h3>;
+      return <h3 className="font-display">Attached File</h3>;
     }
   } else if (attachmentTypes.includes("announcement")) {
     return (
-      <h3>
+      <h3 className="font-display">
         Post about{" "}
         {attachments
           .map((attachment) =>
@@ -69,7 +69,7 @@ const PostTitle = ({ attachments }: { attachments: Array<Attachment> }) => {
     );
   } else if (attachmentTypes.includes("assignment")) {
     return (
-      <h3>
+      <h3 className="font-display">
         Post about{" "}
         {attachments
           .map((attachment) =>
@@ -80,9 +80,9 @@ const PostTitle = ({ attachments }: { attachments: Array<Attachment> }) => {
       </h3>
     );
   } else if (attachments.length > 0) {
-    return <h3>Post about {renderAttachmentNames(attachments)}</h3>;
+    return <h3 className="font-display">Post about {renderAttachmentNames(attachments)}</h3>;
   } else {
-    return <h3>Post</h3>;
+    return <h3 className="font-display">Post</h3>;
   }
 };
 

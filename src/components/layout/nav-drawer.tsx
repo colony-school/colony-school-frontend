@@ -93,7 +93,7 @@ const NavDrawer = ({ groups }: { groups: Array<NavGroup> }): JSX.Element => {
       <div
         aria-hidden="true"
         role="presentation"
-        className="flex flex-row items-center gap-2 font-extrabold text-4xl p-4"
+        className="flex flex-row items-center gap-2 font-display font-bold text-5xl p-4"
       >
         <div className="relative w-9 h-9">
           <Image

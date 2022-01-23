@@ -14,7 +14,7 @@ const PaymentAttachment = ({
   unpaidPeople: Array<string>;
 }) => {
   return (
-    <li className="flex flex-col md:grid md:grid-cols-2 container-tertiary">
+    <li className="flex flex-col sm:grid sm:grid-cols-2 container-tertiary">
       <Title
         icon={
           <MaterialIcon
@@ -22,7 +22,7 @@ const PaymentAttachment = ({
             className="text-light-tertiary dark:text-dark-tertiary"
           />
         }
-        title={<h4 className="text-lg">Payment: {name}</h4>}
+        title={<h4 className="font-display text-lg">Payment: {name}</h4>}
         subhead={`฿${totalOwed.toFixed(2)} total,
           ฿${perPersonOwed.toFixed(2)} per person`}
       />
@@ -45,7 +45,7 @@ const PaymentAttachment = ({
             />
           }
           title={
-            <h4 className="text-lg">
+            <h4 className="font-display text-lg">
               {unpaidPeople.length}{" "}
               {unpaidPeople.length == 1 ? "person hasn’t" : "people haven’t"}{" "}
               paid

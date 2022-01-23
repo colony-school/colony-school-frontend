@@ -33,7 +33,7 @@ const TopAppBar = ({
         />
       </button>
       <h1
-        className={`sm:text-3xl ${
+        className={`font-display sm:text-3xl ${
           scrim
             ? "text-light-surface dark:text-dark-on-surface"
             : "text-light-on-surface dark:text-dark-on-surface"
