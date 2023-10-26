@@ -1,4 +1,6 @@
 // Modules
+import { format } from "date-fns";
+import isPast from "date-fns/isPast";
 import Link from "next/link";
 
 // Components
@@ -8,7 +10,6 @@ import Status from "@components/assignments/status";
 
 // Types
 import { Assignment } from "@utils/types/assignment";
-import { getUnixTime } from "date-fns";
 
 /**
  *
@@ -27,19 +28,18 @@ const AssignmentItem = ({
           focus:bg-light-primary-0.12-tlc active:bg-light-primary-0.12-tlc"
         >
           <div>
-            <p className="font-bold text-lg">
-              {assignment.name}
-            </p>
+            <p className="font-bold text-lg">{assignment.name}</p>
             <p className="text-light-on-surface-variant dark:text-dark-on-surface-variant text-base">
               {assignment.subject}
               {" • "}
-              {assignment.due.toLocaleDateString("th-TH")}
+              {format(assignment.due, "dd/MM/yyyy")}
             </p>
           </div>
           <Status
+            minified={true}
             status={assignment.status}
             urgent={assignment.urgent}
-            pastDue={getUnixTime(assignment.due) > getUnixTime(new Date())}
+            pastDue={isPast(assignment.due) && assignment.status != "done"}
           />
         </a>
       </Link>
@@ -61,7 +61,7 @@ const Assignments = ({
             className="text-light-primary dark:text-dark-primary"
           />
         }
-        title={<h3>Due Soon</h3>}
+        title={<h3 className="font-display">Due Soon</h3>}
       />
       <ul>
         {assignments.map((assignment) => {

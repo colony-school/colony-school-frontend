@@ -25,9 +25,12 @@ const AssignmentDetails = ({
 }): JSX.Element => {
   return (
     <div>
-      <Title title={<h2>{assignment.name}</h2>} subhead={assignment.subject} />
+      <Title
+        title={<h2 className="font-display">{assignment.name}</h2>}
+        subhead={assignment.subject}
+      />
       <div className="flex flex-col sm:grid sm:grid-cols-2">
-        <Title
+        <Headline
           icon={
             <MaterialIcon
               icon="calendar_today"
@@ -35,9 +38,9 @@ const AssignmentDetails = ({
             />
           }
           title={<h3>Due Date</h3>}
-          subhead={format(assignment.due, "dd/MM/yyyy HH:mm")}
+          subhead={<time className="text-xl">{format(assignment.due, "dd/MM/yyyy HH:mm")}</time>}
         />
-        <Title
+        <Headline
           icon={
             <MaterialIcon
               icon={
@@ -59,20 +62,25 @@ const AssignmentDetails = ({
                 : "Time Left"}
             </h3>
           }
-          subhead={`${formatDuration(
-            intervalToDuration({ start: assignment.due, end: new Date() }),
-            { format: ["years", "months", "days", "hours"] }
-          )} ${isPast(assignment.due) ? "ago" : "left"}`}
+          subhead={
+            <p className="text-xl">
+              {formatDuration(
+                intervalToDuration({ start: assignment.due, end: new Date() }),
+                { format: ["years", "months", "days", "hours"] }
+              )}{" "}
+              {isPast(assignment.due) ? "ago" : "left"}
+            </p>
+          }
         />
       </div>
       <Headline
         icon={
           <MaterialIcon
             icon="assignment"
-            className="self-center text-light-primary dark:text-dark-primary"
+            className="text-light-primary dark:text-dark-primary"
           />
         }
-        title={<h3 className="w-full text-xl font-medium">Status</h3>}
+        title={<h3>Status</h3>}
         subhead={
           <div className="flex flex-row flex-wrap gap-2">
             <ChoiceChip
@@ -85,7 +93,7 @@ const AssignmentDetails = ({
                     inactive:
                       "transition-colors \
                         hover:bg-light-tertiary-0.08-tlc hover:dark:bg-dark-tertiary-0.08-tlc transition-none \
-                        focus:bg-light-tertiary-0.12-tlc focus:dark:bg-dark-tertiary-0.12-tlc ring-0",
+                        focus:bg-light-tertiary-0.12-tlc focus:dark:bg-dark-tertiary-0.12-tlc",
                   },
                 },
                 {
@@ -96,7 +104,7 @@ const AssignmentDetails = ({
                     inactive:
                       "transition-colors \
                         hover:bg-light-secondary-0.08-tlc hover:dark:bg-dark-secondary-0.08-tlc transition-none \
-                        focus:bg-light-secondary-0.12-tlc focus:dark:bg-dark-secondary-0.12-tlc ring-0",
+                        focus:bg-light-secondary-0.12-tlc focus:dark:bg-dark-secondary-0.12-tlc",
                   },
                 },
                 {
@@ -107,7 +115,7 @@ const AssignmentDetails = ({
                     inactive:
                       "transition-colors \
                         hover:bg-light-primary-0.08-tlc hover:dark:bg-dark-primary-0.08-tlc transition-none \
-                        focus:bg-light-primary-0.12-tlc focus:dark:bg-dark-primary-0.12-tlc ring-0",
+                        focus:bg-light-primary-0.12-tlc focus:dark:bg-dark-primary-0.12-tlc",
                   },
                 },
               ]}
@@ -122,7 +130,7 @@ const AssignmentDetails = ({
                 inactive:
                   "transition-colors \
                     hover:bg-light-error-0.08-tlc hover:dark:bg-dark-error-0.08-tlc transition-none \
-                    focus:bg-light-error-0.12-tlc focus:dark:bg-dark-error-0.12-tlc ring-0",
+                    focus:bg-light-error-0.12-tlc focus:dark:bg-dark-error-0.12-tlc",
               }}
               value={assignment.urgent}
             />
@@ -136,7 +144,6 @@ const AssignmentDetails = ({
             )}
           </div>
         }
-        gap={4}
       />
       <h3 className="sr-only">Description</h3>
       <ReactMarkdown className="p-4">{assignment.desc}</ReactMarkdown>

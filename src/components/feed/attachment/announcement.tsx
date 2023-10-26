@@ -14,7 +14,7 @@ const AnnouncementAttachment = ({
   announcement: Announcement;
 }) => {
   return (
-    <li className="flex flex-col md:grid md:grid-cols-2 container-primary">
+    <li className="flex flex-col sm:grid sm:grid-cols-2 container-primary">
       <Title
         icon={
           <MaterialIcon
@@ -22,7 +22,9 @@ const AnnouncementAttachment = ({
             className="text-light-primary dark:text-dark-primary"
           />
         }
-        title={<h4 className="text-lg">Event: {announcement.title}</h4>}
+        title={
+          <h4 className="font-display text-lg">Event: {announcement.title}</h4>
+        }
         subhead={announcement.desc}
       />
       {announcement.eventStart && announcement.eventEnd && (
@@ -34,7 +36,7 @@ const AnnouncementAttachment = ({
             />
           }
           title={
-            <h4 className="text-lg">
+            <h4 className="font-display text-lg">
               Date: {formatDate(announcement.eventStart, announcement.eventEnd)}
             </h4>
           }

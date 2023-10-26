@@ -16,11 +16,12 @@ const TopAppBar = ({
 }): JSX.Element => {
   return (
     <header
-      className={`w-full p-4 ${
+      className={`flex flex-row items-center gap-4 w-full h-16 p-4 shadow-md
+        sm:flex-col sm:items-start sm:gap-0 sm:h-fit sm:p-7 sm:shadow-none ${
         scrim
           ? "bg-gradient-to-b from-[#000000dd] to-transparent"
           : "bg-light-surface2 dark:bg-dark-surface2"
-      } sm:p-7 ${className || ""}`}
+      } ${className || ""}`}
     >
       <button className="btn btn-text p-0" onClick={() => history.back()}>
         <MaterialIcon
@@ -33,7 +34,7 @@ const TopAppBar = ({
         />
       </button>
       <h1
-        className={`sm:text-3xl ${
+        className={`font-display text-2xl sm:text-3xl ${
           scrim
             ? "text-light-surface dark:text-dark-on-surface"
             : "text-light-on-surface dark:text-dark-on-surface"

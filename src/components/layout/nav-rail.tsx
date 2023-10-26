@@ -3,6 +3,51 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
+import { NavItem } from "@utils/types/navigation";
+
+/**
+ * An item in the navigation rail
+ */
+const NavRailItem = ({
+  item,
+  active,
+}: {
+  item: NavItem;
+  active: boolean;
+}): JSX.Element => (
+  <Link href={item.url} key={item.name}>
+    <a
+      className="flex flex-col justify-center items-center gap-1 p-2 h-20 group
+        focus-visible:bg-light-primary-0.12-tlc focus-visible:dark:bg-dark-primary-0.12-tlc"
+    >
+      <div
+        className={`flex flex-row items-center py-2 px-6
+        text-light-on-surface-variant dark:text-dark-on-surface-variant
+          rounded-full ${
+            active
+              ? "text-light-tertiary bg-light-secondary-container dark:text-dark-tertiary \
+                dark:bg-dark-secondary-container \
+                transition-shadow group-hover:shadow \
+                group-focus:shadow-none"
+              : "bg-transparent transition-colors group-hover:text-light-tertiary \
+                group-hover:dark:text-dark-tertiary group-hover:bg-light-tertiary-container \
+                group-hover:dark:bg-dark-tertiary-container group-hover:transition-none"
+          }`}
+      >
+        {item.icon}
+      </div>
+      <div className={`${active || "h-0 overflow-hidden group-hover:h-fit"}`}>
+        <p
+          className={`font-bold text-sm text-light-on-surface-variant dark:text-dark-on-surface-variant
+            ${active || "hidden group-hover:block"}`}
+        >
+          {item.name}
+        </p>
+      </div>
+    </a>
+  </Link>
+);
+
 /**
  * Provides access to primary destinations in apps when using tablet and desktop screens
  */
@@ -11,7 +56,8 @@ const NavRail = ({
 }: {
   items: Array<{ name: string; icon: JSX.Element; url: string }>;
 }) => {
-  const path = useRouter().pathname;
+  // Removes queries (?) and fragments (#)
+  const path = useRouter().asPath.split(/\?|#/)[0];
 
   return (
     <nav
@@ -34,43 +80,7 @@ const NavRail = ({
         </a>
       </Link>
       {items.map((item) => {
-        return (
-          <Link href={item.url} key={item.name}>
-            <a
-              className="flex flex-col justify-center items-center gap-1 p-2 h-20 group
-              focus-visible:bg-light-primary-0.12-tlc focus-visible:dark:bg-dark-primary-0.12-tlc ring-0"
-            >
-              <div
-                className={`flex flex-row items-center py-2 px-6
-                text-light-on-surface-variant dark:text-dark-on-surface-variant
-                  rounded-full ${
-                    path == item.url
-                      ? "text-light-tertiary bg-light-secondary-container dark:text-dark-tertiary \
-                       dark:bg-dark-secondary-container \
-                       transition-shadow group-hover:shadow \
-                       group-focus:shadow-none"
-                      : "bg-transparent transition-colors group-hover:text-light-tertiary \
-                       group-hover:dark:text-dark-tertiary group-hover:bg-light-tertiary-container \
-                       group-hover:dark:bg-dark-tertiary-container group-hover:transition-none"
-                  }`}
-              >
-                {item.icon}
-              </div>
-              <div
-                className={`${
-                  path != item.url && "h-0 overflow-hidden group-hover:h-fit"
-                }`}
-              >
-                <p
-                  className={`font-bold text-sm text-light-on-surface-variant dark:text-dark-on-surface-variant
-                  ${path != item.url && "hidden group-hover:block"}`}
-                >
-                  {item.name}
-                </p>
-              </div>
-            </a>
-          </Link>
-        );
+        return <NavRailItem item={item} active={path == item.url} key={item.name} />;
       })}
     </nav>
   );
